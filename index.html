@@ -43,7 +43,7 @@ document.getElementById("homeButton").href =
         <a href="index.html">Home</a>
         <a href="devlog.html">Dev Log</a>
         <a href="game.html">Game</a>
-        <a href="signin.html">Sign In</a>
+        <a id="navAccount" href="signin.html">Sign In</a>
     </div>
 </nav>
 
@@ -80,6 +80,22 @@ Terrain, forests, mountains, movement and more!
 </p>
 
 </main>
+
+<script>
+
+let loggedIn = localStorage.getItem("horizonLoggedIn");
+let username = localStorage.getItem("horizonUsername");
+
+let accountLink = document.getElementById("navAccount");
+
+if(loggedIn === "true" && accountLink){
+
+    accountLink.innerHTML = "Account";
+    accountLink.href = "account.html";
+
+}
+
+</script>
 
 
 </body>
