@@ -6,6 +6,34 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
+<script>
+
+let user = localStorage.getItem("horizonUsername");
+
+if(user){
+document.getElementById("loginLink").innerHTML = "Account";
+document.getElementById("loginLink").href = "account.html";
+}
+
+</script>
+
+<script>
+
+let loggedIn = localStorage.getItem("horizonLoggedIn");
+let user = localStorage.getItem("horizonUsername");
+
+if(loggedIn == "true") {
+
+document.getElementById("homeButton").innerHTML =
+"<button>Account</button>";
+
+document.getElementById("homeButton").href =
+"account.html";
+
+}
+
+</script>
+
 <body>
 
 <nav>
@@ -35,7 +63,7 @@ A new adventure is being created.
 Follow the development of Horizon.
 </p>
 
-<a href="signin.html">
+<a id="homeButton" href="signin.html">
 <button>Sign In</button>
 </a>
 
@@ -55,4 +83,13 @@ Terrain, forests, mountains, movement and more!
 
 
 </body>
+<script>
+let loggedIn = localStorage.getItem("horizonLoggedIn");
+let username = localStorage.getItem("horizonUsername");
+
+if(loggedIn == "true") {
+    document.querySelector("main").innerHTML +=
+    "<h2>Welcome back, " + username + "!</h2>";
+}
+</script>
 </html>
