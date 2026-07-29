@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Download - Horizon</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<nav>
+    <h2>Horizon</h2>
+
+    <div>
+        <a href="index.html">Home</a>
+        <a href="devlog.html">Dev Log</a>
+        <a href="download.html">Download</a>
+        <a href="game.html">Game</a>
+        <a id="navAccount" href="signin.html">Sign In</a>
+    </div>
+</nav>
+
+
+<header>
+    <h1>Download Horizon</h1>
+    <p>Begin your adventure.</p>
+</header>
+
+
+<main>
+
+<h2>Horizon Pre-Alpha 0.0.1</h2>
+
+<p>
+Current available version of Horizon.
+</p>
+
+
+<a href="https://github.com/Dnl24x/horizon-game/releases/download/v0.0.1/Version.0.0.1.zip">
+<button>Download for Windows</button>
+</a>
+
+
+<h2>Platforms</h2>
+
+<p>
+🖥 Windows (x64 only)
+</p>
+
+<p>
+More platforms coming soon.
+</p>
+
+
+<h2>System Requirements</h2>
+
+
+<h3>Minimum</h3>
+
+<p>
+<strong>OS:</strong> Windows 10 / 11 (64-bit)
+<br><br>
+
+<strong>Processor:</strong> Intel Core i7-6700 / AMD Ryzen 3 1200
+<br><br>
+
+<strong>Graphics:</strong> NVIDIA GTX 1050 Ti (4GB) / AMD RX 570 (4GB)
+<br><br>
+
+<strong>Memory:</strong> 8GB RAM
+<br><br>
+
+<strong>DirectX:</strong> Version 12
+</p>
+
+
+<h3>Recommended</h3>
+
+<p>
+<strong>OS:</strong> Windows 10 / 11 (64-bit)
+<br><br>
+
+<strong>Processor:</strong> Intel Core i5-10400 / AMD Ryzen 5 3600
+<br><br>
+
+<strong>Graphics:</strong> NVIDIA GTX 1660 Super / AMD RX 6600
+<br><br>
+
+<strong>Memory:</strong> 16GB RAM
+<br><br>
+
+<strong>DirectX:</strong> Version 12
+</p>
+
+
+<h2>Version Information</h2>
+
+<p>
+Horizon Pre-Alpha 0.0.1
+<br>
+First public test build.
+</p>
+
+
+</main>
+
+
+<script>
+
+let loggedIn = localStorage.getItem("horizonLoggedIn");
+
+let accountLink = document.getElementById("navAccount");
+
+
+if(loggedIn === "true") {
+
+    accountLink.innerHTML = "Account";
+    accountLink.href = "account.html";
+
+}
+
+</script>
+
+
+</body>
+</html>
