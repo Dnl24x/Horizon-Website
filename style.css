@@ -1,177 +1,451 @@
-/* ===== GLOBAL ===== */
+/* =========================
+   Horizon Website Style
+========================= */
 
 * {
+    * {
+    cursor: url("Images/cursor.png") 16 16, auto;
+}
     box-sizing: border-box;
 }
 
+
 body {
-    background: #0b0b0b;
-    color: white;
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
-    margin: 0;
+
+    margin:0;
+
+    background:
+    radial-gradient(circle at top, #1b263b, #05070d 70%);
+
+    color:white;
+
+    font-family:Arial, Helvetica, sans-serif;
+
+    text-align:center;
+
+    overflow-x:hidden;
+
 }
 
 
-/* ===== NAVBAR ===== */
+/* =========================
+   Loading / Fade Effect
+========================= */
+
+body {
+
+    animation: pageLoad 0.8s ease;
+
+}
+
+
+@keyframes pageLoad {
+
+from {
+
+    opacity:0;
+
+}
+
+to {
+
+    opacity:1;
+
+}
+
+}
+
+
+
+/* =========================
+   Navigation
+========================= */
+
 
 nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: rgba(20,20,20,0.95);
-    padding: 20px 45px;
-    border-bottom: 1px solid #333;
-    position: sticky;
-    top: 0;
-    z-index: 10;
+
+    height:80px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:0 50px;
+
+
+    background:
+
+    rgba(5,10,20,0.75);
+
+
+    backdrop-filter:blur(12px);
+
+
+    border-bottom:
+
+    1px solid rgba(255,255,255,0.1);
+
+
+    position:sticky;
+
+    top:0;
+
+    z-index:100;
+
 }
 
 
-nav h2 {
-    font-size: 28px;
-    margin: 0;
-    letter-spacing: 2px;
+
+.logo {
+
+    width:170px;
+
+    transition:0.4s;
+
+    filter:
+
+    brightness(2)
+
+    drop-shadow(0 0 15px #1683d8);
+
 }
+
+
+
+.logo:hover {
+
+    transform:scale(1.08);
+
+    filter:
+
+    brightness(2.5)
+
+    drop-shadow(0 0 35px #1683d8);
+
+}
+
+
 
 
 nav a {
-    color: white;
-    text-decoration: none;
-    margin: 0 15px;
-    font-size: 17px;
-    transition: 0.3s;
+
+    color:#ddd;
+
+    text-decoration:none;
+
+    margin-left:30px;
+
+    font-size:18px;
+
+    position:relative;
+
+    transition:0.3s;
+
 }
+
 
 
 nav a:hover {
-    color: #00ffff;
+
+    color:white;
+
+    text-shadow:
+
+    0 0 10px #1683d8;
+
+
 }
 
 
-/* ===== HERO SECTIONS ===== */
+
+nav a::after {
+
+    content:"";
+
+    position:absolute;
+
+    bottom:-8px;
+
+    left:0;
+
+    width:0%;
+
+    height:2px;
+
+    background:#1683d8;
+
+    transition:0.3s;
+
+}
+
+
+
+nav a:hover::after {
+
+    width:100%;
+
+}
+
+
+
+
+/* =========================
+   Hero
+========================= */
+
 
 header {
-    padding: 100px 20px;
-    background: linear-gradient(
-        135deg,
-        #242424,
-        #111
-    );
+
+
+    min-height:520px;
+
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+
+    background:
+
+
+    linear-gradient(
+
+    rgba(3,8,18,0.65),
+
+    rgba(3,8,18,0.95)
+
+    ),
+
+
+    url("Images/home-backround.png");
+
+
+    background-size:cover;
+
+    background-position:center;
+
+
 }
+
 
 
 h1 {
-    font-size: 70px;
-    margin-bottom: 20px;
-    letter-spacing: 3px;
+
+    font-size:90px;
+
+    margin:0;
+
+
+    letter-spacing:5px;
+
+
+    text-shadow:
+
+    0 0 20px #1683d8,
+
+    0 0 50px rgba(22,131,216,0.8);
+
+
 }
+
 
 
 header p {
-    font-size: 22px;
-    color: #cccccc;
+
+    font-size:22px;
+
+    color:#ddd;
+
+    margin-top:25px;
+
 }
 
 
-/* ===== MAIN CONTENT ===== */
+
+/* =========================
+   Content
+========================= */
+
 
 main {
-    padding: 50px 20px;
+
+    padding:80px 20px;
+
+
 }
+
 
 
 h2 {
-    font-size: 32px;
+
+    font-size:35px;
+
+    color:#62b9ff;
+
+
+    text-shadow:
+
+    0 0 15px rgba(98,185,255,0.5);
+
 }
 
 
-p {
-    font-size: 18px;
-    color: #ddd;
-}
 
+/* =========================
+ Buttons
+========================= */
 
-/* ===== BUTTONS ===== */
 
 button {
-    background: white;
-    color: black;
-    padding: 14px 35px;
-    margin: 12px;
-    border-radius: 12px;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-    transition: 0.25s;
+
+
+    background:
+
+    linear-gradient(
+
+    135deg,
+
+    #1683d8,
+
+    #004c99
+
+    );
+
+
+    color:white;
+
+
+    padding:15px 45px;
+
+
+    border:none;
+
+
+    border-radius:12px;
+
+
+    font-size:18px;
+
+
+    box-shadow:
+
+    0 0 20px rgba(22,131,216,0.5);
+
+
+    transition:0.3s;
+
+
 }
+
 
 
 button:hover {
-    transform: scale(1.08);
-    background: #00ffff;
+
+
+    transform:
+
+    translateY(-5px)
+
+    scale(1.05);
+
+
+    box-shadow:
+
+
+    0 0 35px #1683d8;
+
+
 }
 
 
-/* ===== INPUTS ===== */
+
+/* =========================
+ Inputs
+========================= */
+
 
 input, select {
-    padding: 12px;
-    width: 220px;
-    border-radius: 8px;
-    border: none;
-    font-size: 16px;
+
+
+    padding:14px;
+
+
+    border-radius:10px;
+
+
+    border:
+
+    1px solid #345;
+
+
+    background:#0b1220;
+
+
+    color:white;
+
+
 }
 
 
-/* ===== CARDS ===== */
 
-.card {
-    background: #181818;
-    border: 1px solid #333;
-    border-radius: 20px;
-    padding: 30px;
-    margin: 25px auto;
-    max-width: 600px;
-    box-shadow: 0 0 20px rgba(0,255,255,0.08);
+/* =========================
+ Glass Sections
+========================= */
+
+
+section {
+
+
+    background:
+
+    rgba(255,255,255,0.04);
+
+
+    border-radius:20px;
+
+
+    padding:30px;
+
+
+    margin:30px;
+
+
+    backdrop-filter:blur(10px);
+
+
 }
 
 
-/* ===== PROFILE IMAGE PLACEHOLDER ===== */
 
-.profile-image {
-    width: 180px;
-    height: 180px;
-    background: #222;
-    border-radius: 50%;
-    margin: 30px auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #aaa;
-}
+/* =========================
+ Scrollbar
+========================= */
 
 
-/* ===== PAGE ANIMATION ===== */
+::-webkit-scrollbar {
 
-body {
-    animation: fadeIn 0.5s ease;
-}
-
-
-@keyframes fadeIn {
-
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
+width:10px;
 
 }
 
-.logo {
-    width: 120px;
-    height: auto;
+
+::-webkit-scrollbar-track {
+
+background:#05070d;
+
+}
+
+
+::-webkit-scrollbar-thumb {
+
+background:#1683d8;
+
+border-radius:10px;
+
 }
