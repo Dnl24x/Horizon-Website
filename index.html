@@ -6,34 +6,6 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<script>
-
-let user = localStorage.getItem("horizonUsername");
-
-if(user){
-document.getElementById("loginLink").innerHTML = "Account";
-document.getElementById("loginLink").href = "account.html";
-}
-
-</script>
-
-<script>
-
-let loggedIn = localStorage.getItem("horizonLoggedIn");
-let user = localStorage.getItem("horizonUsername");
-
-if(loggedIn == "true") {
-
-document.getElementById("homeButton").innerHTML =
-"<button>Account</button>";
-
-document.getElementById("homeButton").href =
-"account.html";
-
-}
-
-</script>
-
 <body>
 
 <nav>
@@ -63,11 +35,13 @@ A new adventure is being created.
 Follow the development of Horizon.
 </p>
 
+
 <a id="homeButton" href="signin.html">
 <button>Sign In</button>
 </a>
 
-<a href="create.html">
+
+<a id="createButton" href="create.html">
 <button>Create Account</button>
 </a>
 
@@ -81,17 +55,42 @@ Terrain, forests, mountains, movement and more!
 
 </main>
 
+
 <script>
 
 let loggedIn = localStorage.getItem("horizonLoggedIn");
 let username = localStorage.getItem("horizonUsername");
 
 let accountLink = document.getElementById("navAccount");
+let homeButton = document.getElementById("homeButton");
+let createButton = document.getElementById("createButton");
 
-if(loggedIn === "true" && accountLink){
 
-    accountLink.innerHTML = "Account";
-    accountLink.href = "account.html";
+if(loggedIn === "true") {
+
+    // Change navbar
+    if(accountLink){
+        accountLink.innerHTML = "Account";
+        accountLink.href = "account.html";
+    }
+
+
+    // Change main button
+    if(homeButton){
+        homeButton.innerHTML = "<button>Account</button>";
+        homeButton.href = "account.html";
+    }
+
+
+    // Hide create account button
+    if(createButton){
+        createButton.style.display = "none";
+    }
+
+
+    // Welcome message
+    document.querySelector("main").innerHTML +=
+    "<h2>Welcome back, " + username + "!</h2>";
 
 }
 
@@ -99,13 +98,4 @@ if(loggedIn === "true" && accountLink){
 
 
 </body>
-<script>
-let loggedIn = localStorage.getItem("horizonLoggedIn");
-let username = localStorage.getItem("horizonUsername");
-
-if(loggedIn == "true") {
-    document.querySelector("main").innerHTML +=
-    "<h2>Welcome back, " + username + "!</h2>";
-}
-</script>
 </html>
