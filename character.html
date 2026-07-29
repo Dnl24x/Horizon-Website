@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Create Character - Horizon</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<nav>
+    <h2>Horizon</h2>
+
+    <div>
+        <a href="index.html">Home</a>
+        <a href="game.html">Game</a>
+        <a href="download.html">Download</a>
+        <a href="account.html">Account</a>
+    </div>
+</nav>
+
+
+<header>
+    <h1>Create Character</h1>
+    <p>Your journey begins here.</p>
+</header>
+
+
+<main>
+
+<h2>Choose your name</h2>
+
+<input id="characterName" placeholder="Character name">
+
+
+<br><br>
+
+
+<h2>Select class</h2>
+
+<select id="characterClass">
+
+<option>Explorer</option>
+<option>Survivor</option>
+<option>Builder</option>
+
+</select>
+
+
+<br><br>
+
+
+<button onclick="createCharacter()">
+Create Character
+</button>
+
+
+<p id="message"></p>
+
+
+</main>
+
+
+<script>
+
+function createCharacter(){
+
+let name = document.getElementById("characterName").value;
+let characterClass = document.getElementById("characterClass").value;
+
+
+if(name == ""){
+    document.getElementById("message").innerHTML =
+    "Please enter a name!";
+    return;
+}
+
+
+localStorage.setItem(
+"horizonCharacter",
+name
+);
+
+
+localStorage.setItem(
+"horizonClass",
+characterClass
+);
+
+
+document.getElementById("message").innerHTML =
+"Character created!";
+
+
+}
+
+
+</script>
+
+
+</body>
+</html>
