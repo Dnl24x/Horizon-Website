@@ -1,12 +1,11 @@
 /* =========================
-   Horizon Website Style
+   Horizon V2 Global Style
 ========================= */
 
+
 * {
-    * {
-    cursor: url("Images/cursor.png") 16 16, auto;
-}
-    box-sizing: border-box;
+    box-sizing:border-box;
+    cursor:url("../Images/cursor.cur"), auto;
 }
 
 
@@ -15,43 +14,18 @@ body {
     margin:0;
 
     background:
-    radial-gradient(circle at top, #1b263b, #05070d 70%);
+    radial-gradient(
+        circle at top,
+        #172b4d,
+        #05070d 70%
+    );
 
     color:white;
 
-    font-family:Arial, Helvetica, sans-serif;
+    font-family:
+    Arial, Helvetica, sans-serif;
 
     text-align:center;
-
-    overflow-x:hidden;
-
-}
-
-
-/* =========================
-   Loading / Fade Effect
-========================= */
-
-body {
-
-    animation: pageLoad 0.8s ease;
-
-}
-
-
-@keyframes pageLoad {
-
-from {
-
-    opacity:0;
-
-}
-
-to {
-
-    opacity:1;
-
-}
 
 }
 
@@ -64,7 +38,7 @@ to {
 
 nav {
 
-    height:80px;
+    height:85px;
 
     display:flex;
 
@@ -72,7 +46,7 @@ nav {
 
     align-items:center;
 
-    padding:0 50px;
+    padding:0 60px;
 
 
     background:
@@ -80,7 +54,7 @@ nav {
     rgba(5,10,20,0.75);
 
 
-    backdrop-filter:blur(12px);
+    backdrop-filter:blur(15px);
 
 
     border-bottom:
@@ -94,6 +68,7 @@ nav {
 
     z-index:100;
 
+
 }
 
 
@@ -102,11 +77,9 @@ nav {
 
     width:170px;
 
-    transition:0.4s;
+    transition:0.3s;
 
     filter:
-
-    brightness(2)
 
     drop-shadow(0 0 15px #1683d8);
 
@@ -120,57 +93,59 @@ nav {
 
     filter:
 
-    brightness(2.5)
-
-    drop-shadow(0 0 35px #1683d8);
+    drop-shadow(0 0 30px #1683d8);
 
 }
 
 
 
 
-nav a {
 
-    color:#ddd;
+.nav-links a {
+
+
+    color:white;
 
     text-decoration:none;
 
     margin-left:30px;
 
-    font-size:18px;
-
-    position:relative;
+    font-size:17px;
 
     transition:0.3s;
 
+    position:relative;
+
 }
 
 
 
-nav a:hover {
+.nav-links a:hover {
 
-    color:white;
+
+    color:#61c6ff;
+
 
     text-shadow:
 
-    0 0 10px #1683d8;
-
+    0 0 15px #1683d8;
 
 }
 
 
 
-nav a::after {
+.nav-links a::after {
+
 
     content:"";
 
     position:absolute;
 
-    bottom:-8px;
-
     left:0;
 
-    width:0%;
+    bottom:-8px;
+
+    width:0;
 
     height:2px;
 
@@ -178,11 +153,12 @@ nav a::after {
 
     transition:0.3s;
 
+
 }
 
 
 
-nav a:hover::after {
+.nav-links a:hover::after {
 
     width:100%;
 
@@ -196,19 +172,18 @@ nav a:hover::after {
 ========================= */
 
 
-header {
+.hero {
 
 
-    min-height:520px;
+    height:650px;
 
 
     display:flex;
 
-    flex-direction:column;
-
     justify-content:center;
 
     align-items:center;
+
 
 
     background:
@@ -216,14 +191,14 @@ header {
 
     linear-gradient(
 
-    rgba(3,8,18,0.65),
+    rgba(5,10,20,0.45),
 
-    rgba(3,8,18,0.95)
+    rgba(5,10,20,0.95)
 
     ),
 
 
-    url("Images/home-backround.png");
+    url("../Images/home-background.png");
 
 
     background-size:cover;
@@ -235,93 +210,72 @@ header {
 
 
 
-h1 {
+.hero-content {
+
+
+    animation:
+
+    fadeUp 1s ease;
+
+
+}
+
+
+
+.hero h1 {
+
 
     font-size:90px;
 
     margin:0;
 
 
-    letter-spacing:5px;
+    letter-spacing:8px;
 
 
     text-shadow:
 
     0 0 20px #1683d8,
 
-    0 0 50px rgba(22,131,216,0.8);
+    0 0 60px #1683d8;
 
 
 }
 
 
 
-header p {
+.hero p {
 
-    font-size:22px;
+
+    font-size:25px;
 
     color:#ddd;
 
-    margin-top:25px;
-
 }
+
 
 
 
 /* =========================
-   Content
+   Buttons
 ========================= */
 
 
-main {
-
-    padding:80px 20px;
+.hero-buttons {
 
 
-}
-
-
-
-h2 {
-
-    font-size:35px;
-
-    color:#62b9ff;
-
-
-    text-shadow:
-
-    0 0 15px rgba(98,185,255,0.5);
+    margin-top:40px;
 
 }
 
-
-
-/* =========================
- Buttons
-========================= */
 
 
 button {
 
 
-    background:
+    padding:
 
-    linear-gradient(
-
-    135deg,
-
-    #1683d8,
-
-    #004c99
-
-    );
-
-
-    color:white;
-
-
-    padding:15px 45px;
+    16px 45px;
 
 
     border:none;
@@ -333,12 +287,28 @@ button {
     font-size:18px;
 
 
+    color:white;
+
+
+    background:
+
+    linear-gradient(
+
+    135deg,
+
+    #1683d8,
+
+    #0050a0
+
+    );
+
+
     box-shadow:
 
-    0 0 20px rgba(22,131,216,0.5);
+    0 0 20px rgba(22,131,216,.5);
 
 
-    transition:0.3s;
+    transition:.3s;
 
 
 }
@@ -357,95 +327,127 @@ button:hover {
 
     box-shadow:
 
-
-    0 0 35px #1683d8;
+    0 0 40px #1683d8;
 
 
 }
 
 
 
-/* =========================
- Inputs
-========================= */
+.secondary {
 
 
-input, select {
+    background:
 
-
-    padding:14px;
-
-
-    border-radius:10px;
+    rgba(255,255,255,0.1);
 
 
     border:
 
-    1px solid #345;
-
-
-    background:#0b1220;
-
-
-    color:white;
+    1px solid rgba(255,255,255,.3);
 
 
 }
 
 
 
+
+
 /* =========================
- Glass Sections
+   Content
 ========================= */
+
+
+main {
+
+
+    padding:80px 20px;
+
+
+}
+
 
 
 section {
 
 
+    max-width:900px;
+
+    margin:
+
+    0 auto 60px;
+
+
+}
+
+
+
+h2 {
+
+
+    font-size:35px;
+
+    color:#7dc8ff;
+
+
+}
+
+
+
+
+
+.update-card {
+
+
     background:
 
-    rgba(255,255,255,0.04);
+    rgba(255,255,255,.05);
+
+
+    padding:40px;
 
 
     border-radius:20px;
 
 
-    padding:30px;
-
-
-    margin:30px;
-
-
     backdrop-filter:blur(10px);
 
 
+    border:
+
+    1px solid rgba(255,255,255,.1);
+
+
 }
+
+
 
 
 
 /* =========================
- Scrollbar
+   Animations
 ========================= */
 
 
-::-webkit-scrollbar {
-
-width:10px;
-
-}
+@keyframes fadeUp {
 
 
-::-webkit-scrollbar-track {
+from {
 
-background:#05070d;
+    opacity:0;
+
+    transform:translateY(40px);
 
 }
 
 
-::-webkit-scrollbar-thumb {
+to {
 
-background:#1683d8;
+    opacity:1;
 
-border-radius:10px;
+    transform:translateY(0);
+
+}
+
 
 }
