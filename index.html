@@ -2,34 +2,102 @@
 <html>
 
 <head>
+
     <title>Horizon</title>
-    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="css/style.css">
+
 </head>
+
 
 <body>
 
-<nav>
-   <img src="Images/Horizon-logo.png" class="logo">
 
-    <div>
+<!-- Navigation -->
+
+<nav>
+
+    <a href="index.html">
+        <img src="Images/Horizon-logo.png" class="logo">
+    </a>
+
+
+    <div class="nav-links">
+
         <a href="index.html">Home</a>
-        <a href="devlog.html">Dev Log</a>
+
         <a href="game.html">Game</a>
-        <a id="navAccount" href="signin.html">Sign In</a>
+
+        <a href="devlog.html">Dev Log</a>
+
         <a href="download.html">Download</a>
+
+        <a id="navAccount" href="signin.html">
+            Sign In
+        </a>
+
     </div>
+
+
 </nav>
 
 
-<header>
-    <h1>Horizon</h1>
-    <p>Explore. Discover. Survive.</p>
+
+
+<!-- Hero -->
+
+<header class="hero">
+
+
+    <div class="hero-content">
+
+        <h1>Horizon</h1>
+
+        <p>
+            Explore. Discover. Survive.
+        </p>
+
+
+        <div class="hero-buttons">
+
+            <a id="homeButton" href="signin.html">
+                <button>
+                    Play Horizon
+                </button>
+            </a>
+
+
+            <a id="createButton" href="create.html">
+                <button class="secondary">
+                    Create Account
+                </button>
+            </a>
+
+        </div>
+
+
+    </div>
+
+
 </header>
+
+
+
+
+
+<!-- Main Content -->
 
 
 <main>
 
-<h2>Welcome to Horizon</h2>
+
+<section class="intro">
+
+
+<h2>
+Welcome to Horizon
+</h2>
+
 
 <p>
 A new adventure is being created.
@@ -37,78 +105,103 @@ Follow the development of Horizon.
 </p>
 
 
-<a id="homeButton" href="signin.html">
-    <button>Sign In</button>
-</a>
-
-
-<a id="createButton" href="create.html">
-    <button>Create Account</button>
-</a>
-
-
 <div id="welcomeMessage"></div>
 
 
-<h2>Latest Development</h2>
+</section>
+
+
+
+
+
+<section class="update-card">
+
+
+<h2>
+Latest Development
+</h2>
+
 
 <p>
-Pre-Alpha 0.0.1<br>
-Terrain, forests, mountains, movement and more!
+<b>Pre-Alpha 0.0.1</b>
 </p>
+
+
+<p>
+Terrain, forests, mountains,
+movement and more!
+</p>
+
+
+</section>
+
+
 
 </main>
 
 
+
+
+
 <script>
 
+
 let loggedIn = localStorage.getItem("horizonLoggedIn");
+
 let username = localStorage.getItem("horizonUsername");
 
 
-let accountLink = document.getElementById("navAccount");
-let homeButton = document.getElementById("homeButton");
-let createButton = document.getElementById("createButton");
-let welcomeMessage = document.getElementById("welcomeMessage");
+
+let accountLink =
+document.getElementById("navAccount");
+
+
+let homeButton =
+document.getElementById("homeButton");
+
+
+let createButton =
+document.getElementById("createButton");
+
+
+let welcomeMessage =
+document.getElementById("welcomeMessage");
 
 
 
-if(loggedIn === "true" && username) {
 
 
-    // Change navbar Sign In -> Account
-    if(accountLink){
-        accountLink.innerHTML = "Account";
-        accountLink.href = "account.html";
-    }
+if(loggedIn === "true" && username){
 
 
+    accountLink.innerHTML = "Account";
 
-    // Change main Sign In button -> Account
-    if(homeButton){
-        homeButton.innerHTML = "<button>Account</button>";
-        homeButton.href = "account.html";
-    }
+    accountLink.href = "account.html";
 
 
 
-    // Hide Create Account button
-    if(createButton){
-        createButton.style.display = "none";
-    }
+    homeButton.innerHTML =
+    "<button>Account</button>";
+
+    homeButton.href =
+    "account.html";
 
 
 
-    // Show welcome message
-    if(welcomeMessage){
-        welcomeMessage.innerHTML =
-        "<h2>Welcome back, " + username + "!</h2>";
-    }
+    createButton.style.display = "none";
+
+
+
+    welcomeMessage.innerHTML =
+    "<h2>Welcome back, " + username + "!</h2>";
 
 }
+
 
 </script>
 
 
+
 </body>
+
 </html>
