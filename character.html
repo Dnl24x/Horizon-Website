@@ -91,6 +91,25 @@ characterClass
 document.getElementById("message").innerHTML =
 "Character created!";
 
+let username = localStorage.getItem("horizonUsername");
+
+
+// Developer preset
+
+if(username === "Dnl24x"){
+
+localStorage.setItem(
+"horizonCharacter",
+"DEVDnl24x - Developer"
+);
+
+localStorage.setItem(
+"horizonClass",
+"Developer"
+);
+
+}
+
 
 }
 

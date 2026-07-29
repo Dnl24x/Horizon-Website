@@ -6,12 +6,9 @@
 <link rel="stylesheet" href="style.css">
 </head>
 
-
 <body>
 
-
 <nav>
-
 <h2>Horizon</h2>
 
 <div>
@@ -24,130 +21,99 @@
 </nav>
 
 
-
 <header>
-
 <h1>Welcome to Horizon</h1>
-
 <p id="username"></p>
-
 </header>
-
 
 
 <main>
 
-
 <h2 id="rank"></h2>
 
-
 <h2>Your Account</h2>
-
 
 <p id="character">
 Character: Not created yet
 </p>
 
 
-
 <a href="character.html">
 <button>Create Character</button>
 </a>
 
-
 <br><br>
-
 
 <button>
 Play Horizon
 </button>
 
-
 <br><br>
-
 
 <button onclick="logout()">
 Log Out
 </button>
 
-
-
 </main>
-
 
 
 <script>
 
-
 let user = localStorage.getItem("horizonUsername");
-let rank = localStorage.getItem("horizonRank");
-
-
-
-// If not logged in, send back to sign in
 
 if(user == null){
-
     window.location.href = "signin.html";
-
 }
 
 
-
-// Username display
+// username
 
 document.getElementById("username").innerHTML =
 "Welcome back, " + user + "!";
 
 
+// rank
 
+let rank = localStorage.getItem("horizonRank");
 
-// Rank display
+if(rank == null){
 
-if(rank){
+    if(user === "Dnl24x"){
+        rank = "OWNER";
+    }
+    else{
+        rank = "PLAYER";
+    }
 
-    document.getElementById("rank").innerHTML =
-    "Rank: " + rank;
+    localStorage.setItem("horizonRank", rank);
 
 }
 
-else{
 
-    document.getElementById("rank").innerHTML =
-    "Rank: PLAYER";
-
-}
+document.getElementById("rank").innerHTML =
+"Rank: " + rank;
 
 
 
-// Show character if created
+// character display
 
 let character = localStorage.getItem("horizonCharacter");
-let characterClass = localStorage.getItem("horizonClass");
-
 
 if(character){
 
-    document.getElementById("character").innerHTML =
-    "Character: " + character +
-    "<br>Class: " + characterClass;
+document.getElementById("character").innerHTML =
+"Character: " + character;
 
 }
 
 
-
-// Logout function
-
 function logout(){
 
-    localStorage.removeItem("horizonLoggedIn");
-    localStorage.removeItem("horizonUsername");
-    localStorage.removeItem("horizonRank");
-    localStorage.removeItem("horizonCharacter");
-    localStorage.removeItem("horizonClass");
+localStorage.removeItem("horizonLoggedIn");
+localStorage.removeItem("horizonUsername");
+localStorage.removeItem("horizonRank");
 
-
-    window.location.href = "index.html";
+window.location.href="signin.html";
 
 }
 
@@ -156,5 +122,4 @@ function logout(){
 
 
 </body>
-
 </html>

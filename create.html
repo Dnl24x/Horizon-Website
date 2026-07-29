@@ -2,159 +2,87 @@
 <html>
 
 <head>
-<title>Horizon Account</title>
+<title>Create Account - Horizon</title>
 <link rel="stylesheet" href="style.css">
 </head>
 
-
 <body>
 
-
 <nav>
-
 <h2>Horizon</h2>
 
 <div>
 <a href="index.html">Home</a>
-<a href="game.html">Game</a>
-<a href="account.html">Account</a>
-<a href="download.html">Download</a>
+<a href="signin.html">Sign In</a>
 </div>
 
 </nav>
 
 
-
 <header>
-
-<h1>Welcome to Horizon</h1>
-
-<p id="username"></p>
-
+<h1>Create Account</h1>
 </header>
-
 
 
 <main>
 
-
-<h2 id="rank"></h2>
-
-
-<h2>Your Account</h2>
-
-
-<p id="character">
-Character: Not created yet
-</p>
-
-
-
-<a href="character.html">
-<button>Create Character</button>
-</a>
-
+<input id="username" placeholder="Username">
 
 <br><br>
 
-
-<button>
-Play Horizon
-</button>
-
+<input id="password" placeholder="Password" type="password">
 
 <br><br>
 
+<button onclick="createAccount()">Create Account</button>
 
-<button onclick="logout()">
-Log Out
-</button>
-
-
+<p id="message"></p>
 
 </main>
 
 
+<script src="script.js"></script>
+
 
 <script>
 
+function createAccount(){
 
-let user = localStorage.getItem("horizonUsername");
-let rank = localStorage.getItem("horizonRank");
+let username = document.getElementById("username").value;
+let password = document.getElementById("password").value;
 
 
+if(username === "" || password === ""){
+    document.getElementById("message").innerHTML =
+    "Please enter username and password";
 
-// If not logged in, send back to sign in
-
-if(user == null){
-
-    window.location.href = "signin.html";
-
+    return;
 }
 
 
-
-// Username display
-
-document.getElementById("username").innerHTML =
-"Welcome back, " + user + "!";
+localStorage.setItem("horizonUsername", username);
+localStorage.setItem("horizonPassword", password);
+localStorage.setItem("horizonLoggedIn", "true");
 
 
-
-
-// Rank display
-
-if(rank){
-
-    document.getElementById("rank").innerHTML =
-    "Rank: " + rank;
-
+// Rank system
+if(username === "Dnl24x"){
+    localStorage.setItem("horizonRank", "OWNER");
 }
-
+else if(username === "DevNameHere"){
+    localStorage.setItem("horizonRank", "DEV");
+}
 else{
-
-    document.getElementById("rank").innerHTML =
-    "Rank: PLAYER";
-
+    localStorage.setItem("horizonRank", "PLAYER");
 }
 
 
-
-// Show character if created
-
-let character = localStorage.getItem("horizonCharacter");
-let characterClass = localStorage.getItem("horizonClass");
-
-
-if(character){
-
-    document.getElementById("character").innerHTML =
-    "Character: " + character +
-    "<br>Class: " + characterClass;
+window.location.href = "account.html";
 
 }
-
-
-
-// Logout function
-
-function logout(){
-
-    localStorage.removeItem("horizonLoggedIn");
-    localStorage.removeItem("horizonUsername");
-    localStorage.removeItem("horizonRank");
-    localStorage.removeItem("horizonCharacter");
-    localStorage.removeItem("horizonClass");
-
-
-    window.location.href = "index.html";
-
-}
-
 
 </script>
 
 
 </body>
-
 </html>
