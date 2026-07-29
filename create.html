@@ -27,5 +27,14 @@
 
 <script src="script.js"></script>
 
+let username = localStorage.getItem("horizonUsername");
+
+if(username === "Dnl24x"){
+    localStorage.setItem("horizonRank", "OWNER");
+}
+else{
+    localStorage.setItem("horizonRank", "PLAYER");
+}
+
 </body>
 </html>
