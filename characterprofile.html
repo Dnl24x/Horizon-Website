@@ -2,34 +2,64 @@
 <html>
 
 <head>
-<title>Your Character - Horizon</title>
+<title>Horizon Character</title>
 <link rel="stylesheet" href="style.css">
 </head>
 
 
 <body>
 
+
 <nav>
+
 <h2>Horizon</h2>
+
+<div>
+<a href="index.html">Home</a>
+<a href="game.html">Game</a>
+<a href="download.html">Download</a>
+<a href="account.html">Account</a>
+</div>
+
 </nav>
+
 
 
 <header>
 
-<h1 id="characterName"></h1>
+<h1 id="characterName">
+Character
+</h1>
 
-<p>
+<p id="characterImage">
 No image available yet.
 </p>
 
 </header>
 
 
+
 <main>
 
 <h2>Character Info</h2>
 
-<p id="characterClass"></p>
+
+<p id="characterClass">
+Class:
+</p>
+
+
+<p id="characterRank">
+Rank:
+</p>
+
+
+<br>
+
+
+<button onclick="backAccount()">
+Back to Account
+</button>
 
 
 </main>
@@ -38,18 +68,48 @@ No image available yet.
 
 <script>
 
+
 let name = localStorage.getItem("characterName");
-let className = localStorage.getItem("characterClass");
+
+let characterClass = localStorage.getItem("characterClass");
+
+let rank = localStorage.getItem("horizonRank");
 
 
-document.getElementById("characterName").innerHTML=name;
 
-document.getElementById("characterClass").innerHTML=
-"Class: "+className;
+if(name == null){
+
+window.location.href="character.html";
+
+}
+
+
+
+document.getElementById("characterName").innerHTML =
+name;
+
+
+
+document.getElementById("characterClass").innerHTML =
+"Class: " + characterClass;
+
+
+
+document.getElementById("characterRank").innerHTML =
+"Rank: " + rank;
+
+
+
+function backAccount(){
+
+window.location.href="account.html";
+
+}
 
 
 </script>
 
 
 </body>
+
 </html>
