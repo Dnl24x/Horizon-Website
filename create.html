@@ -2,39 +2,159 @@
 <html>
 
 <head>
-<title>Create Account - Horizon</title>
+<title>Horizon Account</title>
 <link rel="stylesheet" href="style.css">
 </head>
 
+
 <body>
 
+
 <nav>
+
 <h2>Horizon</h2>
+
+<div>
 <a href="index.html">Home</a>
+<a href="game.html">Game</a>
+<a href="account.html">Account</a>
+<a href="download.html">Download</a>
+</div>
+
 </nav>
 
-<h1>Create Account</h1>
 
-<input id="username" placeholder="Username">
+
+<header>
+
+<h1>Welcome to Horizon</h1>
+
+<p id="username"></p>
+
+</header>
+
+
+
+<main>
+
+
+<h2 id="rank"></h2>
+
+
+<h2>Your Account</h2>
+
+
+<p id="character">
+Character: Not created yet
+</p>
+
+
+
+<a href="character.html">
+<button>Create Character</button>
+</a>
+
+
 <br><br>
 
-<input id="password" placeholder="Password" type="password">
+
+<button>
+Play Horizon
+</button>
+
+
 <br><br>
 
-<button onclick="createAccount()">Create Account</button>
 
-<p id="message"></p>
+<button onclick="logout()">
+Log Out
+</button>
 
-<script src="script.js"></script>
 
-let username = localStorage.getItem("horizonUsername");
 
-if(username === "Dnl24x"){
-    localStorage.setItem("horizonRank", "OWNER");
+</main>
+
+
+
+<script>
+
+
+let user = localStorage.getItem("horizonUsername");
+let rank = localStorage.getItem("horizonRank");
+
+
+
+// If not logged in, send back to sign in
+
+if(user == null){
+
+    window.location.href = "signin.html";
+
 }
+
+
+
+// Username display
+
+document.getElementById("username").innerHTML =
+"Welcome back, " + user + "!";
+
+
+
+
+// Rank display
+
+if(rank){
+
+    document.getElementById("rank").innerHTML =
+    "Rank: " + rank;
+
+}
+
 else{
-    localStorage.setItem("horizonRank", "PLAYER");
+
+    document.getElementById("rank").innerHTML =
+    "Rank: PLAYER";
+
 }
+
+
+
+// Show character if created
+
+let character = localStorage.getItem("horizonCharacter");
+let characterClass = localStorage.getItem("horizonClass");
+
+
+if(character){
+
+    document.getElementById("character").innerHTML =
+    "Character: " + character +
+    "<br>Class: " + characterClass;
+
+}
+
+
+
+// Logout function
+
+function logout(){
+
+    localStorage.removeItem("horizonLoggedIn");
+    localStorage.removeItem("horizonUsername");
+    localStorage.removeItem("horizonRank");
+    localStorage.removeItem("horizonCharacter");
+    localStorage.removeItem("horizonClass");
+
+
+    window.location.href = "index.html";
+
+}
+
+
+</script>
+
 
 </body>
+
 </html>
