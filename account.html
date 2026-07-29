@@ -33,12 +33,11 @@
 
 <h2>Your Account</h2>
 
-<p id="character">
+<p id="characterStatus">
 Character: Not created yet
 </p>
 
-
-<a href="character.html">
+<a id="characterButton" href="character.html">
 <button>Create Character</button>
 </a>
 
@@ -60,6 +59,29 @@ Log Out
 <script>
 
 let user = localStorage.getItem("horizonUsername");
+
+if(user == null){
+    window.location.href = "signin.html";
+}
+
+
+document.getElementById("username").innerHTML =
+"Welcome back, " + user + "!";
+
+
+let character = localStorage.getItem("horizonCharacter");
+
+
+if(character){
+
+    document.getElementById("characterStatus").innerHTML =
+    "Character: " + character;
+
+    document.getElementById("characterButton").style.display="none";
+
+}
+
+</script>
 
 if(user == null){
     window.location.href = "signin.html";

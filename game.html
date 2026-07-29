@@ -58,6 +58,16 @@ Horizon is an adventure survival game focused on exploration,
 discovery and creating your own story.
 </p>
 
+<script>
+
+let loggedIn = localStorage.getItem("horizonLoggedIn");
+
+if(loggedIn !== "true"){
+    window.location.href = "signin.html";
+}
+
+</script>
+
 
 </main>
 

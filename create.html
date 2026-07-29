@@ -61,6 +61,20 @@ if(username === "" || password === ""){
 
 
 localStorage.setItem("horizonUsername", username);
+if(username === "Dnl24x"){
+
+localStorage.setItem("horizonRank","OWNER");
+
+localStorage.setItem("characterName","DEVDnl24x");
+
+localStorage.setItem("characterClass","Developer");
+
+}
+else{
+
+localStorage.setItem("horizonRank","PLAYER");
+
+}
 localStorage.setItem("horizonPassword", password);
 localStorage.setItem("horizonLoggedIn", "true");
 

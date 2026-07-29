@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Your Character - Horizon</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+
+<nav>
+<h2>Horizon</h2>
+</nav>
+
+
+<header>
+
+<h1 id="characterName"></h1>
+
+<p>
+No image available yet.
+</p>
+
+</header>
+
+
+<main>
+
+<h2>Character Info</h2>
+
+<p id="characterClass"></p>
+
+
+</main>
+
+
+
+<script>
+
+let name = localStorage.getItem("characterName");
+let className = localStorage.getItem("characterClass");
+
+
+document.getElementById("characterName").innerHTML=name;
+
+document.getElementById("characterClass").innerHTML=
+"Class: "+className;
+
+
+</script>
+
+
+</body>
+</html>
