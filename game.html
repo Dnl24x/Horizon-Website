@@ -62,8 +62,23 @@ discovery and creating your own story.
 
 let loggedIn = localStorage.getItem("horizonLoggedIn");
 
+let accountLink = document.getElementById("navAccount");
+
+
 if(loggedIn !== "true"){
-    window.location.href = "signin.html";
+
+    window.location.href="signin.html";
+
+}
+else {
+
+    if(accountLink){
+
+        accountLink.innerHTML = "Account";
+        accountLink.href = "account.html";
+
+    }
+
 }
 
 </script>

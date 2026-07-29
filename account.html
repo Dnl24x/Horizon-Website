@@ -6,7 +6,9 @@
 <link rel="stylesheet" href="style.css">
 </head>
 
+
 <body>
+
 
 <nav>
 <h2>Horizon</h2>
@@ -14,11 +16,12 @@
 <div>
 <a href="index.html">Home</a>
 <a href="game.html">Game</a>
-<a href="account.html">Account</a>
 <a href="download.html">Download</a>
+<a href="account.html">Account</a>
 </div>
 
 </nav>
+
 
 
 <header>
@@ -27,85 +30,85 @@
 </header>
 
 
+
 <main>
+
 
 <h2 id="rank"></h2>
 
+
 <h2>Your Account</h2>
+
 
 <p id="characterStatus">
 Character: Not created yet
 </p>
 
+
 <a id="characterButton" href="character.html">
 <button>Create Character</button>
 </a>
 
+
 <br><br>
+
 
 <button>
 Play Horizon
 </button>
 
+
 <br><br>
+
 
 <button onclick="logout()">
 Log Out
 </button>
 
+
+
 </main>
+
+
 
 
 <script>
 
+
 let user = localStorage.getItem("horizonUsername");
 
+
 if(user == null){
-    window.location.href = "signin.html";
+
+window.location.href="signin.html";
+
 }
+
 
 
 document.getElementById("username").innerHTML =
 "Welcome back, " + user + "!";
 
 
-let character = localStorage.getItem("horizonCharacter");
 
 
-if(character){
-
-    document.getElementById("characterStatus").innerHTML =
-    "Character: " + character;
-
-    document.getElementById("characterButton").style.display="none";
-
-}
-
-</script>
-
-if(user == null){
-    window.location.href = "signin.html";
-}
-
-
-// username
-
-document.getElementById("username").innerHTML =
-"Welcome back, " + user + "!";
-
-
-// rank
+// Rank system
 
 let rank = localStorage.getItem("horizonRank");
+
 
 if(rank == null){
 
     if(user === "Dnl24x"){
-        rank = "OWNER";
+
+        rank="OWNER";
+
+    } else {
+
+        rank="PLAYER";
+
     }
-    else{
-        rank = "PLAYER";
-    }
+
 
     localStorage.setItem("horizonRank", rank);
 
@@ -117,31 +120,55 @@ document.getElementById("rank").innerHTML =
 
 
 
-// character display
 
-let character = localStorage.getItem("horizonCharacter");
 
-if(character){
+// Character system
 
-document.getElementById("character").innerHTML =
-"Character: " + character;
+let hasCharacter = localStorage.getItem("horizonCharacter");
+
+let characterName = localStorage.getItem("characterName");
+
+let characterClass = localStorage.getItem("characterClass");
+
+
+
+if(hasCharacter === "true"){
+
+
+document.getElementById("characterStatus").innerHTML =
+"Character: " + characterName +
+"<br>Class: " + characterClass;
+
+
+
+document.getElementById("characterButton").style.display="none";
+
 
 }
+
+
+
 
 
 function logout(){
 
+
 localStorage.removeItem("horizonLoggedIn");
 localStorage.removeItem("horizonUsername");
+localStorage.removeItem("horizonPassword");
 localStorage.removeItem("horizonRank");
+
 
 window.location.href="signin.html";
 
+
 }
+
 
 
 </script>
 
 
 </body>
+
 </html>
