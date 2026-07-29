@@ -2,125 +2,305 @@
 <html>
 
 <head>
-    <title>Download - Horizon</title>
-   <link rel="stylesheet" href="css/style.css">
+
+<title>Wippix Download</title>
+
+<link rel="stylesheet" href="css/style.css">
+
 </head>
+
 
 <body>
 
-<nav>
-    <img src="Images/Horizon-logo.png" class="logo">
 
-    <div>
-        <a href="index.html">Home</a>
-        <a href="devlog.html">Dev Log</a>
-        <a href="download.html">Download</a>
-        <a href="game.html">Game</a>
-        <a id="navAccount" href="signin.html">Sign In</a>
-    </div>
+<nav>
+
+<a href="index.html">
+<img src="Images/Horizon-logo.png" class="logo">
+</a>
+
+
+<div class="nav-links">
+
+<a href="index.html">Home</a>
+<a href="game.html">Game</a>
+<a href="vehicles.html">Vehicles</a>
+<a href="maps.html">Maps</a>
+<a href="characters.html">Characters</a>
+<a href="features.html">Features</a>
+<a href="devlog.html">Dev Log</a>
+<a href="download.html">Download</a>
+
+</div>
+
+
+<div class="nav-right">
+
+<input class="search" placeholder="Search Wippix...">
+
+<a id="navAccount" href="signin.html">
+Sign In
+</a>
+
+</div>
+
+
 </nav>
 
 
-<header>
-    <h1>Download Horizon</h1>
-    <p>Begin your adventure.</p>
+
+
+
+<header class="hero">
+
+<div class="hero-content">
+
+<h1>
+Download Wippix
+</h1>
+
+<p>
+Get the latest development build.
+</p>
+
+</div>
+
 </header>
+
+
+
 
 
 <main>
 
-<h2>Horizon Pre-Alpha 0.0.1</h2>
+
+
+<section class="update-card">
+
+
+<h2>
+Wippix Pre-Alpha 0.0.1
+</h2>
+
 
 <p>
-Current available version of Horizon.
+
+The first public test version of Wippix.
+
 </p>
+
+
+<br>
 
 
 <a href="https://github.com/Dnl24x/horizon-game/releases/download/v0.0.1/Version.0.0.1.zip">
-<button>Download for Windows</button>
+
+<button>
+Download for Windows
+</button>
+
 </a>
 
 
-<h2>Platforms</h2>
+</section>
+
+
+
+
+
+<section class="cards">
+
+
+
+<div class="card">
+
+<h2>
+🖥 Windows
+</h2>
 
 <p>
-🖥 Windows (x64 only)
-</p>
 
-<p>
-More platforms coming soon.
-</p>
+Available now
 
-
-<h2>System Requirements</h2>
-
-
-<h3>Minimum</h3>
-
-<p>
-<strong>OS:</strong> Windows 10 / 11 (64-bit)
 <br><br>
 
-<strong>Processor:</strong> Intel Core i7-6700 / AMD Ryzen 3 1200
-<br><br>
+Windows 10 / 11
 
-<strong>Graphics:</strong> NVIDIA GTX 1050 Ti (4GB) / AMD RX 570 (4GB)
-<br><br>
-
-<strong>Memory:</strong> 8GB RAM
-<br><br>
-
-<strong>DirectX:</strong> Version 12
-</p>
-
-
-<h3>Recommended</h3>
-
-<p>
-<strong>OS:</strong> Windows 10 / 11 (64-bit)
-<br><br>
-
-<strong>Processor:</strong> Intel Core i5-10400 / AMD Ryzen 5 3600
-<br><br>
-
-<strong>Graphics:</strong> NVIDIA GTX 1660 Super / AMD RX 6600
-<br><br>
-
-<strong>Memory:</strong> 16GB RAM
-<br><br>
-
-<strong>DirectX:</strong> Version 12
-</p>
-
-
-<h2>Version Information</h2>
-
-<p>
-Horizon Pre-Alpha 0.0.1
 <br>
-First public test build.
+
+64-bit
+
 </p>
+
+</div>
+
+
+
+
+
+<div class="card">
+
+<h2>
+🍎 Other Platforms
+</h2>
+
+<p>
+
+Coming soon:
+
+<br><br>
+
+Linux
+
+<br>
+
+macOS
+
+<br>
+
+Console
+
+</p>
+
+</div>
+
+
+
+
+
+<div class="card">
+
+<h2>
+📦 Version Info
+</h2>
+
+<p>
+
+Version:
+
+<br>
+
+Pre-Alpha 0.0.1
+
+<br><br>
+
+Status:
+
+<br>
+
+Development
+
+</p>
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+<section class="update-card">
+
+
+<h2>
+System Requirements
+</h2>
+
+
+
+<h3>
+Minimum
+</h3>
+
+
+<p>
+
+CPU:
+Intel Core i7-6700 / Ryzen 3 1200
+
+<br><br>
+
+GPU:
+GTX 1050 Ti / RX 570
+
+<br><br>
+
+RAM:
+8GB
+
+<br><br>
+
+Storage:
+TBA
+
+</p>
+
+
+
+<br><br>
+
+
+
+<h3>
+Recommended
+</h3>
+
+
+<p>
+
+CPU:
+Intel Core i5-10400 / Ryzen 5 3600
+
+<br><br>
+
+GPU:
+GTX 1660 Super / RX 6600
+
+<br><br>
+
+RAM:
+16GB
+
+</p>
+
+
+</section>
+
 
 
 </main>
 
 
+
+
+
 <script>
 
-let loggedIn = localStorage.getItem("horizonLoggedIn");
 
-let accountLink = document.getElementById("navAccount");
+let loggedIn =
+localStorage.getItem("horizonLoggedIn");
 
 
-if(loggedIn === "true") {
+let account =
+document.getElementById("navAccount");
 
-    accountLink.innerHTML = "Account";
-    accountLink.href = "account.html";
+
+if(loggedIn === "true"){
+
+account.innerHTML="Account";
+
+account.href="account.html";
 
 }
+
 
 </script>
 
 
+
 </body>
+
 </html>

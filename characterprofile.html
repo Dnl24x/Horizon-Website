@@ -2,8 +2,11 @@
 <html>
 
 <head>
-<title>Horizon Character</title>
+
+<title>Wippix Character</title>
+
 <link rel="stylesheet" href="css/style.css">
+
 </head>
 
 
@@ -12,68 +15,200 @@
 
 <nav>
 
+<a href="index.html">
 <img src="Images/Horizon-logo.png" class="logo">
+</a>
 
-<div>
+
+<div class="nav-links">
+
 <a href="index.html">Home</a>
 <a href="game.html">Game</a>
+<a href="vehicles.html">Vehicles</a>
+<a href="maps.html">Maps</a>
+<a href="characters.html">Characters</a>
+<a href="features.html">Features</a>
+<a href="devlog.html">Dev Log</a>
 <a href="download.html">Download</a>
-<a href="account.html">Account</a>
+
 </div>
+
+
+<div class="nav-right">
+
+<input class="search" placeholder="Search Wippix...">
+
+<a href="account.html">
+Account
+</a>
+
+</div>
+
 
 </nav>
 
 
 
-<header>
+
+
+<header class="hero">
+
+
+<div class="hero-content">
+
 
 <h1 id="characterName">
 Character
 </h1>
 
-<p id="characterImage">
-No image available yet.
+
+<p>
+Your Wippix identity
 </p>
+
+
+</div>
+
 
 </header>
 
 
 
+
+
 <main>
 
-<h2>Character Info</h2>
+
+
+<section class="cards">
+
+
+
+<div class="card">
+
+
+<h2>
+🧍 Character Preview
+</h2>
+
+
+<div class="character-image">
+
+<p>
+No image available yet.
+</p>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="card">
+
+
+<h2>
+Character Information
+</h2>
 
 
 <p id="characterClass">
+
 Class:
+
 </p>
 
 
 <p id="characterRank">
+
 Rank:
+
 </p>
 
 
+</div>
+
+
+
+
+</section>
+
+
+
+
+
+<section class="update-card">
+
+
+<h2>
+Customization
+</h2>
+
+
+<p>
+
+👕 Clothing
+
 <br>
+
+🎩 Hats
+
+<br>
+
+🕶 Accessories
+
+<br>
+
+🎨 Appearance
+
+
+</p>
+
+
+<button>
+Customize Character
+</button>
+
+
+</section>
+
+
+
 
 
 <button onclick="backAccount()">
+
 Back to Account
+
 </button>
+
 
 
 </main>
 
 
 
+
+
+
+
 <script>
 
 
-let name = localStorage.getItem("characterName");
+let name =
+localStorage.getItem("characterName");
 
-let characterClass = localStorage.getItem("characterClass");
 
-let rank = localStorage.getItem("horizonRank");
+let characterClass =
+localStorage.getItem("characterClass");
+
+
+let rank =
+localStorage.getItem("horizonRank");
 
 
 
@@ -82,6 +217,7 @@ if(name == null){
 window.location.href="character.html";
 
 }
+
 
 
 
@@ -100,6 +236,8 @@ document.getElementById("characterRank").innerHTML =
 
 
 
+
+
 function backAccount(){
 
 window.location.href="account.html";
@@ -107,7 +245,9 @@ window.location.href="account.html";
 }
 
 
+
 </script>
+
 
 
 </body>

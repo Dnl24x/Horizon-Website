@@ -3,9 +3,9 @@
 
 <head>
 
-    <title>Horizon</title>
+<title>Wippix</title>
 
-    <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/style.css">
 
 </head>
 
@@ -13,30 +13,80 @@
 <body>
 
 
-<!-- Navigation -->
-
 <nav>
 
-    <a href="index.html">
-        <img src="Images/Horizon-logo.png" class="logo">
-    </a>
+
+<a href="index.html">
+
+<img src="Images/Horizon-logo.png" class="logo">
+
+</a>
 
 
-    <div class="nav-links">
 
-        <a href="index.html">Home</a>
+<div class="nav-links">
 
-        <a href="game.html">Game</a>
 
-        <a href="devlog.html">Dev Log</a>
+<a href="index.html">
+Home
+</a>
 
-        <a href="download.html">Download</a>
 
-        <a id="navAccount" href="signin.html">
-            Sign In
-        </a>
+<a href="game.html">
+Game
+</a>
 
-    </div>
+
+<a href="vehicles.html">
+Vehicles
+</a>
+
+
+<a href="maps.html">
+Maps
+</a>
+
+
+<a href="characters.html">
+Characters
+</a>
+
+
+<a href="features.html">
+Features
+</a>
+
+
+<a href="devlog.html">
+Dev Log
+</a>
+
+
+<a href="download.html">
+Download
+</a>
+
+
+
+</div>
+
+
+
+<div class="nav-right">
+
+
+<input 
+class="search"
+placeholder="Search Wippix..."
+>
+
+
+<a id="navAccount" href="signin.html">
+Sign In
+</a>
+
+
+</div>
 
 
 </nav>
@@ -44,39 +94,51 @@
 
 
 
-<!-- Hero -->
 
 <header class="hero">
 
 
-    <div class="hero-content">
-
-        <h1>Horizon</h1>
-
-        <p>
-            Explore. Discover. Survive.
-        </p>
+<div class="hero-content">
 
 
-        <div class="hero-buttons">
-
-            <a id="homeButton" href="signin.html">
-                <button>
-                    Play Horizon
-                </button>
-            </a>
+<h1>
+WIPPIX
+</h1>
 
 
-            <a id="createButton" href="create.html">
-                <button class="secondary">
-                    Create Account
-                </button>
-            </a>
-
-        </div>
+<p>
+A new generation of driving and exploration.
+</p>
 
 
-    </div>
+
+<div class="hero-buttons">
+
+
+<a href="game.html">
+
+<button>
+Explore Game
+</button>
+
+</a>
+
+
+
+<a href="download.html">
+
+<button class="secondary">
+Download
+</button>
+
+</a>
+
+
+
+</div>
+
+
+</div>
 
 
 </header>
@@ -85,27 +147,73 @@
 
 
 
-<!-- Main Content -->
-
-
 <main>
 
 
-<section class="intro">
+<section>
 
 
 <h2>
-Welcome to Horizon
+Welcome to Wippix
 </h2>
 
 
 <p>
-A new adventure is being created.
-Follow the development of Horizon.
+Drive, explore, customize and create your own experience.
 </p>
 
 
-<div id="welcomeMessage"></div>
+</section>
+
+
+
+
+
+<section class="cards">
+
+
+<div class="card">
+
+<h2>
+🚗 Vehicles
+</h2>
+
+<p>
+Discover cars, upgrades and future customization.
+</p>
+
+</div>
+
+
+
+
+<div class="card">
+
+<h2>
+🗺 Maps
+</h2>
+
+<p>
+Explore cities, roads and environments.
+</p>
+
+</div>
+
+
+
+
+<div class="card">
+
+<h2>
+🧍 Characters
+</h2>
+
+<p>
+Customize your own player with clothing and accessories.
+</p>
+
+</div>
+
 
 
 </section>
@@ -122,14 +230,27 @@ Latest Development
 </h2>
 
 
-<p>
-<b>Pre-Alpha 0.0.1</b>
-</p>
+<h3>
+Pre-Alpha 0.0.1
+</h3>
 
 
 <p>
-Terrain, forests, mountains,
-movement and more!
+
+✔ Terrain System
+
+<br>
+
+✔ Character Creation
+
+<br>
+
+✔ Account System
+
+<br>
+
+✔ First Development Build
+
 </p>
 
 
@@ -146,56 +267,33 @@ movement and more!
 <script>
 
 
-let loggedIn = localStorage.getItem("horizonLoggedIn");
-
-let username = localStorage.getItem("horizonUsername");
-
+let loggedIn =
+localStorage.getItem("horizonLoggedIn");
 
 
-let accountLink =
+let username =
+localStorage.getItem("horizonUsername");
+
+
+
+let account =
 document.getElementById("navAccount");
-
-
-let homeButton =
-document.getElementById("homeButton");
-
-
-let createButton =
-document.getElementById("createButton");
-
-
-let welcomeMessage =
-document.getElementById("welcomeMessage");
-
-
 
 
 
 if(loggedIn === "true" && username){
 
 
-    accountLink.innerHTML = "Account";
-
-    accountLink.href = "account.html";
-
+account.innerHTML =
+"Account";
 
 
-    homeButton.innerHTML =
-    "<button>Account</button>";
+account.href =
+"account.html";
 
-    homeButton.href =
-    "account.html";
-
-
-
-    createButton.style.display = "none";
-
-
-
-    welcomeMessage.innerHTML =
-    "<h2>Welcome back, " + username + "!</h2>";
 
 }
+
 
 
 </script>

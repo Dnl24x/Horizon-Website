@@ -1,11 +1,12 @@
 /* =========================
-   Horizon V2 Global Style
+   Wippix Website Style
+   Dark + Light Blue + Gold
 ========================= */
 
 
 * {
-    box-sizing:border-box;
-    cursor:url("../Images/cursor.cur"), auto;
+    box-sizing: border-box;
+    cursor: url("../Images/cursor.cur"), auto;
 }
 
 
@@ -16,16 +17,16 @@ body {
     background:
     radial-gradient(
         circle at top,
-        #172b4d,
-        #05070d 70%
+        #1b202b,
+        #080a0f 60%
     );
 
-    color:white;
+    color:#e8e8e8;
 
     font-family:
-    Arial, Helvetica, sans-serif;
-
-    text-align:center;
+    "Segoe UI",
+    Arial,
+    sans-serif;
 
 }
 
@@ -38,29 +39,21 @@ body {
 
 nav {
 
-    height:85px;
-
     display:flex;
-
-    justify-content:space-between;
 
     align-items:center;
 
-    padding:0 60px;
+    justify-content:space-between;
 
+    padding:18px 50px;
 
     background:
-
-    rgba(5,10,20,0.75);
-
+    rgba(12,14,18,0.85);
 
     backdrop-filter:blur(15px);
 
-
     border-bottom:
-
-    1px solid rgba(255,255,255,0.1);
-
+    1px solid rgba(255,255,255,0.08);
 
     position:sticky;
 
@@ -68,20 +61,18 @@ nav {
 
     z-index:100;
 
-
 }
 
 
 
 .logo {
 
-    width:170px;
+    width:145px;
 
-    transition:0.3s;
+    transition:.3s;
 
     filter:
-
-    drop-shadow(0 0 15px #1683d8);
+    drop-shadow(0 0 8px rgba(98,200,255,.35));
 
 }
 
@@ -89,80 +80,86 @@ nav {
 
 .logo:hover {
 
-    transform:scale(1.08);
-
-    filter:
-
-    drop-shadow(0 0 30px #1683d8);
+    transform:scale(1.05);
 
 }
 
 
 
+.nav-links {
+
+    display:flex;
+
+    gap:25px;
+
+}
 
 
-.nav-links a {
+
+.nav-links a,
+.nav-right a {
 
 
-    color:white;
+    color:#ddd;
 
     text-decoration:none;
 
-    margin-left:30px;
+    font-size:16px;
 
-    font-size:17px;
-
-    transition:0.3s;
-
-    position:relative;
-
-}
-
-
-
-.nav-links a:hover {
-
-
-    color:#61c6ff;
-
-
-    text-shadow:
-
-    0 0 15px #1683d8;
-
-}
-
-
-
-.nav-links a::after {
-
-
-    content:"";
-
-    position:absolute;
-
-    left:0;
-
-    bottom:-8px;
-
-    width:0;
-
-    height:2px;
-
-    background:#1683d8;
-
-    transition:0.3s;
+    transition:.3s;
 
 
 }
 
 
 
-.nav-links a:hover::after {
+.nav-links a:hover,
+.nav-right a:hover {
 
-    width:100%;
+    color:#62c8ff;
 
 }
+
+
+
+.nav-right {
+
+    display:flex;
+
+    align-items:center;
+
+    gap:20px;
+
+}
+
+
+
+.search {
+
+    background:#161a22;
+
+    border:
+
+    1px solid #333;
+
+    padding:10px 18px;
+
+    border-radius:20px;
+
+    color:white;
+
+    outline:none;
+
+}
+
+
+
+.search:focus {
+
+    border-color:#62c8ff;
+
+}
+
 
 
 
@@ -175,30 +172,23 @@ nav {
 .hero {
 
 
-    height:650px;
-
+    height:600px;
 
     display:flex;
 
-    justify-content:center;
-
     align-items:center;
 
+    justify-content:center;
 
 
     background:
 
-
     linear-gradient(
-
-    rgba(5,10,20,0.45),
-
-    rgba(5,10,20,0.95)
-
+        rgba(5,8,12,.45),
+        rgba(5,8,12,.9)
     ),
 
-
-    url("../Images/home-background.png");
+    url("../Images/home-backround.png");
 
 
     background-size:cover;
@@ -212,11 +202,7 @@ nav {
 
 .hero-content {
 
-
-    animation:
-
-    fadeUp 1s ease;
-
+    animation:fadeUp .8s ease;
 
 }
 
@@ -225,19 +211,11 @@ nav {
 .hero h1 {
 
 
-    font-size:90px;
-
-    margin:0;
-
+    font-size:85px;
 
     letter-spacing:8px;
 
-
-    text-shadow:
-
-    0 0 20px #1683d8,
-
-    0 0 60px #1683d8;
+    margin:0;
 
 
 }
@@ -246,12 +224,125 @@ nav {
 
 .hero p {
 
+    font-size:24px;
 
-    font-size:25px;
-
-    color:#ddd;
+    color:#ccc;
 
 }
+
+
+
+
+
+/* =========================
+   Main Content
+========================= */
+
+
+main {
+
+    padding:70px 8%;
+
+}
+
+
+
+section {
+
+    margin-bottom:50px;
+
+}
+
+
+
+h2 {
+
+    color:#62c8ff;
+
+}
+
+
+
+p {
+
+    color:#ccc;
+
+    line-height:1.6;
+
+}
+
+
+
+
+
+/* =========================
+   Cards
+========================= */
+
+
+.cards {
+
+
+    display:grid;
+
+    grid-template-columns:
+
+    repeat(auto-fit,minmax(260px,1fr));
+
+    gap:25px;
+
+
+}
+
+
+
+.card,
+.update-card {
+
+
+    background:
+
+    rgba(255,255,255,.04);
+
+
+    border:
+
+    1px solid rgba(255,255,255,.1);
+
+
+    border-radius:15px;
+
+
+    padding:30px;
+
+
+    transition:.3s;
+
+
+}
+
+
+
+.card:hover,
+.update-card:hover {
+
+
+    transform:translateY(-6px);
+
+
+    border-color:#62c8ff;
+
+
+}
+
+
+
+.card h2 {
+
+    color:#d6a84f;
+
+}
+
 
 
 
@@ -261,51 +352,38 @@ nav {
 ========================= */
 
 
-.hero-buttons {
-
-
-    margin-top:40px;
-
-}
-
-
-
 button {
-
-
-    padding:
-
-    16px 45px;
-
-
-    border:none;
-
-
-    border-radius:12px;
-
-
-    font-size:18px;
-
-
-    color:white;
 
 
     background:
 
     linear-gradient(
-
-    135deg,
-
-    #1683d8,
-
-    #0050a0
-
+        135deg,
+        #1d2735,
+        #11151c
     );
 
 
-    box-shadow:
+    color:white;
 
-    0 0 20px rgba(22,131,216,.5);
+
+    border:
+
+    1px solid #62c8ff;
+
+
+    padding:
+
+    14px 35px;
+
+
+    border-radius:10px;
+
+
+    font-size:17px;
+
+
+    cursor:pointer;
 
 
     transition:.3s;
@@ -318,16 +396,15 @@ button {
 button:hover {
 
 
-    transform:
+    transform:translateY(-3px);
 
-    translateY(-5px)
 
-    scale(1.05);
+    background:#182534;
 
 
     box-shadow:
 
-    0 0 40px #1683d8;
+    0 8px 25px rgba(98,200,255,.25);
 
 
 }
@@ -337,14 +414,7 @@ button:hover {
 .secondary {
 
 
-    background:
-
-    rgba(255,255,255,0.1);
-
-
-    border:
-
-    1px solid rgba(255,255,255,.3);
+    border-color:#d6a84f;
 
 
 }
@@ -354,69 +424,39 @@ button:hover {
 
 
 /* =========================
-   Content
+   Inputs
 ========================= */
 
 
-main {
+input,
+select {
 
 
-    padding:80px 20px;
+    background:#11151c;
 
 
-}
-
-
-
-section {
-
-
-    max-width:900px;
-
-    margin:
-
-    0 auto 60px;
-
-
-}
-
-
-
-h2 {
-
-
-    font-size:35px;
-
-    color:#7dc8ff;
-
-
-}
-
-
-
-
-
-.update-card {
-
-
-    background:
-
-    rgba(255,255,255,.05);
-
-
-    padding:40px;
-
-
-    border-radius:20px;
-
-
-    backdrop-filter:blur(10px);
+    color:white;
 
 
     border:
 
-    1px solid rgba(255,255,255,.1);
+    1px solid #333;
 
+
+    padding:13px;
+
+
+    border-radius:8px;
+
+
+}
+
+
+
+input:focus,
+select:focus {
+
+    border-color:#62c8ff;
 
 }
 
@@ -436,7 +476,7 @@ from {
 
     opacity:0;
 
-    transform:translateY(40px);
+    transform:translateY(25px);
 
 }
 
@@ -449,5 +489,15 @@ to {
 
 }
 
+
+}
+
+
+
+main,
+.card,
+.update-card {
+
+    animation:fadeUp .6s ease;
 
 }

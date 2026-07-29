@@ -2,8 +2,11 @@
 <html>
 
 <head>
-<title>Horizon Account</title>
+
+<title>Wippix Account</title>
+
 <link rel="stylesheet" href="css/style.css">
+
 </head>
 
 
@@ -11,54 +14,163 @@
 
 
 <nav>
-<img src="Images/Horizon-logo.png" class="logo">
 
-<div>
+<a href="index.html">
+<img src="Images/Horizon-logo.png" class="logo">
+</a>
+
+
+<div class="nav-links">
+
 <a href="index.html">Home</a>
 <a href="game.html">Game</a>
+<a href="vehicles.html">Vehicles</a>
+<a href="maps.html">Maps</a>
+<a href="characters.html">Characters</a>
+<a href="features.html">Features</a>
+<a href="devlog.html">Dev Log</a>
 <a href="download.html">Download</a>
-<a href="account.html">Account</a>
+
 </div>
+
+
+<div class="nav-right">
+
+<input class="search" placeholder="Search Wippix...">
+
+<a href="account.html">
+Account
+</a>
+
+</div>
+
 
 </nav>
 
 
 
-<header>
-<h1>Welcome to Horizon</h1>
-<p id="username"></p>
+
+<header class="hero">
+
+<div class="hero-content">
+
+<h1>
+Player Profile
+</h1>
+
+<p id="username">
+</p>
+
+</div>
+
 </header>
+
+
 
 
 
 <main>
 
 
-<h2 id="rank"></h2>
+<section class="update-card">
 
 
-<h2>Your Account</h2>
+<h2 id="rank">
+Rank
+</h2>
+
+
+<p>
+Welcome to your Wippix profile.
+</p>
+
+
+</section>
+
+
+
+
+
+<section class="cards">
+
+
+<div class="card">
+
+
+<h2>
+🧍 Character
+</h2>
 
 
 <p id="characterStatus">
-Character: Not created yet
+No character created.
 </p>
 
 
 <a id="characterButton" href="character.html">
-<button>Create Character</button>
+
+<button>
+Create Character
+</button>
+
 </a>
 
 
+</div>
+
+
+
+
+
+<div class="card">
+
+
+<h2>
+🚗 Vehicles
+</h2>
+
+
+<p>
+No vehicles unlocked yet.
+</p>
+
+
+</div>
+
+
+
+
+
+<div class="card">
+
+
+<h2>
+⭐ Progress
+</h2>
+
+
+<p>
+
+Level: 1
+
 <br><br>
 
+Experience: 0 XP
 
-<button>
-Play Horizon
-</button>
+</p>
 
 
-<br><br>
+</div>
+
+
+
+</section>
+
+
+
+
+
+<br>
 
 
 <button onclick="logout()">
@@ -72,13 +184,16 @@ Log Out
 
 
 
+
+
 <script>
 
 
-let user = localStorage.getItem("horizonUsername");
+let user =
+localStorage.getItem("horizonUsername");
 
 
-if(user == null){
+if(!user){
 
 window.location.href="signin.html";
 
@@ -87,32 +202,14 @@ window.location.href="signin.html";
 
 
 document.getElementById("username").innerHTML =
-"Welcome back, " + user + "!";
+"Welcome back, " + user;
 
 
 
 
-// Rank system
+let rank =
+localStorage.getItem("horizonRank");
 
-let rank = localStorage.getItem("horizonRank");
-
-
-if(rank == null){
-
-    if(user === "Dnl24x"){
-
-        rank="OWNER";
-
-    } else {
-
-        rank="PLAYER";
-
-    }
-
-
-    localStorage.setItem("horizonRank", rank);
-
-}
 
 
 document.getElementById("rank").innerHTML =
@@ -121,23 +218,31 @@ document.getElementById("rank").innerHTML =
 
 
 
-
-// Character system
-
-let hasCharacter = localStorage.getItem("horizonCharacter");
-
-let characterName = localStorage.getItem("characterName");
-
-let characterClass = localStorage.getItem("characterClass");
+let character =
+localStorage.getItem("horizonCharacter");
 
 
+let characterName =
+localStorage.getItem("characterName");
 
-if(hasCharacter === "true"){
+
+let characterClass =
+localStorage.getItem("characterClass");
+
+
+
+if(character === "true"){
 
 
 document.getElementById("characterStatus").innerHTML =
-"Character: " + characterName +
-"<br>Class: " + characterClass;
+
+characterName +
+
+"<br>" +
+
+"Class: " +
+
+characterClass;
 
 
 
@@ -154,9 +259,10 @@ function logout(){
 
 
 localStorage.removeItem("horizonLoggedIn");
+
 localStorage.removeItem("horizonUsername");
+
 localStorage.removeItem("horizonPassword");
-localStorage.removeItem("horizonRank");
 
 
 window.location.href="signin.html";

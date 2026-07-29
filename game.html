@@ -2,89 +2,258 @@
 <html>
 
 <head>
-    <title>Horizon - Game</title>
-    <link rel="stylesheet" href="css/style.css">
+
+<title>Wippix - Game</title>
+
+<link rel="stylesheet" href="css/style.css">
+
 </head>
+
 
 <body>
 
-<nav>
-    <img src="Images/Horizon-logo.png" class="logo">
 
-    <div>
-        <a href="index.html">Home</a>
-        <a href="devlog.html">Dev Log</a>
-        <a href="game.html">Game</a>
-        <a href="download.html">Download</a>
-        <a id="navAccount" href="signin.html">Sign In</a>
-    </div>
+<nav>
+
+<a href="index.html">
+<img src="Images/Horizon-logo.png" class="logo">
+</a>
+
+
+<div class="nav-links">
+
+<a href="index.html">Home</a>
+<a href="game.html">Game</a>
+<a href="vehicles.html">Vehicles</a>
+<a href="maps.html">Maps</a>
+<a href="characters.html">Characters</a>
+<a href="features.html">Features</a>
+<a href="devlog.html">Dev Log</a>
+<a href="download.html">Download</a>
+
+</div>
+
+
+<div class="nav-right">
+
+<input class="search" placeholder="Search Wippix...">
+
+<a id="navAccount" href="signin.html">
+Sign In
+</a>
+
+</div>
+
+
 </nav>
 
 
-<header>
-    <h1>Horizon</h1>
-    <p>Explore. Discover. Survive.</p>
+
+
+
+<header class="hero">
+
+<div class="hero-content">
+
+<h1>
+Wippix
+</h1>
+
+<p>
+Drive. Explore. Create your own experience.
+</p>
+
+</div>
+
 </header>
+
+
+
 
 
 <main>
 
-<h2>Play Horizon</h2>
+
+<section>
+
+<h2>
+About Wippix
+</h2>
+
 
 <p>
-Welcome to Horizon.
-Your adventure begins here.
+
+Wippix is an open-world driving experience focused on vehicles,
+customization and exploring a connected world.
+
+</p>
+
+
+</section>
+
+
+
+
+
+<section class="cards">
+
+
+<div class="card">
+
+<h2>
+🚘 Driving
+</h2>
+
+<p>
+Experience different vehicles and realistic driving mechanics.
+</p>
+
+</div>
+
+
+
+
+<div class="card">
+
+<h2>
+🌆 Exploration
+</h2>
+
+<p>
+Travel through cities, roads and environments.
+</p>
+
+</div>
+
+
+
+
+<div class="card">
+
+<h2>
+🎨 Customization
+</h2>
+
+<p>
+Create your character and personalize your experience.
+</p>
+
+</div>
+
+
+</section>
+
+
+
+
+
+<section class="update-card">
+
+
+<h2>
+Current Version
+</h2>
+
+
+<p>
+
+<b>
+Pre-Alpha 0.0.1
+</b>
+
+<br><br>
+
+Status:
+Development Build
+
+<br><br>
+
+Current systems:
+
+<br>
+
+✔ Account System
+
+<br>
+
+✔ Character Creation
+
+<br>
+
+✔ Basic World Systems
+
+<br>
+
+⬜ Vehicles
+
+<br>
+
+⬜ Multiplayer
+
+</p>
+
+
+</section>
+
+
+
+
+
+<section>
+
+
+<h2>
+Download Wippix
+</h2>
+
+
+<p>
+Try the latest available build.
 </p>
 
 
 <a href="download.html">
-<button>Download Game</button>
+
+<button>
+Download
+</button>
+
 </a>
 
 
-<h2>Latest Version</h2>
-
-<p>
-Version: Pre-Alpha 0.0.1
-<br>
-Status: In Development
-</p>
+</section>
 
 
-<h2>About</h2>
 
-<p>
-Horizon is an adventure survival game focused on exploration,
-discovery and creating your own story.
-</p>
+</main>
+
+
+
+
 
 <script>
 
-let loggedIn = localStorage.getItem("horizonLoggedIn");
 
-let accountLink = document.getElementById("navAccount");
+let loggedIn =
+localStorage.getItem("horizonLoggedIn");
 
 
-if(loggedIn !== "true"){
+let account =
+document.getElementById("navAccount");
 
-    window.location.href="signin.html";
 
-}
-else {
+if(loggedIn === "true"){
 
-    if(accountLink){
+account.innerHTML="Account";
 
-        accountLink.innerHTML = "Account";
-        accountLink.href = "account.html";
-
-    }
+account.href="account.html";
 
 }
+
 
 </script>
 
 
-</main>
 
 </body>
 
