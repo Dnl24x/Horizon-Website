@@ -24,37 +24,22 @@
 
 <div class="nav-links">
 
-<a href="index.html">
-Home
-</a>
+<a href="index.html">Home</a>
 
-<a href="vehicles.html">
-Vehicles
-</a>
+<a href="vehicles.html">Vehicles</a>
 
-<a href="maps.html">
-Maps
-</a>
+<a href="maps.html">Maps</a>
 
-<a href="characters.html">
-Characters
-</a>
+<a href="characters.html">Characters</a>
 
-<a href="features.html">
-Features
-</a>
+<a href="features.html">Features</a>
 
-<a href="devlog.html">
-Dev Log
-</a>
+<a href="devlog.html">Dev Log</a>
 
 </div>
 
 
 <div class="nav-right">
-
-<input placeholder="Search">
-
 
 <a href="account.html">
 Account
@@ -69,9 +54,7 @@ Account
 
 
 
-
 <header class="dashboard-header">
-
 
 <h1>
 Characters
@@ -79,7 +62,7 @@ Characters
 
 
 <p>
-Create and customize your Wippix identity.
+Manage your Wippix identity.
 </p>
 
 
@@ -98,12 +81,14 @@ Create and customize your Wippix identity.
 <section class="profile-section">
 
 
+
 <div class="character-box">
 
 
 <div class="character-placeholder">
 
-Character Preview Coming Soon
+3D Character Coming Soon
+
 
 </div>
 
@@ -119,16 +104,38 @@ Character Preview Coming Soon
 
 <h2 id="name">
 
-No Character
+Player
 
 </h2>
 
 
+
 <p id="style">
 
-Create your first character.
+Style: Driver
 
 </p>
+
+
+
+<p>
+
+Default Character
+
+</p>
+
+
+
+<a href="character.html">
+
+<button>
+
+Customize Character
+
+</button>
+
+</a>
+
 
 
 </div>
@@ -147,26 +154,15 @@ Create your first character.
 
 
 <h2>
-Character Management
+Character Status
 </h2>
 
 
-<p id="status">
+<p>
 
-No character created yet.
+Your default Wippix character is ready.
 
 </p>
-
-
-
-<a id="characterButton" href="character.html">
-
-<button>
-Create Character
-</button>
-
-</a>
-
 
 
 </section>
@@ -181,18 +177,20 @@ Create Character
 
 
 <h2>
-Customization
+Future Features
 </h2>
 
 
 <p>
 
-Clothing, accessories and appearance options will appear here.
+Clothing, hairstyles, accessories and more customization options will appear here.
 
 </p>
 
 
 </section>
+
+
 
 
 
@@ -207,12 +205,20 @@ Clothing, accessories and appearance options will appear here.
 <script>
 
 
-let character =
-localStorage.getItem("wippixCharacter");
+let username =
+localStorage.getItem("wippixUsername");
 
 
-let name =
-localStorage.getItem("wippixCharacterName");
+
+if(username){
+
+
+document.getElementById("name").innerHTML =
+username;
+
+
+}
+
 
 
 let style =
@@ -220,38 +226,11 @@ localStorage.getItem("wippixCharacterStyle");
 
 
 
-let button =
-document.getElementById("characterButton");
-
-
-
-if(character === "true"){
-
-
-
-document.getElementById("name").innerHTML =
-name;
-
+if(style){
 
 
 document.getElementById("style").innerHTML =
 "Style: " + style;
-
-
-
-document.getElementById("status").innerHTML =
-"Your character is ready.";
-
-
-
-button.innerHTML =
-"<button>View Character</button>";
-
-
-
-button.href =
-"characterprofile.html";
-
 
 
 }
@@ -259,6 +238,8 @@ button.href =
 
 
 </script>
+
+
 
 
 

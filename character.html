@@ -3,7 +3,7 @@
 
 <head>
 
-<title>Create Character - Wippix</title>
+<title>Character Customization - Wippix</title>
 
 <link rel="stylesheet" href="css/style.css">
 
@@ -24,21 +24,17 @@
 
 <div class="nav-links">
 
-<a href="index.html">
-Home
-</a>
+<a href="index.html">Home</a>
 
-<a href="vehicles.html">
-Vehicles
-</a>
+<a href="vehicles.html">Vehicles</a>
 
-<a href="maps.html">
-Maps
-</a>
+<a href="maps.html">Maps</a>
 
-<a href="characters.html">
-Characters
-</a>
+<a href="characters.html">Characters</a>
+
+<a href="features.html">Features</a>
+
+<a href="devlog.html">Dev Log</a>
 
 </div>
 
@@ -58,24 +54,17 @@ Account
 
 
 
-
-
 <header class="dashboard-header">
 
-
 <h1>
-Create Character
+Customize Character
 </h1>
-
 
 <p>
 Create your Wippix identity.
 </p>
 
-
 </header>
-
-
 
 
 
@@ -84,127 +73,97 @@ Create your Wippix identity.
 <main>
 
 
-
-<section class="profile-section">
-
-
-<div class="character-box">
-
-
-<div class="character-placeholder">
-
-Character Preview Coming Soon
-
-</div>
-
-
-</div>
+<section class="character-creator">
 
 
 
-<div class="profile-info">
+<!-- Character Preview -->
+
+<div class="character-preview">
 
 
 <h2>
-New Character
+Character Preview
 </h2>
 
 
-<p>
-Customize your appearance in the future.
-</p>
+<div class="character-model">
+
+Image Coming Soon
+
+</div>
+
+
+<h3 id="characterName">
+document.getElementById("characterName").innerHTML =
+localStorage.getItem("wippixCharacterName") || "Player";
+</h3>
 
 
 </div>
 
 
 
-</section>
 
 
+<!-- Customization -->
 
-
-
-
-
-
-<section class="dashboard-section">
+<div class="customization-panel">
 
 
 <h2>
-Character Name
-</h2>
-
-
-<input 
-id="characterName"
-placeholder="Character name"
->
-
-
-</section>
-
-
-
-
-
-
-
-
-<section class="dashboard-section">
-
-
-<h2>
-Starting Style
+Customization
 </h2>
 
 
 
-<select id="characterStyle">
+<div class="custom-tabs">
 
 
-<option>
-Driver
-</option>
-
-
-<option>
-Explorer
-</option>
-
-
-<option>
-Creator
-</option>
-
-
-<option>
-Developer
-</option>
-
-
-</select>
-
-
-
-</section>
-
-
-
-
-
-
-
-
-<button onclick="createCharacter()">
-
-Create Character
-
+<button onclick="showCategory('hair')">
+Hair
 </button>
 
 
+<button onclick="showCategory('clothes')">
+Clothes
+</button>
 
-<p id="message"></p>
+
+<button onclick="showCategory('shoes')">
+Shoes
+</button>
+
+
+<button onclick="showCategory('skin')">
+Skin Tone
+</button>
+
+
+<button onclick="showCategory('accessories')">
+Accessories
+</button>
+
+
+</div>
+
+
+
+
+
+<div id="customOptions">
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+</section>
 
 
 
@@ -215,73 +174,100 @@ Create Character
 
 
 
-
 <script>
 
 
-function createCharacter(){
+let username =
+localStorage.getItem("wippixUsername");
 
 
-
-let name =
-document.getElementById("characterName").value;
-
-
-
-let style =
-document.getElementById("characterStyle").value;
+document.getElementById("characterName").innerHTML =
+username || "Player";
 
 
 
 
-if(name === ""){
+
+function showCategory(type){
 
 
-document.getElementById("message").innerHTML =
-"Please enter a character name.";
+let box =
+document.getElementById("customOptions");
 
 
-return;
+
+let title =
+type.charAt(0).toUpperCase() + type.slice(1);
+
+
+
+box.innerHTML =
+
+`
+
+<h2>${title}</h2>
+
+<div class="option-grid">
+
+
+<div class="option-card">
+Image Coming Soon
+<br>
+${title} Style 1
+</div>
+
+
+<div class="option-card">
+Image Coming Soon
+<br>
+${title} Style 2
+</div>
+
+
+<div class="option-card">
+Image Coming Soon
+<br>
+${title} Style 3
+</div>
+
+
+<div class="option-card">
+Image Coming Soon
+<br>
+${title} Style 4
+</div>
+
+
+<div class="option-card">
+Image Coming Soon
+<br>
+${title} Style 5
+</div>
+
+
+<div class="option-card">
+Image Coming Soon
+<br>
+${title} Style 6
+</div>
+
+
+</div>
+
+`;
+
 
 
 }
 
 
 
-
-localStorage.setItem(
-"wippixCharacter",
-"true"
-);
-
-
-
-localStorage.setItem(
-"wippixCharacterName",
-name
-);
-
-
-
-localStorage.setItem(
-"wippixCharacterStyle",
-style
-);
-
-
-
-
-
-window.location.href =
-"characters.html";
-
-
-
-}
+showCategory("hair");
 
 
 
 </script>
+
 
 
 

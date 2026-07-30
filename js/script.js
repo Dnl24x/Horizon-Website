@@ -81,11 +81,62 @@ localStorage.setItem(
 
 
 
+// ==========================
+// Default Character Creation
+// ==========================
+
+
+localStorage.setItem(
+"wippixCharacter",
+"true"
+);
+
+
+localStorage.setItem(
+"wippixCharacterName",
+username
+);
+
+
+localStorage.setItem(
+"wippixCharacterStyle",
+"Driver"
+);
+
+
+localStorage.setItem(
+"wippixCharacterHair",
+"Default"
+);
+
+
+localStorage.setItem(
+"wippixCharacterClothes",
+"Default"
+);
+
+
+localStorage.setItem(
+"wippixCharacterShoes",
+"Default"
+);
+
+
+localStorage.setItem(
+"wippixCharacterSkin",
+"Default"
+);
+
+
+localStorage.setItem(
+"wippixCharacterAccessories",
+"None"
+);
+
+
+
 window.location.href =
 "index.html";
-
-
-}
 
 
 

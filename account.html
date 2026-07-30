@@ -112,9 +112,8 @@ Character Coming Soon
 </p>
 
 
-<p>
-Character:
-Not created
+<p id="characterStatus">
+
 </p>
 
 
@@ -250,6 +249,23 @@ user;
 document.getElementById("rank").innerHTML =
 "Rank: " +
 (localStorage.getItem("wippixRank") || "PLAYER");
+let character =
+localStorage.getItem("wippixCharacter");
+
+
+if(character === "true"){
+
+document.getElementById("characterStatus").innerHTML =
+"Character: Ready";
+
+}
+
+else{
+
+document.getElementById("characterStatus").innerHTML =
+"Character: Not created";
+
+}
 
 
 

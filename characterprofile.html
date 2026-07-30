@@ -24,21 +24,17 @@
 
 <div class="nav-links">
 
-<a href="index.html">
-Home
-</a>
+<a href="index.html">Home</a>
 
-<a href="vehicles.html">
-Vehicles
-</a>
+<a href="vehicles.html">Vehicles</a>
 
-<a href="maps.html">
-Maps
-</a>
+<a href="maps.html">Maps</a>
 
-<a href="characters.html">
-Characters
-</a>
+<a href="characters.html">Characters</a>
+
+<a href="features.html">Features</a>
+
+<a href="devlog.html">Dev Log</a>
 
 </div>
 
@@ -61,18 +57,13 @@ Account
 
 <header class="dashboard-header">
 
-
-<h1 id="characterName">
-
-Character
-
+<h1>
+Character Profile
 </h1>
 
-
 <p>
-Wippix Character Profile
+Your Wippix identity.
 </p>
-
 
 </header>
 
@@ -86,7 +77,9 @@ Wippix Character Profile
 
 
 
+
 <section class="profile-section">
+
 
 
 <div class="character-box">
@@ -94,12 +87,14 @@ Wippix Character Profile
 
 <div class="character-placeholder">
 
-Character Image Coming Soon
-
-</div>
+3D Character Coming Soon
 
 
 </div>
+
+
+</div>
+
 
 
 
@@ -108,35 +103,45 @@ Character Image Coming Soon
 <div class="profile-info">
 
 
-<h2>
-Information
+<h2 id="name">
+
+Player
+
 </h2>
 
 
-<p id="characterStyle">
 
-Style:
+<p id="rank">
 
-</p>
-
-
-<p>
-
-Customization:
-Coming Soon
+Rank: PLAYER
 
 </p>
 
 
-<p>
 
-Accessories:
-None
+<p id="style">
+
+Style: Driver
 
 </p>
+
+
+
+
+<a href="character.html">
+
+<button>
+
+Customize Character
+
+</button>
+
+</a>
+
 
 
 </div>
+
 
 
 
@@ -148,19 +153,35 @@ None
 
 
 
+
 <section class="dashboard-section">
 
 
 <h2>
-Appearance
+Character Stats
 </h2>
 
 
 <p>
 
-Future clothing, hairstyles and accessories will appear here.
+Level: 1
 
 </p>
+
+
+<p>
+
+Experience: 0 XP
+
+</p>
+
+
+<p>
+
+Reputation: New Driver
+
+</p>
+
 
 
 </section>
@@ -181,9 +202,24 @@ Equipment
 
 <p>
 
-Future items and loadouts will appear here.
+Vehicle: None
 
 </p>
+
+
+<p>
+
+Outfit: Default
+
+</p>
+
+
+<p>
+
+Accessories: None
+
+</p>
+
 
 
 </section>
@@ -201,8 +237,9 @@ Back to Characters
 
 
 
-</main>
 
+
+</main>
 
 
 
@@ -213,8 +250,12 @@ Back to Characters
 <script>
 
 
-let name =
-localStorage.getItem("wippixCharacterName");
+let username =
+localStorage.getItem("wippixUsername");
+
+
+let rank =
+localStorage.getItem("wippixRank");
 
 
 let style =
@@ -222,43 +263,44 @@ localStorage.getItem("wippixCharacterStyle");
 
 
 
+if(username){
 
-if(!name){
-
-
-window.location.href =
-"character.html";
-
+document.getElementById("name").innerHTML =
+username;
 
 }
 
 
 
+if(rank){
 
-document.getElementById("characterName").innerHTML =
-name;
+document.getElementById("rank").innerHTML =
+"Rank: " + rank;
+
+}
 
 
 
-document.getElementById("characterStyle").innerHTML =
+if(style){
+
+document.getElementById("style").innerHTML =
 "Style: " + style;
 
+}
 
 
 
 
 function back(){
 
-
 window.location.href =
 "characters.html";
-
 
 }
 
 
-
 </script>
+
 
 
 
