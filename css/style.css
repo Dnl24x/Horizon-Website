@@ -489,3 +489,180 @@ nav{
 
 
 }
+
+/* =========================
+   Wippix Launcher Dashboard
+========================= */
+
+
+.launcher{
+
+    width:90%;
+
+    max-width:1300px;
+
+    margin:auto;
+
+}
+
+
+
+
+.main-profile{
+
+
+    display:flex;
+
+    gap:40px;
+
+    align-items:center;
+
+
+    background:#0c1827;
+
+
+    padding:40px;
+
+
+    border-radius:18px;
+
+
+    border:
+
+    1px solid rgba(255,255,255,.08);
+
+
+}
+
+
+
+
+.character-preview{
+
+
+    width:280px;
+
+    height:350px;
+
+
+    background:#101d2d;
+
+
+    border-radius:15px;
+
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+
+}
+
+
+
+
+.profile-details h2{
+
+
+    font-size:35px;
+
+}
+
+
+
+
+.launcher-grid{
+
+
+    display:grid;
+
+
+    grid-template-columns:
+
+    repeat(3,1fr);
+
+
+    gap:25px;
+
+
+    margin-top:30px;
+
+
+}
+
+
+
+
+
+.launcher-box{
+
+
+    background:#0c1827;
+
+
+    padding:35px;
+
+
+    border-radius:18px;
+
+
+    min-height:220px;
+
+
+    border:
+
+    1px solid rgba(255,255,255,.08);
+
+
+    transition:.25s;
+
+
+}
+
+
+
+
+.launcher-box:hover{
+
+
+    transform:translateY(-5px);
+
+
+    border-color:#f5d76e;
+
+
+}
+
+
+
+.launcher-box h2{
+
+
+    color:#f5d76e;
+
+
+}
+
+
+
+
+@media(max-width:900px){
+
+
+.main-profile{
+
+    flex-direction:column;
+
+}
+
+
+.launcher-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+
+}
