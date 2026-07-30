@@ -808,6 +808,39 @@ transform:translateY(-3px);
 
 }
 
+textarea{
+
+width:80%;
+
+height:150px;
+
+background:#101c2b;
+
+color:white;
+
+border:1px solid #30445c;
+
+border-radius:10px;
+
+padding:15px;
+
+font-family:
+"Segoe UI",
+Arial;
+
+resize:none;
+
+}
+
+
+textarea:focus{
+
+outline:none;
+
+border-color:#f5d76e;
+
+}
+
 
 
 
@@ -825,5 +858,53 @@ flex-direction:column;
 grid-template-columns:repeat(2,1fr);
 
 }
+
+}
+
+footer{
+
+margin-top:80px;
+
+padding:40px;
+
+text-align:center;
+
+background:#08101a;
+
+border-top:
+1px solid rgba(255,255,255,.08);
+
+color:#8997a8;
+
+}
+
+
+
+.footer-logo{
+
+width:120px;
+
+filter:
+drop-shadow(0 0 10px #f5d76e);
+
+margin-bottom:15px;
+
+}
+
+
+
+footer a{
+
+color:#d7dde5;
+
+text-decoration:none;
+
+}
+
+
+
+footer a:hover{
+
+color:#f5d76e;
 
 }

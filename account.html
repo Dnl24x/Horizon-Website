@@ -58,21 +58,15 @@ Account
 
 
 
-
 <header class="dashboard-header">
-
 
 <h1>
 Account
 </h1>
 
-
-<p id="welcome">
-</p>
-
+<p id="welcome"></p>
 
 </header>
-
 
 
 
@@ -87,16 +81,13 @@ Account
 
 <div class="character-box">
 
-
 <div class="character-placeholder">
 
 Character Coming Soon
 
 </div>
 
-
 </div>
-
 
 
 
@@ -105,10 +96,12 @@ Character Coming Soon
 
 
 <h2 id="username">
+
 </h2>
 
 
 <p id="rank">
+
 </p>
 
 
@@ -120,9 +113,61 @@ Character Coming Soon
 </div>
 
 
+</section>
+
+
+
+
+
+
+<section class="dashboard-section">
+
+
+<h2>
+About Yourself
+</h2>
+
+
+<textarea id="aboutText" placeholder="Tell us about yourself..."></textarea>
+
+
+<br>
+
+
+<button onclick="saveAbout()">
+Save
+</button>
+
+
+<p id="aboutMessage"></p>
+
 
 </section>
 
+
+
+
+
+
+<section class="dashboard-section">
+
+
+<h2>
+Friends
+</h2>
+
+
+<p>
+No friends yet.
+</p>
+
+
+<p>
+Friend system coming soon.
+</p>
+
+
+</section>
 
 
 
@@ -139,14 +184,11 @@ Profile
 
 
 <p>
-
 Manage your Wippix identity and settings.
-
 </p>
 
 
 </section>
-
 
 
 
@@ -163,9 +205,7 @@ Customization
 
 
 <p>
-
 Character clothing, accessories and appearance options will appear here.
-
 </p>
 
 
@@ -194,13 +234,11 @@ Account Actions
 </h2>
 
 
-
 <button onclick="logout()">
 
 Log Out
 
 </button>
-
 
 
 </section>
@@ -215,8 +253,38 @@ Log Out
 
 
 
-<script>
+<footer>
 
+
+<img src="Images/Wippix-logo.png" class="footer-logo">
+
+
+<p>
+Wippix © 2026
+</p>
+
+
+<p>
+Website Version: 0.1 Pre-Alpha
+</p>
+
+
+<a href="terms.html">
+Terms of Service
+</a>
+
+
+</footer>
+
+
+
+
+
+
+
+
+
+<script>
 
 
 let user =
@@ -226,10 +294,8 @@ localStorage.getItem("wippixUsername");
 
 if(!user){
 
-
 window.location.href =
 "signin.html";
-
 
 }
 
@@ -249,8 +315,13 @@ user;
 document.getElementById("rank").innerHTML =
 "Rank: " +
 (localStorage.getItem("wippixRank") || "PLAYER");
+
+
+
+
 let character =
 localStorage.getItem("wippixCharacter");
+
 
 
 if(character === "true"){
@@ -264,6 +335,46 @@ else{
 
 document.getElementById("characterStatus").innerHTML =
 "Character: Not created";
+
+}
+
+
+
+
+
+
+let about =
+localStorage.getItem("wippixAbout");
+
+
+if(about){
+
+document.getElementById("aboutText").value =
+about;
+
+}
+
+
+
+
+
+function saveAbout(){
+
+
+let text =
+document.getElementById("aboutText").value;
+
+
+
+localStorage.setItem(
+"wippixAbout",
+text
+);
+
+
+
+document.getElementById("aboutMessage").innerHTML =
+"Saved.";
 
 }
 

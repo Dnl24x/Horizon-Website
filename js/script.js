@@ -7,138 +7,54 @@
 
 function createAccount(){
 
-
-let username =
-document.getElementById("username").value;
-
-
-let password =
-document.getElementById("password").value;
+    let username = document.getElementById("username").value;
+    let password = document.getElementById("password").value;
 
 
+    if(username === "" || password === ""){
 
-if(username === "" || password === ""){
+        document.getElementById("message").innerHTML =
+        "Please enter username and password.";
 
+        return;
 
-document.getElementById("message").innerHTML =
-"Please enter username and password.";
-
-
-return;
-
-
-}
+    }
 
 
+    localStorage.setItem("wippixUsername", username);
+    localStorage.setItem("wippixPassword", password);
 
 
-localStorage.setItem(
-"wippixUsername",
-username
-);
+    if(username === "Dnl24x"){
+
+        localStorage.setItem("wippixRank","OWNER");
+
+    } else {
+
+        localStorage.setItem("wippixRank","PLAYER");
+
+    }
 
 
-
-localStorage.setItem(
-"wippixPassword",
-password
-);
+    localStorage.setItem("wippixLoggedIn","true");
 
 
+    // Default Character
+
+    localStorage.setItem("wippixCharacter","true");
+    localStorage.setItem("wippixCharacterName",username);
+    localStorage.setItem("wippixCharacterStyle","Driver");
+
+    localStorage.setItem("wippixCharacterHair","Default");
+    localStorage.setItem("wippixCharacterClothes","Default");
+    localStorage.setItem("wippixCharacterShoes","Default");
+    localStorage.setItem("wippixCharacterSkin","Default");
+    localStorage.setItem("wippixCharacterAccessories","None");
 
 
-// Rank System
-
-if(username === "Dnl24x"){
-
-
-localStorage.setItem(
-"wippixRank",
-"OWNER"
-);
-
+    window.location.href="index.html";
 
 }
-
-else{
-
-
-localStorage.setItem(
-"wippixRank",
-"PLAYER"
-);
-
-
-}
-
-
-
-
-localStorage.setItem(
-"wippixLoggedIn",
-"true"
-);
-
-
-
-// ==========================
-// Default Character Creation
-// ==========================
-
-
-localStorage.setItem(
-"wippixCharacter",
-"true"
-);
-
-
-localStorage.setItem(
-"wippixCharacterName",
-username
-);
-
-
-localStorage.setItem(
-"wippixCharacterStyle",
-"Driver"
-);
-
-
-localStorage.setItem(
-"wippixCharacterHair",
-"Default"
-);
-
-
-localStorage.setItem(
-"wippixCharacterClothes",
-"Default"
-);
-
-
-localStorage.setItem(
-"wippixCharacterShoes",
-"Default"
-);
-
-
-localStorage.setItem(
-"wippixCharacterSkin",
-"Default"
-);
-
-
-localStorage.setItem(
-"wippixCharacterAccessories",
-"None"
-);
-
-
-
-window.location.href =
-"index.html";
-
-
 
 
 
@@ -146,64 +62,48 @@ window.location.href =
 
 // Login
 
-
 function login(){
 
-
-let username =
-document.getElementById("loginUsername").value;
-
-
-let password =
-document.getElementById("loginPassword").value;
+    let username =
+    document.getElementById("loginUsername").value;
 
 
-
-let savedUsername =
-localStorage.getItem("wippixUsername");
-
-
-let savedPassword =
-localStorage.getItem("wippixPassword");
+    let password =
+    document.getElementById("loginPassword").value;
 
 
 
+    let savedUsername =
+    localStorage.getItem("wippixUsername");
 
 
-if(
-username === savedUsername &&
-password === savedPassword
-){
-
-
-localStorage.setItem(
-"wippixLoggedIn",
-"true"
-);
+    let savedPassword =
+    localStorage.getItem("wippixPassword");
 
 
 
-window.location.href =
-"index.html";
+    if(username === savedUsername && password === savedPassword){
 
 
-}
+        localStorage.setItem(
+        "wippixLoggedIn",
+        "true"
+        );
 
 
-else{
+        window.location.href="index.html";
 
 
-document.getElementById("message").innerHTML =
-"Incorrect username or password.";
+    } else {
 
+
+        document.getElementById("message").innerHTML =
+        "Incorrect username or password.";
+
+
+    }
 
 }
-
-
-
-}
-
-
 
 
 
@@ -211,18 +111,14 @@ document.getElementById("message").innerHTML =
 
 // Logout
 
-
 function logout(){
 
+    localStorage.removeItem(
+    "wippixLoggedIn"
+    );
 
-localStorage.removeItem(
-"wippixLoggedIn"
-);
 
-
-window.location.href =
-"index.html";
-
+    window.location.href="index.html";
 
 }
 
@@ -230,17 +126,12 @@ window.location.href =
 
 
 
-
-
-// Check login state
-
+// Check login
 
 function isLoggedIn(){
 
-
-return localStorage.getItem(
-"wippixLoggedIn"
-) === "true";
-
+    return localStorage.getItem(
+    "wippixLoggedIn"
+    ) === "true";
 
 }
