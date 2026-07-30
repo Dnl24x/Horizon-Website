@@ -3,7 +3,7 @@
 
 <head>
 
-<title>Wippix Character</title>
+<title>Character Profile - Wippix</title>
 
 <link rel="stylesheet" href="css/style.css">
 
@@ -16,27 +16,34 @@
 <nav>
 
 <a href="index.html">
-<img src="Images/Horizon-logo.png" class="logo">
+
+<img src="Images/Wippix-logo.png" class="logo">
+
 </a>
 
 
 <div class="nav-links">
 
-<a href="index.html">Home</a>
-<a href="game.html">Game</a>
-<a href="vehicles.html">Vehicles</a>
-<a href="maps.html">Maps</a>
-<a href="characters.html">Characters</a>
-<a href="features.html">Features</a>
-<a href="devlog.html">Dev Log</a>
-<a href="download.html">Download</a>
+<a href="index.html">
+Home
+</a>
+
+<a href="vehicles.html">
+Vehicles
+</a>
+
+<a href="maps.html">
+Maps
+</a>
+
+<a href="characters.html">
+Characters
+</a>
 
 </div>
 
 
 <div class="nav-right">
-
-<input class="search" placeholder="Search Wippix...">
 
 <a href="account.html">
 Account
@@ -51,26 +58,25 @@ Account
 
 
 
-<header class="hero">
 
-
-<div class="hero-content">
+<header class="dashboard-header">
 
 
 <h1 id="characterName">
+
 Character
+
 </h1>
 
 
 <p>
-Your Wippix identity
+Wippix Character Profile
 </p>
 
 
-</div>
-
-
 </header>
+
+
 
 
 
@@ -80,58 +86,57 @@ Your Wippix identity
 
 
 
-<section class="cards">
+<section class="profile-section">
+
+
+<div class="character-box">
+
+
+<div class="character-placeholder">
+
+Character Image Coming Soon
+
+</div>
+
+
+</div>
 
 
 
-<div class="card">
+
+
+<div class="profile-info">
 
 
 <h2>
-🧍 Character Preview
+Information
 </h2>
 
 
-<div class="character-image">
+<p id="characterStyle">
+
+Style:
+
+</p>
+
 
 <p>
-No image available yet.
-</p>
 
-
-</div>
-
-
-</div>
-
-
-
-
-
-<div class="card">
-
-
-<h2>
-Character Information
-</h2>
-
-
-<p id="characterClass">
-
-Class:
+Customization:
+Coming Soon
 
 </p>
 
 
-<p id="characterRank">
+<p>
 
-Rank:
+Accessories:
+None
 
 </p>
 
 
 </div>
-
 
 
 
@@ -141,37 +146,21 @@ Rank:
 
 
 
-<section class="update-card">
+
+
+<section class="dashboard-section">
 
 
 <h2>
-Customization
+Appearance
 </h2>
 
 
 <p>
 
-👕 Clothing
-
-<br>
-
-🎩 Hats
-
-<br>
-
-🕶 Accessories
-
-<br>
-
-🎨 Appearance
-
+Future clothing, hairstyles and accessories will appear here.
 
 </p>
-
-
-<button>
-Customize Character
-</button>
 
 
 </section>
@@ -180,9 +169,33 @@ Customize Character
 
 
 
-<button onclick="backAccount()">
 
-Back to Account
+
+<section class="dashboard-section">
+
+
+<h2>
+Equipment
+</h2>
+
+
+<p>
+
+Future items and loadouts will appear here.
+
+</p>
+
+
+</section>
+
+
+
+
+
+
+<button onclick="back()">
+
+Back to Characters
 
 </button>
 
@@ -196,25 +209,26 @@ Back to Account
 
 
 
+
 <script>
 
 
 let name =
-localStorage.getItem("characterName");
+localStorage.getItem("wippixCharacterName");
 
 
-let characterClass =
-localStorage.getItem("characterClass");
-
-
-let rank =
-localStorage.getItem("horizonRank");
+let style =
+localStorage.getItem("wippixCharacterStyle");
 
 
 
-if(name == null){
 
-window.location.href="character.html";
+if(!name){
+
+
+window.location.href =
+"character.html";
+
 
 }
 
@@ -226,27 +240,26 @@ name;
 
 
 
-document.getElementById("characterClass").innerHTML =
-"Class: " + characterClass;
-
-
-
-document.getElementById("characterRank").innerHTML =
-"Rank: " + rank;
+document.getElementById("characterStyle").innerHTML =
+"Style: " + style;
 
 
 
 
 
-function backAccount(){
+function back(){
 
-window.location.href="account.html";
+
+window.location.href =
+"characters.html";
+
 
 }
 
 
 
 </script>
+
 
 
 

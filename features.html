@@ -16,30 +16,34 @@
 <nav>
 
 <a href="index.html">
-<img src="Images/Horizon-logo.png" class="logo">
+<img src="Images/Wippix-logo.png" class="logo">
 </a>
 
 
 <div class="nav-links">
 
 <a href="index.html">Home</a>
-<a href="game.html">Game</a>
+
 <a href="vehicles.html">Vehicles</a>
+
 <a href="maps.html">Maps</a>
+
 <a href="characters.html">Characters</a>
+
 <a href="features.html">Features</a>
+
 <a href="devlog.html">Dev Log</a>
-<a href="download.html">Download</a>
 
 </div>
 
 
 <div class="nav-right">
 
-<input class="search" placeholder="Search Wippix...">
+<input placeholder="Search">
 
-<a id="navAccount" href="signin.html">
-Sign In
+
+<a href="account.html">
+Account
 </a>
 
 </div>
@@ -50,21 +54,23 @@ Sign In
 
 
 
-<header class="hero">
 
-<div class="hero-content">
+<header class="dashboard-header">
+
 
 <h1>
 Features
 </h1>
 
+
 <p>
-Discover what is planned for the world of Wippix.
+The systems and experiences being developed for Wippix.
 </p>
 
-</div>
 
 </header>
+
+
 
 
 
@@ -72,15 +78,20 @@ Discover what is planned for the world of Wippix.
 <main>
 
 
-<section>
+
+
+<section class="dashboard-section">
+
 
 <h2>
-What makes Wippix?
+Vehicles
 </h2>
 
 
 <p>
-A driving experience focused on freedom, customization and exploration.
+
+Drive, customize and experience vehicles across different worlds.
+
 </p>
 
 
@@ -90,95 +101,21 @@ A driving experience focused on freedom, customization and exploration.
 
 
 
-<section class="cards">
 
 
-<div class="card">
+<section class="dashboard-section">
+
 
 <h2>
-🚗 Realistic Driving
+Worlds
 </h2>
 
-<p>
-Experience different vehicles, handling styles and driving mechanics.
-</p>
-
-</div>
-
-
-
-
-<div class="card">
-
-<h2>
-🌎 Open World
-</h2>
 
 <p>
-Explore cities, highways and environments across the Wippix world.
+
+Explore detailed environments including cities, roads and open areas.
+
 </p>
-
-</div>
-
-
-
-
-<div class="card">
-
-<h2>
-🧍 Character Customization
-</h2>
-
-<p>
-Create your own identity with clothing, accessories and styles.
-</p>
-
-</div>
-
-
-
-
-<div class="card">
-
-<h2>
-🌦 Dynamic World
-</h2>
-
-<p>
-Future plans include weather, day and night cycles.
-</p>
-
-</div>
-
-
-
-
-<div class="card">
-
-<h2>
-🛠 Vehicle Customization
-</h2>
-
-<p>
-Modify and personalize your vehicles.
-</p>
-
-</div>
-
-
-
-
-<div class="card">
-
-<h2>
-👥 Multiplayer
-</h2>
-
-<p>
-Connect with other players in future updates.
-</p>
-
-</div>
 
 
 </section>
@@ -187,37 +124,65 @@ Connect with other players in future updates.
 
 
 
-<section class="update-card">
+
+
+<section class="dashboard-section">
 
 
 <h2>
-Development Progress
+Character Customization
 </h2>
 
 
 <p>
 
-✔ Account System
+Create your identity with future clothing, accessories and appearance options.
 
-<br>
+</p>
 
-✔ Character Creation
 
-<br>
+</section>
 
-✔ Terrain System
 
-<br>
 
-⬜ Vehicle Customization
 
-<br>
 
-⬜ Multiplayer
 
-<br>
 
-⬜ Full Open World
+<section class="dashboard-section">
+
+
+<h2>
+Online Features
+</h2>
+
+
+<p>
+
+Future multiplayer, community systems and shared experiences.
+
+</p>
+
+
+</section>
+
+
+
+
+
+
+
+<section class="dashboard-section">
+
+
+<h2>
+Development Tools
+</h2>
+
+
+<p>
+
+Future tools for creating vehicles, maps and content.
 
 </p>
 
@@ -227,32 +192,6 @@ Development Progress
 
 
 </main>
-
-
-
-
-
-<script>
-
-
-let loggedIn =
-localStorage.getItem("horizonLoggedIn");
-
-
-let account =
-document.getElementById("navAccount");
-
-
-if(loggedIn === "true"){
-
-account.innerHTML="Account";
-
-account.href="account.html";
-
-}
-
-
-</script>
 
 
 

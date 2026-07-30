@@ -16,30 +16,34 @@
 <nav>
 
 <a href="index.html">
-<img src="Images/Horizon-logo.png" class="logo">
+<img src="Images/Wippix-logo.png" class="logo">
 </a>
 
 
 <div class="nav-links">
 
 <a href="index.html">Home</a>
-<a href="game.html">Game</a>
+
 <a href="vehicles.html">Vehicles</a>
+
 <a href="maps.html">Maps</a>
+
 <a href="characters.html">Characters</a>
+
 <a href="features.html">Features</a>
+
 <a href="devlog.html">Dev Log</a>
-<a href="download.html">Download</a>
 
 </div>
 
 
 <div class="nav-right">
 
-<input class="search" placeholder="Search Wippix...">
+<input placeholder="Search">
 
-<a id="navAccount" href="signin.html">
-Sign In
+
+<a href="account.html">
+Account
 </a>
 
 </div>
@@ -51,21 +55,21 @@ Sign In
 
 
 
-<header class="hero">
+<header class="dashboard-header">
 
-<div class="hero-content">
 
 <h1>
 Development Log
 </h1>
 
+
 <p>
-Follow the creation of Wippix.
+Follow the progress of Wippix development.
 </p>
 
-</div>
 
 </header>
+
 
 
 
@@ -75,42 +79,55 @@ Follow the creation of Wippix.
 
 
 
-<section class="update-card">
+
+<section class="dashboard-section">
+
 
 <h2>
-Version 0.0.1 - First Prototype
+Current Version
+</h2>
+
+
+<h3>
+Prototype Development
+</h3>
+
+
+<p>
+
+Building the foundation of Wippix systems, worlds and experiences.
+
+</p>
+
+
+</section>
+
+
+
+
+
+
+
+
+<section class="dashboard-section">
+
+
+<h2>
+Completed
 </h2>
 
 
 <p>
 
-Released the first Wippix prototype.
+Website platform structure<br>
 
-</p>
+Account system prototype<br>
 
+Character system prototype<br>
 
-<br>
+Vehicle testing<br>
 
-
-<p>
-
-✔ Website created
-
-<br>
-
-✔ Account system
-
-<br>
-
-✔ Character creation
-
-<br>
-
-✔ First game build
-
-<br>
-
-✔ Basic world systems
+World development setup
 
 </p>
 
@@ -121,29 +138,27 @@ Released the first Wippix prototype.
 
 
 
-<section class="update-card">
+
+
+<section class="dashboard-section">
 
 
 <h2>
-Currently Working On
+In Development
 </h2>
 
 
 <p>
 
-🚗 Vehicle systems
+Vehicle physics<br>
 
-<br>
+World creation tools<br>
 
-🗺 World building
+Character customization<br>
 
-<br>
+Improved environments<br>
 
-🧍 Character improvements
-
-<br>
-
-🎨 Website redesign
+User profiles
 
 </p>
 
@@ -154,69 +169,36 @@ Currently Working On
 
 
 
-<section class="update-card">
+
+
+<section class="dashboard-section">
 
 
 <h2>
-Future Updates</h2>
+Future Plans
+</h2>
 
 
 <p>
 
-⬜ Vehicle customization
+Multiplayer systems<br>
 
-<br>
+Community features<br>
 
-⬜ More vehicles
+More vehicles<br>
 
-<br>
+More worlds<br>
 
-⬜ Larger maps
-
-<br>
-
-⬜ Multiplayer systems
-
-<br>
-
-⬜ Weather and environment systems
+Creator tools
 
 </p>
 
 
 </section>
-
-
 
 
 
 </main>
-
-
-
-
-
-<script>
-
-
-let loggedIn =
-localStorage.getItem("horizonLoggedIn");
-
-
-let account =
-document.getElementById("navAccount");
-
-
-if(loggedIn === "true"){
-
-account.innerHTML="Account";
-
-account.href="account.html";
-
-}
-
-
-</script>
 
 
 

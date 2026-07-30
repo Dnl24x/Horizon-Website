@@ -3,7 +3,7 @@
 
 <head>
 
-<title>Wippix Account</title>
+<title>Account - Wippix</title>
 
 <link rel="stylesheet" href="css/style.css">
 
@@ -16,27 +16,34 @@
 <nav>
 
 <a href="index.html">
-<img src="Images/Horizon-logo.png" class="logo">
+
+<img src="Images/Wippix-logo.png" class="logo">
+
 </a>
 
 
 <div class="nav-links">
 
-<a href="index.html">Home</a>
-<a href="game.html">Game</a>
-<a href="vehicles.html">Vehicles</a>
-<a href="maps.html">Maps</a>
-<a href="characters.html">Characters</a>
-<a href="features.html">Features</a>
-<a href="devlog.html">Dev Log</a>
-<a href="download.html">Download</a>
+<a href="index.html">
+Home
+</a>
+
+<a href="vehicles.html">
+Vehicles
+</a>
+
+<a href="maps.html">
+Maps
+</a>
+
+<a href="characters.html">
+Characters
+</a>
 
 </div>
 
 
 <div class="nav-right">
-
-<input class="search" placeholder="Search Wippix...">
 
 <a href="account.html">
 Account
@@ -50,20 +57,22 @@ Account
 
 
 
-<header class="hero">
 
-<div class="hero-content">
+
+<header class="dashboard-header">
+
 
 <h1>
-Player Profile
+Account
 </h1>
 
-<p id="username">
+
+<p id="welcome">
 </p>
 
-</div>
 
 </header>
+
 
 
 
@@ -72,16 +81,68 @@ Player Profile
 <main>
 
 
-<section class="update-card">
+
+<section class="profile-section">
 
 
-<h2 id="rank">
-Rank
+<div class="character-box">
+
+
+<div class="character-placeholder">
+
+Character Coming Soon
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="profile-info">
+
+
+<h2 id="username">
+</h2>
+
+
+<p id="rank">
+</p>
+
+
+<p>
+Character:
+Not created
+</p>
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+<section class="dashboard-section">
+
+
+<h2>
+Profile
 </h2>
 
 
 <p>
-Welcome to your Wippix profile.
+
+Manage your Wippix identity and settings.
+
 </p>
 
 
@@ -91,91 +152,59 @@ Welcome to your Wippix profile.
 
 
 
-<section class="cards">
 
 
-<div class="card">
+
+<section class="dashboard-section">
 
 
 <h2>
-🧍 Character
+Customization
 </h2>
 
 
-<p id="characterStatus">
-No character created.
+<p>
+
+Character clothing, accessories and appearance options will appear here.
+
 </p>
 
 
-<a id="characterButton" href="character.html">
+<a href="characters.html">
 
 <button>
-Create Character
+Open Characters
 </button>
 
 </a>
 
 
-</div>
-
-
-
-
-
-<div class="card">
-
-
-<h2>
-🚗 Vehicles
-</h2>
-
-
-<p>
-No vehicles unlocked yet.
-</p>
-
-
-</div>
-
-
-
-
-
-<div class="card">
-
-
-<h2>
-⭐ Progress
-</h2>
-
-
-<p>
-
-Level: 1
-
-<br><br>
-
-Experience: 0 XP
-
-</p>
-
-
-</div>
-
-
-
 </section>
 
 
 
 
 
-<br>
+
+
+<section class="dashboard-section">
+
+
+<h2>
+Account Actions
+</h2>
+
 
 
 <button onclick="logout()">
+
 Log Out
+
 </button>
+
+
+
+</section>
 
 
 
@@ -186,70 +215,42 @@ Log Out
 
 
 
+
 <script>
 
 
+
 let user =
-localStorage.getItem("horizonUsername");
+localStorage.getItem("wippixUsername");
+
 
 
 if(!user){
 
-window.location.href="signin.html";
+
+window.location.href =
+"signin.html";
+
 
 }
 
 
 
-document.getElementById("username").innerHTML =
+
+document.getElementById("welcome").innerHTML =
 "Welcome back, " + user;
 
 
 
-
-let rank =
-localStorage.getItem("horizonRank");
+document.getElementById("username").innerHTML =
+user;
 
 
 
 document.getElementById("rank").innerHTML =
-"Rank: " + rank;
+"Rank: " +
+(localStorage.getItem("wippixRank") || "PLAYER");
 
-
-
-
-let character =
-localStorage.getItem("horizonCharacter");
-
-
-let characterName =
-localStorage.getItem("characterName");
-
-
-let characterClass =
-localStorage.getItem("characterClass");
-
-
-
-if(character === "true"){
-
-
-document.getElementById("characterStatus").innerHTML =
-
-characterName +
-
-"<br>" +
-
-"Class: " +
-
-characterClass;
-
-
-
-document.getElementById("characterButton").style.display="none";
-
-
-}
 
 
 
@@ -258,14 +259,13 @@ document.getElementById("characterButton").style.display="none";
 function logout(){
 
 
-localStorage.removeItem("horizonLoggedIn");
-
-localStorage.removeItem("horizonUsername");
-
-localStorage.removeItem("horizonPassword");
+localStorage.removeItem(
+"wippixLoggedIn"
+);
 
 
-window.location.href="signin.html";
+window.location.href =
+"index.html";
 
 
 }
@@ -273,6 +273,8 @@ window.location.href="signin.html";
 
 
 </script>
+
+
 
 
 </body>

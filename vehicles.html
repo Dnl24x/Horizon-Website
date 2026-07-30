@@ -16,30 +16,34 @@
 <nav>
 
 <a href="index.html">
-<img src="Images/Horizon-logo.png" class="logo">
+<img src="Images/Wippix-logo.png" class="logo">
 </a>
 
 
 <div class="nav-links">
 
 <a href="index.html">Home</a>
-<a href="game.html">Game</a>
+
 <a href="vehicles.html">Vehicles</a>
+
 <a href="maps.html">Maps</a>
+
 <a href="characters.html">Characters</a>
+
 <a href="features.html">Features</a>
+
 <a href="devlog.html">Dev Log</a>
-<a href="download.html">Download</a>
 
 </div>
 
 
 <div class="nav-right">
 
-<input class="search" placeholder="Search Wippix...">
+<input placeholder="Search">
 
-<a id="navAccount" href="signin.html">
-Sign In
+
+<a href="account.html">
+Account
 </a>
 
 </div>
@@ -49,21 +53,22 @@ Sign In
 
 
 
-<header class="hero">
 
-<div class="hero-content">
+<header class="dashboard-header">
+
 
 <h1>
 Vehicles
 </h1>
 
+
 <p>
-Drive, customize and experience the world of Wippix.
+Your collection of vehicles.
 </p>
 
-</div>
 
 </header>
+
 
 
 
@@ -71,16 +76,53 @@ Drive, customize and experience the world of Wippix.
 <main>
 
 
-<section>
+<section class="dashboard-section">
+
 
 <h2>
-Vehicle System
+Current Vehicle
+</h2>
+
+
+<div class="character-box">
+
+
+<div class="character-placeholder">
+
+No vehicle selected
+
+</div>
+
+
+</div>
+
+
+<p>
+
+Choose a vehicle to view information and customization options.
+
+</p>
+
+
+
+</section>
+
+
+
+
+
+
+
+<section class="dashboard-section">
+
+
+<h2>
+Garage
 </h2>
 
 
 <p>
-Vehicles are a core part of Wippix.
-Explore different types of cars and customize your driving experience.
+Your owned vehicles will appear here.
 </p>
 
 
@@ -90,84 +132,18 @@ Explore different types of cars and customize your driving experience.
 
 
 
-<section class="cards">
 
+<section class="dashboard-section">
 
-<div class="card">
 
 <h2>
-🚗 Street Cars
+Customization
 </h2>
 
-<p>
-Fast everyday vehicles designed for city driving.
-</p>
-
-</div>
-
-
-
-
-<div class="card">
-
-<h2>
-🏎 Performance Cars
-</h2>
-
-<p>
-High speed vehicles built for racing and excitement.
-</p>
-
-</div>
-
-
-
-
-<div class="card">
-
-<h2>
-🚙 Off-Road Vehicles
-</h2>
-
-<p>
-Explore roads, mountains and difficult terrain.
-</p>
-
-</div>
-
-
-</section>
-
-
-
-
-
-<section class="update-card">
-
-
-<h2>
-Vehicle Development</h2>
-
 
 <p>
 
-✔ Vehicle system planned
-
-<br>
-
-⬜ Car customization
-
-<br>
-
-⬜ Paint system
-
-<br>
-
-⬜ Upgrades
-
-<br>
-
-⬜ Vehicle collection
+Vehicle upgrades, colours and modifications will appear here.
 
 </p>
 
@@ -177,31 +153,6 @@ Vehicle Development</h2>
 
 
 </main>
-
-
-
-
-<script>
-
-
-let loggedIn =
-localStorage.getItem("horizonLoggedIn");
-
-
-let account =
-document.getElementById("navAccount");
-
-
-if(loggedIn === "true"){
-
-account.innerHTML="Account";
-
-account.href="account.html";
-
-}
-
-
-</script>
 
 
 

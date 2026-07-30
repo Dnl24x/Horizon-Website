@@ -2,8 +2,11 @@
 <html>
 
 <head>
-    <title>Create Character - Horizon</title>
-    <link rel="stylesheet" href="css/style.css">
+
+<title>Create Character - Wippix</title>
+
+<link rel="stylesheet" href="css/style.css">
+
 </head>
 
 
@@ -13,7 +16,9 @@
 <nav>
 
 <a href="index.html">
-<img src="Images/Horizon-logo.png" class="logo">
+
+<img src="Images/Wippix-logo.png" class="logo">
+
 </a>
 
 
@@ -21,10 +26,6 @@
 
 <a href="index.html">
 Home
-</a>
-
-<a href="game.html">
-Game
 </a>
 
 <a href="vehicles.html">
@@ -39,31 +40,14 @@ Maps
 Characters
 </a>
 
-<a href="features.html">
-Features
-</a>
-
-<a href="devlog.html">
-Dev Log
-</a>
-
-<a href="download.html">
-Download
-</a>
-
 </div>
-
 
 
 <div class="nav-right">
 
-<input class="search" placeholder="Search Wippix...">
-
-
-<a id="navAccount" href="signin.html">
-Sign In
+<a href="account.html">
+Account
 </a>
-
 
 </div>
 
@@ -72,49 +56,162 @@ Sign In
 
 
 
-<header>
-    <h1>Create Character</h1>
-    <p>Your journey begins here.</p>
+
+
+
+
+<header class="dashboard-header">
+
+
+<h1>
+Create Character
+</h1>
+
+
+<p>
+Create your Wippix identity.
+</p>
+
+
 </header>
+
+
+
+
 
 
 
 <main>
 
 
-<h2>Choose your name</h2>
 
-<input id="characterName" placeholder="Character name">
-
-
-<br><br>
+<section class="profile-section">
 
 
-<h2>Select class</h2>
+<div class="character-box">
 
 
-<select id="characterClass">
+<div class="character-placeholder">
 
-<option>Explorer</option>
-<option>Survivor</option>
-<option>Builder</option>
-<option>Developer</option>
+Character Preview Coming Soon
+
+</div>
+
+
+</div>
+
+
+
+<div class="profile-info">
+
+
+<h2>
+New Character
+</h2>
+
+
+<p>
+Customize your appearance in the future.
+</p>
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+<section class="dashboard-section">
+
+
+<h2>
+Character Name
+</h2>
+
+
+<input 
+id="characterName"
+placeholder="Character name"
+>
+
+
+</section>
+
+
+
+
+
+
+
+
+<section class="dashboard-section">
+
+
+<h2>
+Starting Style
+</h2>
+
+
+
+<select id="characterStyle">
+
+
+<option>
+Driver
+</option>
+
+
+<option>
+Explorer
+</option>
+
+
+<option>
+Creator
+</option>
+
+
+<option>
+Developer
+</option>
+
 
 </select>
 
 
-<br><br>
+
+</section>
+
+
+
+
+
+
 
 
 <button onclick="createCharacter()">
+
 Create Character
+
 </button>
+
 
 
 <p id="message"></p>
 
 
+
 </main>
+
+
+
 
 
 
@@ -125,47 +222,59 @@ Create Character
 function createCharacter(){
 
 
-let name = document.getElementById("characterName").value;
 
-let characterClass = document.getElementById("characterClass").value;
+let name =
+document.getElementById("characterName").value;
+
+
+
+let style =
+document.getElementById("characterStyle").value;
+
 
 
 
 if(name === ""){
 
-    document.getElementById("message").innerHTML =
-    "Please enter a character name!";
 
-    return;
+document.getElementById("message").innerHTML =
+"Please enter a character name.";
+
+
+return;
+
 
 }
 
 
 
-// Save character
 
 localStorage.setItem(
-"horizonCharacter",
+"wippixCharacter",
 "true"
 );
 
 
+
 localStorage.setItem(
-"characterName",
+"wippixCharacterName",
 name
 );
 
 
+
 localStorage.setItem(
-"characterClass",
-characterClass
+"wippixCharacterStyle",
+style
 );
 
 
 
-// Send to character profile
 
-window.location.href = "characterprofile.html";
+
+window.location.href =
+"characters.html";
+
 
 
 }
@@ -173,6 +282,7 @@ window.location.href = "characterprofile.html";
 
 
 </script>
+
 
 
 </body>

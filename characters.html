@@ -16,30 +16,48 @@
 <nav>
 
 <a href="index.html">
-<img src="Images/Horizon-logo.png" class="logo">
+
+<img src="Images/Wippix-logo.png" class="logo">
+
 </a>
 
 
 <div class="nav-links">
 
-<a href="index.html">Home</a>
-<a href="game.html">Game</a>
-<a href="vehicles.html">Vehicles</a>
-<a href="maps.html">Maps</a>
-<a href="characters.html">Characters</a>
-<a href="features.html">Features</a>
-<a href="devlog.html">Dev Log</a>
-<a href="download.html">Download</a>
+<a href="index.html">
+Home
+</a>
+
+<a href="vehicles.html">
+Vehicles
+</a>
+
+<a href="maps.html">
+Maps
+</a>
+
+<a href="characters.html">
+Characters
+</a>
+
+<a href="features.html">
+Features
+</a>
+
+<a href="devlog.html">
+Dev Log
+</a>
 
 </div>
 
 
 <div class="nav-right">
 
-<input class="search" placeholder="Search Wippix...">
+<input placeholder="Search">
 
-<a id="navAccount" href="signin.html">
-Sign In
+
+<a href="account.html">
+Account
 </a>
 
 </div>
@@ -49,38 +67,72 @@ Sign In
 
 
 
-<header class="hero">
 
-<div class="hero-content">
+
+
+<header class="dashboard-header">
+
 
 <h1>
 Characters
 </h1>
 
+
 <p>
-Create your identity in the world of Wippix.
+Create and customize your Wippix identity.
 </p>
 
-</div>
 
 </header>
+
+
+
+
 
 
 
 <main>
 
 
-<section>
+
+<section class="profile-section">
 
 
-<h2>
-Character Customization
+<div class="character-box">
+
+
+<div class="character-placeholder">
+
+Character Preview Coming Soon
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="profile-info">
+
+
+<h2 id="name">
+
+No Character
+
 </h2>
 
 
-<p>
-Customize your character with clothing, accessories and unique styles.
+<p id="style">
+
+Create your first character.
+
 </p>
+
+
+</div>
+
 
 
 </section>
@@ -89,51 +141,32 @@ Customize your character with clothing, accessories and unique styles.
 
 
 
-<section class="cards">
 
 
-<div class="card">
+<section class="dashboard-section">
+
 
 <h2>
-👕 Clothing
+Character Management
 </h2>
 
-<p>
-Jackets, shirts, pants and more.
+
+<p id="status">
+
+No character created yet.
+
 </p>
 
-</div>
 
 
+<a id="characterButton" href="character.html">
 
+<button>
+Create Character
+</button>
 
-<div class="card">
+</a>
 
-<h2>
-🎩 Accessories
-</h2>
-
-<p>
-Hats, glasses, watches and future items.
-</p>
-
-</div>
-
-
-
-
-
-<div class="card">
-
-<h2>
-🧍 Appearance
-</h2>
-
-<p>
-Body customization, faces and styles.
-</p>
-
-</div>
 
 
 </section>
@@ -142,33 +175,19 @@ Body customization, faces and styles.
 
 
 
-<section class="update-card">
+
+
+<section class="dashboard-section">
 
 
 <h2>
-Character System Status
+Customization
 </h2>
 
 
 <p>
 
-✔ Account connection
-
-<br>
-
-✔ Character creation
-
-<br>
-
-⬜ Character models
-
-<br>
-
-⬜ Clothing system
-
-<br>
-
-⬜ Accessories
+Clothing, accessories and appearance options will appear here.
 
 </p>
 
@@ -181,26 +200,66 @@ Character System Status
 
 
 
+
+
+
+
 <script>
 
-let loggedIn =
-localStorage.getItem("horizonLoggedIn");
+
+let character =
+localStorage.getItem("wippixCharacter");
 
 
-let account =
-document.getElementById("navAccount");
+let name =
+localStorage.getItem("wippixCharacterName");
 
 
-if(loggedIn === "true"){
+let style =
+localStorage.getItem("wippixCharacterStyle");
 
-account.innerHTML="Account";
 
-account.href="account.html";
+
+let button =
+document.getElementById("characterButton");
+
+
+
+if(character === "true"){
+
+
+
+document.getElementById("name").innerHTML =
+name;
+
+
+
+document.getElementById("style").innerHTML =
+"Style: " + style;
+
+
+
+document.getElementById("status").innerHTML =
+"Your character is ready.";
+
+
+
+button.innerHTML =
+"<button>View Character</button>";
+
+
+
+button.href =
+"characterprofile.html";
+
+
 
 }
 
 
+
 </script>
+
 
 
 </body>

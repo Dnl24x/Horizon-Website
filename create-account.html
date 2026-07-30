@@ -2,16 +2,23 @@
 <html>
 
 <head>
-<title>Create Account - Horizon</title>
+
+<title>Create Account - Wippix</title>
+
 <link rel="stylesheet" href="css/style.css">
+
 </head>
 
+
 <body>
+
 
 <nav>
 
 <a href="index.html">
-<img src="Images/Horizon-logo.png" class="logo">
+
+<img src="Images/Wippix-logo.png" class="logo">
+
 </a>
 
 
@@ -21,47 +28,9 @@
 Home
 </a>
 
-<a href="game.html">
-Game
-</a>
-
-<a href="vehicles.html">
-Vehicles
-</a>
-
-<a href="maps.html">
-Maps
-</a>
-
-<a href="characters.html">
-Characters
-</a>
-
-<a href="features.html">
-Features
-</a>
-
-<a href="devlog.html">
-Dev Log
-</a>
-
-<a href="download.html">
-Download
-</a>
-
-</div>
-
-
-
-<div class="nav-right">
-
-<input class="search" placeholder="Search Wippix...">
-
-
-<a id="navAccount" href="signin.html">
+<a href="signin.html">
 Sign In
 </a>
-
 
 </div>
 
@@ -69,84 +38,181 @@ Sign In
 </nav>
 
 
-<header>
-<h1>Create Account</h1>
+
+
+
+
+<header class="dashboard-header">
+
+
+<h1>
+Create Account
+</h1>
+
+
+<p>
+Create your Wippix profile.
+</p>
+
+
 </header>
+
+
+
+
 
 
 <main>
 
-<input id="username" placeholder="Username">
+
+
+<section class="dashboard-section">
+
+
+
+<input 
+id="username"
+placeholder="Username"
+>
+
+
 
 <br><br>
 
-<input id="password" placeholder="Password" type="password">
+
+
+<input 
+id="password"
+placeholder="Password"
+type="password"
+>
+
+
 
 <br><br>
 
-<button onclick="createAccount()">Create Account</button>
+
+
+<button onclick="createAccount()">
+
+Create Account
+
+</button>
+
+
 
 <p id="message"></p>
+
+
+
+</section>
+
+
 
 </main>
 
 
-<script src="script.js"></script>
+
+
 
 
 <script>
 
+
 function createAccount(){
 
-let username = document.getElementById("username").value;
-let password = document.getElementById("password").value;
+
+
+let username =
+document.getElementById("username").value;
+
+
+let password =
+document.getElementById("password").value;
+
+
 
 
 if(username === "" || password === ""){
-    document.getElementById("message").innerHTML =
-    "Please enter username and password";
 
-    return;
+
+document.getElementById("message").innerHTML =
+"Please enter username and password";
+
+
+return;
+
+
 }
 
 
-localStorage.setItem("horizonUsername", username);
+
+
+localStorage.setItem(
+"wippixUsername",
+username
+);
+
+
+
+localStorage.setItem(
+"wippixPassword",
+password
+);
+
+
+
+
+
 if(username === "Dnl24x"){
 
-localStorage.setItem("horizonRank","OWNER");
 
-localStorage.setItem("characterName","DEVDnl24x");
+localStorage.setItem(
+"wippixRank",
+"OWNER"
+);
 
-localStorage.setItem("characterClass","Developer");
 
 }
-else{
 
-localStorage.setItem("horizonRank","PLAYER");
-
-}
-localStorage.setItem("horizonPassword", password);
-localStorage.setItem("horizonLoggedIn", "true");
+else {
 
 
-// Rank system
-if(username === "Dnl24x"){
-    localStorage.setItem("horizonRank", "OWNER");
-}
-else if(username === "DevNameHere"){
-    localStorage.setItem("horizonRank", "DEV");
-}
-else{
-    localStorage.setItem("horizonRank", "PLAYER");
+localStorage.setItem(
+"wippixRank",
+"PLAYER"
+);
+
+
 }
 
 
-window.location.href = "account.html";
+
+
+
+
+localStorage.setItem(
+"wippixLoggedIn",
+"true"
+);
+
+
+
+
+
+window.location.href =
+"index.html";
+
+
 
 }
+
+
 
 </script>
 
 
+
 </body>
+
 </html>

@@ -2,16 +2,21 @@
 <html>
 
 <head>
-<title>Sign In - Horizon</title>
+
+<title>Sign In - Wippix</title>
+
 <link rel="stylesheet" href="css/style.css">
+
 </head>
 
+
 <body>
+
 
 <nav>
 
 <a href="index.html">
-<img src="Images/Horizon-logo.png" class="logo">
+<img src="Images/Wippix-logo.png" class="logo">
 </a>
 
 
@@ -19,22 +24,6 @@
 
 <a href="index.html">
 Home
-</a>
-
-<a href="game.html">
-Game
-</a>
-
-<a href="vehicles.html">
-Vehicles
-</a>
-
-<a href="maps.html">
-Maps
-</a>
-
-<a href="characters.html">
-Characters
 </a>
 
 <a href="features.html">
@@ -45,42 +34,164 @@ Features
 Dev Log
 </a>
 
-<a href="download.html">
-Download
-</a>
-
 </div>
-
 
 
 <div class="nav-right">
 
-<input class="search" placeholder="Search Wippix...">
-
-
-<a id="navAccount" href="signin.html">
-Sign In
+<a href="create-account.html">
+Create Account
 </a>
-
 
 </div>
 
 
 </nav>
 
-<h1>Sign In</h1>
 
-<input id="loginUsername" placeholder="Username">
+
+
+
+
+<header class="dashboard-header">
+
+
+<h1>
+Sign In
+</h1>
+
+
+<p>
+Access your Wippix profile.
+</p>
+
+
+</header>
+
+
+
+
+
+
+
+<main>
+
+
+
+<section class="dashboard-section">
+
+
+
+<input 
+id="loginUsername"
+placeholder="Username"
+>
+
+
+
 <br><br>
 
-<input id="loginPassword" placeholder="Password" type="password">
+
+
+<input 
+id="loginPassword"
+placeholder="Password"
+type="password"
+>
+
+
+
 <br><br>
 
-<button onclick="login()">Sign In</button>
+
+
+<button onclick="login()">
+
+Sign In
+
+</button>
+
+
 
 <p id="message"></p>
 
-<script src="script.js"></script>
+
+
+</section>
+
+
+
+</main>
+
+
+
+
+
+
+<script>
+
+
+function login(){
+
+
+let username =
+document.getElementById("loginUsername").value;
+
+
+let password =
+document.getElementById("loginPassword").value;
+
+
+
+let savedUsername =
+localStorage.getItem("wippixUsername");
+
+
+let savedPassword =
+localStorage.getItem("wippixPassword");
+
+
+
+
+if(username === savedUsername && password === savedPassword){
+
+
+
+localStorage.setItem(
+"wippixLoggedIn",
+"true"
+);
+
+
+
+window.location.href =
+"index.html";
+
+
+
+}
+
+
+else {
+
+
+
+document.getElementById("message").innerHTML =
+"Incorrect username or password.";
+
+
+}
+
+
+
+}
+
+
+
+</script>
+
+
 
 </body>
+
 </html>

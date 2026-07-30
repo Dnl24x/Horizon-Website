@@ -3,7 +3,7 @@
 
 <head>
 
-<title>Wippix - Game</title>
+<title>Wippix Game</title>
 
 <link rel="stylesheet" href="css/style.css">
 
@@ -13,33 +13,37 @@
 <body>
 
 
+
 <nav>
 
 <a href="index.html">
-<img src="Images/Horizon-logo.png" class="logo">
+
+<img src="Images/Wippix-logo.png" class="logo">
+
 </a>
 
 
 <div class="nav-links">
 
 <a href="index.html">Home</a>
-<a href="game.html">Game</a>
+
 <a href="vehicles.html">Vehicles</a>
+
 <a href="maps.html">Maps</a>
+
 <a href="characters.html">Characters</a>
+
 <a href="features.html">Features</a>
+
 <a href="devlog.html">Dev Log</a>
-<a href="download.html">Download</a>
 
 </div>
 
 
 <div class="nav-right">
 
-<input class="search" placeholder="Search Wippix...">
-
-<a id="navAccount" href="signin.html">
-Sign In
+<a href="account.html">
+Account
 </a>
 
 </div>
@@ -51,21 +55,24 @@ Sign In
 
 
 
-<header class="hero">
 
-<div class="hero-content">
+
+<header class="dashboard-header">
+
 
 <h1>
 Wippix
 </h1>
 
+
 <p>
-Drive. Explore. Create your own experience.
+Drive. Explore. Create your journey.
 </p>
 
-</div>
 
 </header>
+
+
 
 
 
@@ -74,17 +81,19 @@ Drive. Explore. Create your own experience.
 <main>
 
 
-<section>
+
+<section class="dashboard-section">
+
 
 <h2>
-About Wippix
+About
 </h2>
 
 
 <p>
 
-Wippix is an open-world driving experience focused on vehicles,
-customization and exploring a connected world.
+Wippix is a driving experience focused on vehicles,
+large worlds and freedom.
 
 </p>
 
@@ -95,100 +104,35 @@ customization and exploring a connected world.
 
 
 
-<section class="cards">
 
 
-<div class="card">
-
-<h2>
-🚘 Driving
-</h2>
-
-<p>
-Experience different vehicles and realistic driving mechanics.
-</p>
-
-</div>
-
-
-
-
-<div class="card">
-
-<h2>
-🌆 Exploration
-</h2>
-
-<p>
-Travel through cities, roads and environments.
-</p>
-
-</div>
-
-
-
-
-<div class="card">
-
-<h2>
-🎨 Customization
-</h2>
-
-<p>
-Create your character and personalize your experience.
-</p>
-
-</div>
-
-
-</section>
-
-
-
-
-
-<section class="update-card">
+<section class="dashboard-section">
 
 
 <h2>
-Current Version
+Current Features
 </h2>
 
 
 <p>
 
-<b>
-Pre-Alpha 0.0.1
-</b>
+Vehicle driving system
 
 <br><br>
 
-Status:
-Development Build
+Large maps
 
 <br><br>
 
-Current systems:
+Walking and exploring
 
-<br>
+<br><br>
 
-✔ Account System
+Vehicle customization
 
-<br>
+<br><br>
 
-✔ Character Creation
-
-<br>
-
-✔ Basic World Systems
-
-<br>
-
-⬜ Vehicles
-
-<br>
-
-⬜ Multiplayer
+Future multiplayer systems
 
 </p>
 
@@ -199,24 +143,37 @@ Current systems:
 
 
 
-<section>
+
+
+
+<section class="dashboard-section">
 
 
 <h2>
-Download Wippix
+Development Status
 </h2>
 
 
 <p>
-Try the latest available build.
+
+Current Version:
+Pre-Alpha
+
+<br><br>
+
+The game is actively being developed.
+
 </p>
 
 
 <a href="download.html">
 
 <button>
+
 Download
+
 </button>
+
 
 </a>
 
@@ -225,33 +182,8 @@ Download
 
 
 
+
 </main>
-
-
-
-
-
-<script>
-
-
-let loggedIn =
-localStorage.getItem("horizonLoggedIn");
-
-
-let account =
-document.getElementById("navAccount");
-
-
-if(loggedIn === "true"){
-
-account.innerHTML="Account";
-
-account.href="account.html";
-
-}
-
-
-</script>
 
 
 

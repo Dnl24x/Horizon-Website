@@ -13,12 +13,13 @@
 <body>
 
 
+
 <nav>
 
 
 <a href="index.html">
 
-<img src="Images/Horizon-logo.png" class="logo">
+<img src="Images/Wippix-logo.png" class="logo">
 
 </a>
 
@@ -29,11 +30,6 @@
 
 <a href="index.html">
 Home
-</a>
-
-
-<a href="game.html">
-Game
 </a>
 
 
@@ -62,12 +58,6 @@ Dev Log
 </a>
 
 
-<a href="download.html">
-Download
-</a>
-
-
-
 </div>
 
 
@@ -75,18 +65,15 @@ Download
 <div class="nav-right">
 
 
-<input 
-class="search"
-placeholder="Search Wippix..."
->
+<a id="accountLink" href="signin.html">
 
-
-<a id="navAccount" href="signin.html">
 Sign In
+
 </a>
 
 
 </div>
+
 
 
 </nav>
@@ -95,50 +82,101 @@ Sign In
 
 
 
-<header class="hero">
 
 
-<div class="hero-content">
+<!-- Logged out page -->
+
+
+<section id="landingPage" class="landing">
+
+
+
+<div class="landing-content">
 
 
 <h1>
+
 WIPPIX
+
 </h1>
 
 
+
 <p>
-A new generation of driving and exploration.
+
+A new generation of driving and worlds.
+
 </p>
 
 
 
-<div class="hero-buttons">
+
+<div>
 
 
-<a href="game.html">
+<a href="signin.html">
 
 <button>
-Explore Game
+
+Sign In
+
 </button>
 
 </a>
 
 
 
-<a href="download.html">
+<a href="create-account.html">
 
 <button class="secondary">
-Download
+
+Create Account
+
 </button>
 
 </a>
 
 
+</div>
+
+
 
 </div>
 
 
-</div>
+
+</section>
+
+
+
+
+
+
+
+<!-- Logged in dashboard -->
+
+
+<section id="dashboardPage" style="display:none;">
+
+
+
+
+
+<header class="dashboard-header">
+
+
+<h1 id="welcome">
+
+Welcome
+
+</h1>
+
+
+<p>
+
+Your Wippix profile
+
+</p>
 
 
 </header>
@@ -147,70 +185,59 @@ Download
 
 
 
+
+
 <main>
 
 
-<section>
 
-
-<h2>
-Welcome to Wippix
-</h2>
-
-
-<p>
-Drive, explore, customize and create your own experience.
-</p>
-
-
-</section>
+<section class="profile-section">
 
 
 
+<div class="character-box">
 
 
-<section class="cards">
+<div class="character-placeholder">
 
 
-<div class="card">
+Character Coming Soon
 
-<h2>
-🚗 Vehicles
-</h2>
 
-<p>
-Discover cars, upgrades and future customization.
-</p>
+</div>
+
 
 </div>
 
 
 
 
-<div class="card">
 
-<h2>
-🗺 Maps
+<div class="profile-info">
+
+
+<h2 id="username">
+
 </h2>
 
-<p>
-Explore cities, roads and environments.
+
+<p id="rank">
+
 </p>
 
-</div>
 
 
+<a href="characters.html">
+
+<button>
+
+Characters
+
+</button>
+
+</a>
 
 
-<div class="card">
-
-<h2>
-🧍 Characters
-</h2>
-
-<p>
-Customize your own player with clothing and accessories.
-</p>
 
 </div>
 
@@ -222,43 +249,90 @@ Customize your own player with clothing and accessories.
 
 
 
-<section class="update-card">
+
+
+
+<section class="dashboard-section">
 
 
 <h2>
-Latest Development
+
+Vehicles
+
 </h2>
-
-
-<h3>
-Pre-Alpha 0.0.1
-</h3>
 
 
 <p>
 
-✔ Terrain System
-
-<br>
-
-✔ Character Creation
-
-<br>
-
-✔ Account System
-
-<br>
-
-✔ First Development Build
+Your owned vehicles will appear here.
 
 </p>
 
 
+<a href="vehicles.html">
+
+<button>
+
+View Vehicles
+
+</button>
+
+</a>
+
+
 </section>
+
+
+
+
+
+
+
+
+<section class="dashboard-section">
+
+
+<h2>
+
+Maps
+
+</h2>
+
+
+<p>
+
+Explore available worlds.
+
+</p>
+
+
+<a href="maps.html">
+
+<button>
+
+View Maps
+
+</button>
+
+</a>
+
+
+</section>
+
+
+
 
 
 
 </main>
+
+
+
+</section>
+
+
+
+
 
 
 
@@ -267,21 +341,47 @@ Pre-Alpha 0.0.1
 <script>
 
 
+
 let loggedIn =
-localStorage.getItem("horizonLoggedIn");
+localStorage.getItem("wippixLoggedIn");
+
 
 
 let username =
-localStorage.getItem("horizonUsername");
+localStorage.getItem("wippixUsername");
 
+
+
+
+
+let landing =
+document.getElementById("landingPage");
+
+
+let dashboard =
+document.getElementById("dashboardPage");
 
 
 let account =
-document.getElementById("navAccount");
+document.getElementById("accountLink");
+
+
+
 
 
 
 if(loggedIn === "true" && username){
+
+
+
+landing.style.display =
+"none";
+
+
+
+dashboard.style.display =
+"block";
+
 
 
 account.innerHTML =
@@ -292,11 +392,31 @@ account.href =
 "account.html";
 
 
+
+
+document.getElementById("welcome").innerHTML =
+"Welcome back, " + username;
+
+
+
+document.getElementById("username").innerHTML =
+username;
+
+
+
+document.getElementById("rank").innerHTML =
+"Rank: " +
+(localStorage.getItem("wippixRank") || "PLAYER");
+
+
+
 }
 
 
 
 </script>
+
+
 
 
 

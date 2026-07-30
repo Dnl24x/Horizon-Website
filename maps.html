@@ -16,30 +16,34 @@
 <nav>
 
 <a href="index.html">
-<img src="Images/Horizon-logo.png" class="logo">
+<img src="Images/Wippix-logo.png" class="logo">
 </a>
 
 
 <div class="nav-links">
 
 <a href="index.html">Home</a>
-<a href="game.html">Game</a>
+
 <a href="vehicles.html">Vehicles</a>
+
 <a href="maps.html">Maps</a>
+
 <a href="characters.html">Characters</a>
+
 <a href="features.html">Features</a>
+
 <a href="devlog.html">Dev Log</a>
-<a href="download.html">Download</a>
 
 </div>
 
 
 <div class="nav-right">
 
-<input class="search" placeholder="Search Wippix...">
+<input placeholder="Search">
 
-<a id="navAccount" href="signin.html">
-Sign In
+
+<a href="account.html">
+Account
 </a>
 
 </div>
@@ -50,21 +54,22 @@ Sign In
 
 
 
-<header class="hero">
 
-<div class="hero-content">
+<header class="dashboard-header">
+
 
 <h1>
 Maps
 </h1>
 
+
 <p>
-Explore cities, roads and environments in Wippix.
+Explore worlds created for Wippix experiences.
 </p>
 
-</div>
 
 </header>
+
 
 
 
@@ -72,15 +77,31 @@ Explore cities, roads and environments in Wippix.
 <main>
 
 
-<section>
+<section class="dashboard-section">
+
 
 <h2>
-The World of Wippix
+Current World
 </h2>
 
 
+<div class="character-box">
+
+
+<div class="character-placeholder">
+
+Map Preview Coming Soon
+
+</div>
+
+
+</div>
+
+
 <p>
-A connected world built for driving, exploring and discovering new locations.
+
+Your current location and world information will appear here.
+
 </p>
 
 
@@ -90,50 +111,20 @@ A connected world built for driving, exploring and discovering new locations.
 
 
 
-<section class="cards">
 
+<section class="dashboard-section">
 
-<div class="card">
 
 <h2>
-🌆 Cities
+Available Locations
 </h2>
 
-<p>
-Large urban areas with roads, buildings and activities.
-</p>
-
-</div>
-
-
-
-
-<div class="card">
-
-<h2>
-🛣 Highways
-</h2>
 
 <p>
-Long roads designed for high-speed driving.
+
+Cities, highways, countryside and future worlds will appear here.
+
 </p>
-
-</div>
-
-
-
-
-<div class="card">
-
-<h2>
-🏔 Countryside
-</h2>
-
-<p>
-Mountains, forests and open areas to explore.
-</p>
-
-</div>
 
 
 </section>
@@ -143,32 +134,17 @@ Mountains, forests and open areas to explore.
 
 
 
-<section class="update-card">
+<section class="dashboard-section">
 
 
 <h2>
-World Development</h2>
+World Features
+</h2>
 
 
 <p>
 
-✔ Terrain system
-
-<br>
-
-✔ Basic environments
-
-<br>
-
-⬜ Cities
-
-<br>
-
-⬜ Interactive locations
-
-<br>
-
-⬜ Full world map
+Dynamic environments, roads, weather and exploration systems.
 
 </p>
 
@@ -178,32 +154,6 @@ World Development</h2>
 
 
 </main>
-
-
-
-
-
-<script>
-
-
-let loggedIn =
-localStorage.getItem("horizonLoggedIn");
-
-
-let account =
-document.getElementById("navAccount");
-
-
-if(loggedIn === "true"){
-
-account.innerHTML="Account";
-
-account.href="account.html";
-
-}
-
-
-</script>
 
 
 

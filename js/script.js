@@ -1,30 +1,99 @@
+// ==========================
+// Wippix Account System
+// ==========================
+
+
+// Create Account
+
 function createAccount(){
 
-let username = document.getElementById("username").value;
-let password = document.getElementById("password").value;
+
+let username =
+document.getElementById("username").value;
 
 
-if(username=="" || password==""){
+let password =
+document.getElementById("password").value;
+
+
+
+if(username === "" || password === ""){
+
 
 document.getElementById("message").innerHTML =
-"Please fill everything!";
+"Please enter username and password.";
+
 
 return;
 
-}
-
-
-localStorage.setItem("horizonUsername", username);
-localStorage.setItem("horizonPassword", password);
-
-
-document.getElementById("message").innerHTML =
-"Account created! You can now sign in.";
 
 }
 
 
 
+
+localStorage.setItem(
+"wippixUsername",
+username
+);
+
+
+
+localStorage.setItem(
+"wippixPassword",
+password
+);
+
+
+
+
+// Rank System
+
+if(username === "Dnl24x"){
+
+
+localStorage.setItem(
+"wippixRank",
+"OWNER"
+);
+
+
+}
+
+else{
+
+
+localStorage.setItem(
+"wippixRank",
+"PLAYER"
+);
+
+
+}
+
+
+
+
+localStorage.setItem(
+"wippixLoggedIn",
+"true"
+);
+
+
+
+window.location.href =
+"index.html";
+
+
+}
+
+
+
+
+
+
+
+// Login
 
 
 function login(){
@@ -40,27 +109,35 @@ document.getElementById("loginPassword").value;
 
 
 let savedUsername =
-localStorage.getItem("horizonUsername");
+localStorage.getItem("wippixUsername");
 
 
 let savedPassword =
-localStorage.getItem("horizonPassword");
+localStorage.getItem("wippixPassword");
 
 
 
-if(username===savedUsername && password===savedPassword){
+
+
+if(
+username === savedUsername &&
+password === savedPassword
+){
 
 
 localStorage.setItem(
-"horizonLoggedIn",
+"wippixLoggedIn",
 "true"
 );
 
 
-window.location.href="account.html";
+
+window.location.href =
+"index.html";
 
 
 }
+
 
 else{
 
@@ -79,16 +156,40 @@ document.getElementById("message").innerHTML =
 
 
 
+
+
+// Logout
+
+
 function logout(){
 
 
-localStorage.removeItem("horizonLoggedIn");
-localStorage.removeItem("horizonUsername");
-localStorage.removeItem("horizonPassword");
-localStorage.removeItem("horizonRank");
+localStorage.removeItem(
+"wippixLoggedIn"
+);
 
 
-window.location.href="index.html";
+window.location.href =
+"index.html";
+
+
+}
+
+
+
+
+
+
+
+// Check login state
+
+
+function isLoggedIn(){
+
+
+return localStorage.getItem(
+"wippixLoggedIn"
+) === "true";
 
 
 }

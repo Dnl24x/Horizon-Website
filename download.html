@@ -3,7 +3,7 @@
 
 <head>
 
-<title>Wippix Download</title>
+<title>Download - Wippix</title>
 
 <link rel="stylesheet" href="css/style.css">
 
@@ -16,30 +16,33 @@
 <nav>
 
 <a href="index.html">
-<img src="Images/Horizon-logo.png" class="logo">
+
+<img src="Images/Wippix-logo.png" class="logo">
+
 </a>
 
 
 <div class="nav-links">
 
 <a href="index.html">Home</a>
-<a href="game.html">Game</a>
+
 <a href="vehicles.html">Vehicles</a>
+
 <a href="maps.html">Maps</a>
+
 <a href="characters.html">Characters</a>
+
 <a href="features.html">Features</a>
+
 <a href="devlog.html">Dev Log</a>
-<a href="download.html">Download</a>
 
 </div>
 
 
 <div class="nav-right">
 
-<input class="search" placeholder="Search Wippix...">
-
-<a id="navAccount" href="signin.html">
-Sign In
+<a href="account.html">
+Account
 </a>
 
 </div>
@@ -51,21 +54,21 @@ Sign In
 
 
 
-<header class="hero">
 
-<div class="hero-content">
+
+<header class="dashboard-header">
 
 <h1>
-Download Wippix
+Download
 </h1>
 
 <p>
-Get the latest development build.
+Get the latest Wippix build.
 </p>
 
-</div>
-
 </header>
+
+
 
 
 
@@ -75,29 +78,30 @@ Get the latest development build.
 
 
 
-<section class="update-card">
+<section class="dashboard-section">
 
 
 <h2>
-Wippix Pre-Alpha 0.0.1
+Wippix Pre-Alpha
 </h2>
 
 
 <p>
 
-The first public test version of Wippix.
+Current test build.
 
 </p>
 
 
-<br>
-
-
 <a href="https://github.com/Dnl24x/horizon-game/releases/download/v0.0.1/Version.0.0.1.zip">
 
+
 <button>
-Download for Windows
+
+Download Windows
+
 </button>
+
 
 </a>
 
@@ -108,92 +112,42 @@ Download for Windows
 
 
 
-<section class="cards">
 
 
+<section class="dashboard-section">
 
-<div class="card">
 
 <h2>
-🖥 Windows
+System Requirements
 </h2>
+
 
 <p>
 
-Available now
+<strong>OS:</strong>
+Windows 10 / 11 64-bit
 
 <br><br>
 
-Windows 10 / 11
-
-<br>
-
-64-bit
-
-</p>
-
-</div>
-
-
-
-
-
-<div class="card">
-
-<h2>
-🍎 Other Platforms
-</h2>
-
-<p>
-
-Coming soon:
+<strong>Processor:</strong>
+Intel Core i5 / AMD Ryzen 5
 
 <br><br>
 
-Linux
-
-<br>
-
-macOS
-
-<br>
-
-Console
-
-</p>
-
-</div>
-
-
-
-
-
-<div class="card">
-
-<h2>
-📦 Version Info
-</h2>
-
-<p>
-
-Version:
-
-<br>
-
-Pre-Alpha 0.0.1
+<strong>Memory:</strong>
+8GB RAM
 
 <br><br>
 
-Status:
+<strong>Graphics:</strong>
+GTX 1050 Ti / RX 570
 
-<br>
+<br><br>
 
-Development
+<strong>DirectX:</strong>
+Version 12
 
 </p>
-
-</div>
-
 
 
 </section>
@@ -202,67 +156,26 @@ Development
 
 
 
-<section class="update-card">
+
+
+
+<section class="dashboard-section">
 
 
 <h2>
-System Requirements
+Version Information
 </h2>
 
 
-
-<h3>
-Minimum
-</h3>
-
-
 <p>
 
-CPU:
-Intel Core i7-6700 / Ryzen 3 1200
+Version:
+Pre-Alpha 0.0.1
 
 <br><br>
 
-GPU:
-GTX 1050 Ti / RX 570
-
-<br><br>
-
-RAM:
-8GB
-
-<br><br>
-
-Storage:
-TBA
-
-</p>
-
-
-
-<br><br>
-
-
-
-<h3>
-Recommended
-</h3>
-
-
-<p>
-
-CPU:
-Intel Core i5-10400 / Ryzen 5 3600
-
-<br><br>
-
-GPU:
-GTX 1660 Super / RX 6600
-
-<br><br>
-
-RAM:
-16GB
+Status:
+In Development
 
 </p>
 
@@ -272,32 +185,6 @@ RAM:
 
 
 </main>
-
-
-
-
-
-<script>
-
-
-let loggedIn =
-localStorage.getItem("horizonLoggedIn");
-
-
-let account =
-document.getElementById("navAccount");
-
-
-if(loggedIn === "true"){
-
-account.innerHTML="Account";
-
-account.href="account.html";
-
-}
-
-
-</script>
 
 
 
