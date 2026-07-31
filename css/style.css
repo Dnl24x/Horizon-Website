@@ -458,3 +458,88 @@ footer{
     }
 
 }
+
+.search-box{
+
+    width:220px;
+
+    background:#101c2b;
+
+    border:1px solid #30445c;
+
+    color:white;
+
+    border-radius:8px;
+
+    padding:10px 15px;
+
+}
+
+.search-box::placeholder{
+
+    color:#8997a8;
+
+}
+
+.search-box:focus{
+
+    outline:none;
+
+    border-color:#f5d76e;
+
+}
+
+.dashboard-hero{
+
+    background:
+    linear-gradient(
+    rgba(7,18,31,.65),
+    rgba(7,18,31,.92)
+    ),
+    url("../Images/home-background.png");
+
+    background-size:cover;
+
+    background-position:center;
+
+    border-radius:18px;
+
+    padding:90px 70px;
+
+    margin-bottom:35px;
+
+    border:1px solid rgba(255,255,255,.08);
+
+}
+
+.hero-left{
+
+    max-width:520px;
+
+}
+
+.hero-left h1{
+
+    font-size:54px;
+
+    margin:0;
+
+}
+
+.hero-left p{
+
+    font-size:22px;
+
+    color:#b8c2cc;
+
+    margin:20px 0 35px;
+
+}
+
+.hero-buttons{
+
+    display:flex;
+
+    gap:15px;
+
+}
