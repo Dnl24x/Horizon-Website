@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Account - Wippix</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+
+<body>
+
+
+<nav>
+
+<a href="index.html">
+
+<img src="Images/Wippix-logo.png" class="logo">
+
+</a>
+
+
+<div class="nav-links">
+
+<a href="index.html">
+Home
+</a>
+
+<a href="vehicles.html">
+Vehicles
+</a>
+
+<a href="maps.html">
+Maps
+</a>
+
+<a href="characters.html">
+Characters
+</a>
+
+</div>
+
+
+<div class="nav-right">
+
+<a href="account.html">
+Account
+</a>
+
+</div>
+
+
+</nav>
+
+
+
+
+
+<header class="dashboard-header">
+
+<h1>
+Account
+</h1>
+
+<p id="welcome"></p>
+
+</header>
+
+
+
+
+
+<main>
+
+
+
+<section class="profile-section">
+
+
+<div class="character-box">
+
+<div class="character-placeholder">
+
+Character Coming Soon
+
+</div>
+
+</div>
+
+
+
+
+<div class="profile-info">
+
+
+<h2 id="username">
+
+</h2>
+
+
+<p id="rank">
+
+</p>
+
+
+<p id="characterStatus">
+
+</p>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+<section class="dashboard-section">
+
+
+<h2>
+About Yourself
+</h2>
+
+
+<textarea id="aboutText" placeholder="Tell us about yourself..."></textarea>
+
+
+<br>
+
+
+<button onclick="saveAbout()">
+Save
+</button>
+
+
+<p id="aboutMessage"></p>
+
+
+</section>
+
+
+
+
+
+
+<section class="dashboard-section">
+
+
+<h2>
+Friends
+</h2>
+
+
+<p>
+No friends yet.
+</p>
+
+
+<p>
+Friend system coming soon.
+</p>
+
+
+</section>
+
+
+
+
+
+
+
+<section class="dashboard-section">
+
+
+<h2>
+Profile
+</h2>
+
+
+<p>
+Manage your Wippix identity and settings.
+</p>
+
+
+</section>
+
+
+
+
+
+
+
+<section class="dashboard-section">
+
+
+<h2>
+Customization
+</h2>
+
+
+<p>
+Character clothing, accessories and appearance options will appear here.
+</p>
+
+
+<a href="characters.html">
+
+<button>
+Open Characters
+</button>
+
+</a>
+
+
+</section>
+
+
+
+
+
+
+
+<section class="dashboard-section">
+
+
+<h2>
+Account Actions
+</h2>
+
+
+<button onclick="logout()">
+
+Log Out
+
+</button>
+
+
+</section>
+
+
+
+</main>
+
+
+
+
+
+
+
+<footer>
+
+
+<img src="Images/Wippix-logo.png" class="footer-logo">
+
+
+<p>
+Wippix © 2026
+</p>
+
+
+<p>
+Website Version: 0.1 Pre-Alpha
+</p>
+
+
+<a href="terms.html">
+Terms of Service
+</a>
+
+
+</footer>
+
+
+
+
+
+
+
+
+
+<script>
+
+
+let user =
+localStorage.getItem("wippixUsername");
+
+
+
+if(!user){
+
+window.location.href =
+"signin.html";
+
+}
+
+
+
+
+document.getElementById("welcome").innerHTML =
+"Welcome back, " + user;
+
+
+
+document.getElementById("username").innerHTML =
+user;
+
+
+
+document.getElementById("rank").innerHTML =
+"Rank: " +
+(localStorage.getItem("wippixRank") || "PLAYER");
+
+
+
+
+let character =
+localStorage.getItem("wippixCharacter");
+
+
+
+if(character === "true"){
+
+document.getElementById("characterStatus").innerHTML =
+"Character: Ready";
+
+}
+
+else{
+
+document.getElementById("characterStatus").innerHTML =
+"Character: Not created";
+
+}
+
+
+
+
+
+
+let about =
+localStorage.getItem("wippixAbout");
+
+
+if(about){
+
+document.getElementById("aboutText").value =
+about;
+
+}
+
+
+
+
+
+function saveAbout(){
+
+
+let text =
+document.getElementById("aboutText").value;
+
+
+
+localStorage.setItem(
+"wippixAbout",
+text
+);
+
+
+
+document.getElementById("aboutMessage").innerHTML =
+"Saved.";
+
+}
+
+
+
+
+
+
+function logout(){
+
+
+localStorage.removeItem(
+"wippixLoggedIn"
+);
+
+
+window.location.href =
+"index.html";
+
+
+}
+
+
+
+</script>
+
+
+
+
+</body>
+
+</html>

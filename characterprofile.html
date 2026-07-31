@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Character Profile - Wippix</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+
+<body>
+
+
+<nav>
+
+<a href="index.html">
+
+<img src="Images/Wippix-logo.png" class="logo">
+
+</a>
+
+
+<div class="nav-links">
+
+<a href="index.html">Home</a>
+
+<a href="vehicles.html">Vehicles</a>
+
+<a href="maps.html">Maps</a>
+
+<a href="characters.html">Characters</a>
+
+<a href="features.html">Features</a>
+
+<a href="devlog.html">Dev Log</a>
+
+</div>
+
+
+<div class="nav-right">
+
+<a href="account.html">
+Account
+</a>
+
+</div>
+
+
+</nav>
+
+
+
+
+
+
+<header class="dashboard-header">
+
+<h1>
+Character Profile
+</h1>
+
+<p>
+Your Wippix identity.
+</p>
+
+</header>
+
+
+
+
+
+
+
+<main>
+
+
+
+
+<section class="profile-section">
+
+
+
+<div class="character-box">
+
+
+<div class="character-placeholder">
+
+3D Character Coming Soon
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+<div class="profile-info">
+
+
+<h2 id="name">
+
+Player
+
+</h2>
+
+
+
+<p id="rank">
+
+Rank: PLAYER
+
+</p>
+
+
+
+<p id="style">
+
+Style: Driver
+
+</p>
+
+
+
+
+<a href="character.html">
+
+<button>
+
+Customize Character
+
+</button>
+
+</a>
+
+
+
+</div>
+
+
+
+
+</section>
+
+
+
+
+
+
+
+
+<section class="dashboard-section">
+
+
+<h2>
+Character Stats
+</h2>
+
+
+<p>
+
+Level: 1
+
+</p>
+
+
+<p>
+
+Experience: 0 XP
+
+</p>
+
+
+<p>
+
+Reputation: New Driver
+
+</p>
+
+
+
+</section>
+
+
+
+
+
+
+
+<section class="dashboard-section">
+
+
+<h2>
+Equipment
+</h2>
+
+
+<p>
+
+Vehicle: None
+
+</p>
+
+
+<p>
+
+Outfit: Default
+
+</p>
+
+
+<p>
+
+Accessories: None
+
+</p>
+
+
+
+</section>
+
+
+
+
+
+
+<button onclick="back()">
+
+Back to Characters
+
+</button>
+
+
+
+
+
+</main>
+
+
+
+
+
+
+
+<script>
+
+
+let username =
+localStorage.getItem("wippixUsername");
+
+
+let rank =
+localStorage.getItem("wippixRank");
+
+
+let style =
+localStorage.getItem("wippixCharacterStyle");
+
+
+
+if(username){
+
+document.getElementById("name").innerHTML =
+username;
+
+}
+
+
+
+if(rank){
+
+document.getElementById("rank").innerHTML =
+"Rank: " + rank;
+
+}
+
+
+
+if(style){
+
+document.getElementById("style").innerHTML =
+"Style: " + style;
+
+}
+
+
+
+
+function back(){
+
+window.location.href =
+"characters.html";
+
+}
+
+
+</script>
+
+<footer>
+
+
+<img src="Images/Wippix-logo.png" class="footer-logo">
+
+
+<p>
+Wippix © 2026
+</p>
+
+
+<p>
+Website Version: 0.1 Pre-Alpha
+</p>
+
+
+<a href="terms.html">
+Terms of Service
+</a>
+
+
+</footer>
+
+
+
+</body>
+
+</html>

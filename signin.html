@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Sign In - Wippix</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+
+<body>
+
+
+<nav>
+
+<a href="index.html">
+<img src="Images/Wippix-logo.png" class="logo">
+</a>
+
+
+<div class="nav-links">
+
+<a href="index.html">
+Home
+</a>
+
+<a href="features.html">
+Features
+</a>
+
+<a href="devlog.html">
+Dev Log
+</a>
+
+</div>
+
+
+<div class="nav-right">
+
+<a href="create-account.html">
+Create Account
+</a>
+
+</div>
+
+
+</nav>
+
+
+
+
+
+
+<header class="dashboard-header">
+
+
+<h1>
+Sign In
+</h1>
+
+
+<p>
+Access your Wippix profile.
+</p>
+
+
+</header>
+
+
+
+
+
+
+
+<main>
+
+
+
+<section class="dashboard-section">
+
+
+
+<input 
+id="loginUsername"
+placeholder="Username"
+>
+
+
+
+<br><br>
+
+
+
+<input 
+id="loginPassword"
+placeholder="Password"
+type="password"
+>
+
+
+
+<br><br>
+
+
+
+<button onclick="login()">
+
+Sign In
+
+</button>
+
+
+
+<p id="message"></p>
+
+
+
+</section>
+
+
+
+</main>
+
+
+
+
+
+
+<script>
+
+
+function login(){
+
+
+let username =
+document.getElementById("loginUsername").value;
+
+
+let password =
+document.getElementById("loginPassword").value;
+
+
+
+let savedUsername =
+localStorage.getItem("wippixUsername");
+
+
+let savedPassword =
+localStorage.getItem("wippixPassword");
+
+
+
+
+if(username === savedUsername && password === savedPassword){
+
+
+
+localStorage.setItem(
+"wippixLoggedIn",
+"true"
+);
+
+
+
+window.location.href =
+"index.html";
+
+
+
+}
+
+
+else {
+
+
+
+document.getElementById("message").innerHTML =
+"Incorrect username or password.";
+
+
+}
+
+
+
+}
+
+
+
+</script>
+
+
+<footer>
+
+
+<img src="Images/Wippix-logo.png" class="footer-logo">
+
+
+<p>
+Wippix © 2026
+</p>
+
+
+<p>
+Website Version: 0.1 Pre-Alpha
+</p>
+
+
+<a href="terms.html">
+Terms of Service
+</a>
+
+
+</footer>
+
+</body>
+
+</html>

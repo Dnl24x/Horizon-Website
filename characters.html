@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Wippix Characters</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+
+<body>
+
+
+<nav>
+
+<a href="index.html">
+
+<img src="Images/Wippix-logo.png" class="logo">
+
+</a>
+
+
+<div class="nav-links">
+
+<a href="index.html">Home</a>
+
+<a href="vehicles.html">Vehicles</a>
+
+<a href="maps.html">Maps</a>
+
+<a href="characters.html">Characters</a>
+
+<a href="features.html">Features</a>
+
+<a href="devlog.html">Dev Log</a>
+
+</div>
+
+
+<div class="nav-right">
+
+<a href="account.html">
+Account
+</a>
+
+</div>
+
+
+</nav>
+
+
+
+
+
+<header class="dashboard-header">
+
+<h1>
+Characters
+</h1>
+
+
+<p>
+Manage your Wippix identity.
+</p>
+
+
+</header>
+
+
+
+
+
+
+
+<main>
+
+
+
+<section class="profile-section">
+
+
+
+<div class="character-box">
+
+
+<div class="character-placeholder">
+
+3D Character Coming Soon
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="profile-info">
+
+
+<h2 id="name">
+
+Player
+
+</h2>
+
+
+
+<p id="style">
+
+Style: Driver
+
+</p>
+
+
+
+<p>
+
+Default Character
+
+</p>
+
+
+
+<a href="character.html">
+
+<button>
+
+Customize Character
+
+</button>
+
+</a>
+
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+
+<section class="dashboard-section">
+
+
+<h2>
+Character Status
+</h2>
+
+
+<p>
+
+Your default Wippix character is ready.
+
+</p>
+
+
+</section>
+
+
+
+
+
+
+
+<section class="dashboard-section">
+
+
+<h2>
+Future Features
+</h2>
+
+
+<p>
+
+Clothing, hairstyles, accessories and more customization options will appear here.
+
+</p>
+
+
+</section>
+
+
+
+
+
+</main>
+
+
+
+
+
+
+
+<script>
+
+
+let username =
+localStorage.getItem("wippixUsername");
+
+
+
+if(username){
+
+
+document.getElementById("name").innerHTML =
+username;
+
+
+}
+
+
+
+let style =
+localStorage.getItem("wippixCharacterStyle");
+
+
+
+if(style){
+
+
+document.getElementById("style").innerHTML =
+"Style: " + style;
+
+
+}
+
+
+
+</script>
+
+<footer>
+
+
+<img src="Images/Wippix-logo.png" class="footer-logo">
+
+
+<p>
+Wippix © 2026
+</p>
+
+
+<p>
+Website Version: 0.1 Pre-Alpha
+</p>
+
+
+<a href="terms.html">
+Terms of Service
+</a>
+
+
+</footer>
+
+
+
+</body>
+
+</html>

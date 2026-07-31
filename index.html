@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Wippix</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+
+<body>
+
+
+<nav>
+
+
+<a href="index.html">
+
+<img src="Images/Wippix-logo.png" class="logo">
+
+</a>
+
+
+
+<div class="nav-links">
+
+<a href="index.html">
+Home
+</a>
+
+<a href="vehicles.html">
+Vehicles
+</a>
+
+<a href="maps.html">
+Maps
+</a>
+
+<a href="characters.html">
+Characters
+</a>
+
+<a href="features.html">
+Features
+</a>
+
+<a href="devlog.html">
+Dev Log
+</a>
+
+</div>
+
+
+
+<div class="nav-right">
+
+<input placeholder="Search">
+
+<a id="accountLink" href="signin.html">
+Sign In
+</a>
+
+</div>
+
+
+
+</nav>
+
+
+
+
+
+
+
+<!-- Logged out -->
+
+<section id="landingPage" class="landing">
+
+
+<div class="landing-content">
+
+
+<h1>
+WIPPIX
+</h1>
+
+
+<p>
+A new generation of driving and worlds.
+</p>
+
+
+
+<a href="signin.html">
+
+<button>
+Sign In
+</button>
+
+</a>
+
+
+
+<a href="create-account.html">
+
+<button class="secondary">
+Create Account
+</button>
+
+</a>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+
+<!-- Logged in Dashboard -->
+
+
+<section id="dashboardPage" style="display:none;">
+
+
+
+<header class="dashboard-header">
+
+
+<h1>
+Welcome back,
+<span id="welcomeName"></span>
+</h1>
+
+
+<p>
+Your Wippix dashboard
+</p>
+
+
+</header>
+
+
+
+
+
+
+
+<main class="launcher">
+
+
+
+
+
+<section class="main-profile">
+
+
+
+<div class="character-preview">
+
+
+<div class="character-placeholder">
+
+Character Coming Soon
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="profile-details">
+
+
+<h2 id="username">
+
+</h2>
+
+
+<p id="rank">
+
+</p>
+
+
+
+<a href="characters.html">
+
+<button>
+
+Customize Character
+
+</button>
+
+
+</a>
+
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<section class="launcher-grid">
+
+
+
+
+
+<div class="launcher-box">
+
+
+<h2>
+Vehicles
+</h2>
+
+
+<p>
+Manage your vehicles and customization.
+</p>
+
+
+<a href="vehicles.html">
+
+<button>
+Open Garage
+</button>
+
+</a>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="launcher-box">
+
+
+<h2>
+Maps
+</h2>
+
+
+<p>
+Explore worlds and locations.
+</p>
+
+
+<a href="maps.html">
+
+<button>
+View Maps
+</button>
+
+</a>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="launcher-box">
+
+
+<h2>
+Game
+</h2>
+
+
+<p>
+Launch your Wippix experience.
+</p>
+
+
+<a href="game.html">
+
+<button>
+Open Game
+</button>
+
+</a>
+
+
+</div>
+
+
+
+
+
+
+</section>
+
+
+
+
+
+</main>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<script>
+
+
+let loggedIn =
+localStorage.getItem("wippixLoggedIn");
+
+
+let username =
+localStorage.getItem("wippixUsername");
+
+
+
+let landing =
+document.getElementById("landingPage");
+
+
+let dashboard =
+document.getElementById("dashboardPage");
+
+
+let account =
+document.getElementById("accountLink");
+
+
+
+
+if(loggedIn === "true" && username){
+
+
+
+landing.style.display =
+"none";
+
+
+dashboard.style.display =
+"block";
+
+
+
+account.innerHTML =
+"Account";
+
+
+account.href =
+"account.html";
+
+
+
+
+document.getElementById("welcomeName").innerHTML =
+username;
+
+
+
+document.getElementById("username").innerHTML =
+username;
+
+
+
+document.getElementById("rank").innerHTML =
+"Rank: " +
+(localStorage.getItem("wippixRank") || "PLAYER");
+
+
+
+}
+
+
+
+</script>
+
+<footer>
+
+
+<img src="Images/Wippix-logo.png" class="footer-logo">
+
+
+<p>
+Wippix © 2026
+</p>
+
+
+<p>
+Website Version: 0.1 Pre-Alpha
+</p>
+
+
+<a href="terms.html">
+Terms of Service
+</a>
+
+
+</footer>
+
+
+</body>
+
+</html>

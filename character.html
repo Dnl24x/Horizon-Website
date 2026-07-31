@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Character Customization - Wippix</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
+</head>
+
+
+<body>
+
+
+<nav>
+
+<a href="index.html">
+
+<img src="Images/Wippix-logo.png" class="logo">
+
+</a>
+
+
+<div class="nav-links">
+
+<a href="index.html">Home</a>
+
+<a href="vehicles.html">Vehicles</a>
+
+<a href="maps.html">Maps</a>
+
+<a href="characters.html">Characters</a>
+
+<a href="features.html">Features</a>
+
+<a href="devlog.html">Dev Log</a>
+
+</div>
+
+
+<div class="nav-right">
+
+<a href="account.html">
+Account
+</a>
+
+</div>
+
+
+</nav>
+
+
+
+
+
+<header class="dashboard-header">
+
+<h1>
+Customize Character
+</h1>
+
+<p>
+Create your Wippix identity.
+</p>
+
+</header>
+
+
+
+
+
+<main>
+
+
+<section class="character-creator">
+
+
+<!-- Character Preview -->
+
+<div class="character-preview">
+
+<h2>
+Character Preview
+</h2>
+
+<div class="character-model">
+
+<model-viewer
+    src="models/character.glb"
+    camera-controls
+    auto-rotate
+    shadow-intensity="1"
+    style="width:350px; height:450px; margin:auto;">
+</model-viewer>
+
+</div>
+
+<h3 id="characterName">
+</h3>
+
+</div>
+
+
+
+
+
+<!-- Customization -->
+
+<div class="customization-panel">
+
+
+<h2>
+Customization
+</h2>
+
+
+
+<div class="custom-tabs">
+
+
+<button onclick="showCategory('hair')">
+Hair
+</button>
+
+
+<button onclick="showCategory('clothes')">
+Clothes
+</button>
+
+
+<button onclick="showCategory('shoes')">
+Shoes
+</button>
+
+
+<button onclick="showCategory('skin')">
+Skin Tone
+</button>
+
+
+<button onclick="showCategory('accessories')">
+Accessories
+</button>
+
+
+</div>
+
+
+
+
+
+<div id="customOptions">
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+</section>
+
+
+
+</main>
+
+
+
+
+
+
+<script>
+
+
+let username =
+localStorage.getItem("wippixUsername");
+
+
+document.getElementById("characterName").innerHTML =
+username || "Player";
+
+
+
+
+
+function showCategory(type){
+
+
+let box =
+document.getElementById("customOptions");
+
+
+
+let title =
+type.charAt(0).toUpperCase() + type.slice(1);
+
+
+
+box.innerHTML =
+
+`
+
+<h2>${title}</h2>
+
+<div class="option-grid">
+
+
+<div class="option-card">
+Image Coming Soon
+<br>
+${title} Style 1
+</div>
+
+
+<div class="option-card">
+Image Coming Soon
+<br>
+${title} Style 2
+</div>
+
+
+<div class="option-card">
+Image Coming Soon
+<br>
+${title} Style 3
+</div>
+
+
+<div class="option-card">
+Image Coming Soon
+<br>
+${title} Style 4
+</div>
+
+
+<div class="option-card">
+Image Coming Soon
+<br>
+${title} Style 5
+</div>
+
+
+<div class="option-card">
+Image Coming Soon
+<br>
+${title} Style 6
+</div>
+
+
+</div>
+
+`;
+
+
+
+}
+
+
+
+showCategory("hair");
+
+
+
+</script>
+
+<footer>
+
+
+<img src="Images/Wippix-logo.png" class="footer-logo">
+
+
+<p>
+Wippix © 2026
+</p>
+
+
+<p>
+Website Version: 0.1 Pre-Alpha
+</p>
+
+
+<a href="terms.html">
+Terms of Service
+</a>
+
+
+</footer>
+
+
+</body>
+
+</html>
