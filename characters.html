@@ -16,24 +16,17 @@
 <nav>
 
 <a href="index.html">
-
 <img src="Images/Wippix-logo.png" class="logo">
-
 </a>
 
 
 <div class="nav-links">
 
 <a href="index.html">Home</a>
-
 <a href="vehicles.html">Vehicles</a>
-
 <a href="maps.html">Maps</a>
-
 <a href="characters.html">Characters</a>
-
 <a href="features.html">Features</a>
-
 <a href="devlog.html">Dev Log</a>
 
 </div>
@@ -47,7 +40,6 @@ Account
 
 </div>
 
-
 </nav>
 
 
@@ -60,11 +52,9 @@ Account
 Characters
 </h1>
 
-
 <p>
 Manage your Wippix identity.
 </p>
-
 
 </header>
 
@@ -72,10 +62,7 @@ Manage your Wippix identity.
 
 
 
-
-
 <main>
-
 
 
 <section class="profile-section">
@@ -85,9 +72,15 @@ Manage your Wippix identity.
 <div class="character-box">
 
 
-<div class="character-placeholder">
+<h2>
+Character Preview
+</h2>
 
-3D Character Coming Soon
+
+<div class="character-image-box">
+
+
+<img src="Images/character.png" class="character-image">
 
 
 </div>
@@ -103,25 +96,17 @@ Manage your Wippix identity.
 
 
 <h2 id="name">
-
 Player
-
 </h2>
 
 
-
 <p id="style">
-
 Style: Driver
-
 </p>
 
 
-
 <p>
-
 Default Character
-
 </p>
 
 
@@ -129,17 +114,13 @@ Default Character
 <a href="character.html">
 
 <button>
-
 Customize Character
-
 </button>
 
 </a>
 
 
-
 </div>
-
 
 
 </section>
@@ -151,7 +132,6 @@ Customize Character
 
 
 <section class="dashboard-section">
-
 
 <h2>
 Character Status
@@ -159,9 +139,7 @@ Character Status
 
 
 <p>
-
 Your default Wippix character is ready.
-
 </p>
 
 
@@ -175,16 +153,13 @@ Your default Wippix character is ready.
 
 <section class="dashboard-section">
 
-
 <h2>
 Future Features
 </h2>
 
 
 <p>
-
 Clothing, hairstyles, accessories and more customization options will appear here.
-
 </p>
 
 
@@ -192,10 +167,7 @@ Clothing, hairstyles, accessories and more customization options will appear her
 
 
 
-
-
 </main>
-
 
 
 
@@ -209,13 +181,10 @@ let username =
 localStorage.getItem("wippixUsername");
 
 
-
 if(username){
-
 
 document.getElementById("name").innerHTML =
 username;
-
 
 }
 
@@ -225,22 +194,21 @@ let style =
 localStorage.getItem("wippixCharacterStyle");
 
 
-
 if(style){
-
 
 document.getElementById("style").innerHTML =
 "Style: " + style;
 
-
 }
-
 
 
 </script>
 
-<footer>
 
+
+
+
+<footer>
 
 <img src="Images/Wippix-logo.png" class="footer-logo">
 
@@ -261,7 +229,6 @@ Terms of Service
 
 
 </footer>
-
 
 
 </body>

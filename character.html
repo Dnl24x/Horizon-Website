@@ -18,37 +18,23 @@
 <nav>
 
 <a href="index.html">
-
 <img src="Images/Wippix-logo.png" class="logo">
-
 </a>
 
 
 <div class="nav-links">
-
 <a href="index.html">Home</a>
-
 <a href="vehicles.html">Vehicles</a>
-
 <a href="maps.html">Maps</a>
-
 <a href="characters.html">Characters</a>
-
 <a href="features.html">Features</a>
-
 <a href="devlog.html">Dev Log</a>
-
 </div>
 
 
 <div class="nav-right">
-
-<a href="account.html">
-Account
-</a>
-
+<a href="account.html">Account</a>
 </div>
-
 
 </nav>
 
@@ -72,67 +58,57 @@ Create your Wippix identity.
 
 
 
+
 <main>
 
 
 <section class="character-creator">
 
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 311431db7b6dd905aede4b2c9206b77112206da5
-<!-- Character Preview -->
 
 <div class="character-preview">
 
-<<<<<<< HEAD
-=======
 
->>>>>>> 311431db7b6dd905aede4b2c9206b77112206da5
 <h2>
 Character Preview
 </h2>
 
-<<<<<<< HEAD
+
+
 <div class="character-model">
+
 
 <model-viewer
-    src="models/character.glb"
-    camera-controls
-    auto-rotate
-    shadow-intensity="1"
-    style="width:350px; height:450px; margin:auto;">
+
+src="models/character.glb"
+
+camera-controls
+
+auto-rotate
+
+shadow-intensity="1">
+
 </model-viewer>
 
-</div>
-
-<h3 id="characterName">
-</h3>
-
-=======
-
-<div class="character-model">
-
-Image Coming Soon
 
 </div>
+
+
 
 
 <h3 id="characterName">
-document.getElementById("characterName").innerHTML =
-localStorage.getItem("wippixCharacterName") || "Player";
+Player
 </h3>
 
 
->>>>>>> 311431db7b6dd905aede4b2c9206b77112206da5
+
 </div>
 
 
 
 
 
-<!-- Customization -->
+
 
 <div class="customization-panel">
 
@@ -145,41 +121,31 @@ Customization
 
 <div class="custom-tabs">
 
-
 <button onclick="showCategory('hair')">
 Hair
 </button>
-
 
 <button onclick="showCategory('clothes')">
 Clothes
 </button>
 
-
 <button onclick="showCategory('shoes')">
 Shoes
 </button>
-
 
 <button onclick="showCategory('skin')">
 Skin Tone
 </button>
 
-
 <button onclick="showCategory('accessories')">
 Accessories
 </button>
-
 
 </div>
 
 
 
-
-
 <div id="customOptions">
-
-
 
 </div>
 
@@ -192,8 +158,8 @@ Accessories
 </section>
 
 
-
 </main>
+
 
 
 
@@ -217,19 +183,15 @@ username || "Player";
 function showCategory(type){
 
 
-let box =
-document.getElementById("customOptions");
-
+let box=document.getElementById("customOptions");
 
 
 let title =
-type.charAt(0).toUpperCase() + type.slice(1);
+type.charAt(0).toUpperCase()+type.slice(1);
 
 
 
-box.innerHTML =
-
-`
+box.innerHTML = `
 
 <h2>${title}</h2>
 
@@ -237,43 +199,37 @@ box.innerHTML =
 
 
 <div class="option-card">
-Image Coming Soon
-<br>
+Image Coming Soon<br>
 ${title} Style 1
 </div>
 
 
 <div class="option-card">
-Image Coming Soon
-<br>
+Image Coming Soon<br>
 ${title} Style 2
 </div>
 
 
 <div class="option-card">
-Image Coming Soon
-<br>
+Image Coming Soon<br>
 ${title} Style 3
 </div>
 
 
 <div class="option-card">
-Image Coming Soon
-<br>
+Image Coming Soon<br>
 ${title} Style 4
 </div>
 
 
 <div class="option-card">
-Image Coming Soon
-<br>
+Image Coming Soon<br>
 ${title} Style 5
 </div>
 
 
 <div class="option-card">
-Image Coming Soon
-<br>
+Image Coming Soon<br>
 ${title} Style 6
 </div>
 
@@ -282,17 +238,19 @@ ${title} Style 6
 
 `;
 
-
-
 }
-
 
 
 showCategory("hair");
 
 
-
 </script>
+
+
+
+
+
+
 
 <footer>
 
@@ -316,6 +274,7 @@ Terms of Service
 
 
 </footer>
+
 
 
 </body>
