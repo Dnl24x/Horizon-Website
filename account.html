@@ -81,11 +81,8 @@ Account
 
 <div class="character-box">
 
-<div class="character-placeholder">
-
-Character Coming Soon
-
-</div>
+<img src="Images/character-preview.png"
+class="character-image">
 
 </div>
 
@@ -124,22 +121,22 @@ Character Coming Soon
 
 
 <h2>
-About Yourself
+Character Customization
 </h2>
 
 
-<textarea id="aboutText" placeholder="Tell us about yourself..."></textarea>
+<p>
+Change your character appearance, clothes, and accessories.
+</p>
 
 
-<br>
+<a href="character.html">
 
-
-<button onclick="saveAbout()">
-Save
+<button>
+Customize Character
 </button>
 
-
-<p id="aboutMessage"></p>
+</a>
 
 
 </section>
@@ -319,24 +316,8 @@ document.getElementById("rank").innerHTML =
 
 
 
-let character =
-localStorage.getItem("wippixCharacter");
-
-
-
-if(character === "true"){
-
 document.getElementById("characterStatus").innerHTML =
-"Character: Ready";
-
-}
-
-else{
-
-document.getElementById("characterStatus").innerHTML =
-"Character: Not created";
-
-}
+"Character ready. Customize your appearance below.";
 
 
 

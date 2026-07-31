@@ -23,21 +23,24 @@
 
 
 <div class="nav-links">
+
 <a href="index.html">Home</a>
 <a href="vehicles.html">Vehicles</a>
 <a href="maps.html">Maps</a>
 <a href="characters.html">Characters</a>
 <a href="features.html">Features</a>
 <a href="devlog.html">Dev Log</a>
+
 </div>
 
 
 <div class="nav-right">
+
 <a href="account.html">Account</a>
+
 </div>
 
 </nav>
-
 
 
 
@@ -66,7 +69,7 @@ Create your Wippix identity.
 
 
 
-<div class="character-preview">
+<div class="creator-preview">
 
 
 <h2>
@@ -74,8 +77,7 @@ Character Preview
 </h2>
 
 
-
-<div class="character-model">
+<div class="creator-model">
 
 
 <model-viewer
@@ -95,9 +97,10 @@ shadow-intensity="1">
 
 
 
-
 <h3 id="characterName">
+
 Player
+
 </h3>
 
 
@@ -110,7 +113,7 @@ Player
 
 
 
-<div class="customization-panel">
+<div class="creator-customization">
 
 
 <h2>
@@ -119,29 +122,37 @@ Customization
 
 
 
-<div class="custom-tabs">
+<div class="creator-tabs">
+
 
 <button onclick="showCategory('hair')">
 Hair
 </button>
 
+
 <button onclick="showCategory('clothes')">
 Clothes
 </button>
+
 
 <button onclick="showCategory('shoes')">
 Shoes
 </button>
 
+
 <button onclick="showCategory('skin')">
 Skin Tone
 </button>
+
 
 <button onclick="showCategory('accessories')">
 Accessories
 </button>
 
+
 </div>
+
+
 
 
 
@@ -158,8 +169,8 @@ Accessories
 </section>
 
 
-</main>
 
+</main>
 
 
 
@@ -179,21 +190,23 @@ username || "Player";
 
 
 
-
 function showCategory(type){
 
 
-let box=document.getElementById("customOptions");
+let box =
+document.getElementById("customOptions");
+
 
 
 let title =
-type.charAt(0).toUpperCase()+type.slice(1);
+type.charAt(0).toUpperCase() + type.slice(1);
 
 
 
 box.innerHTML = `
 
 <h2>${title}</h2>
+
 
 <div class="option-grid">
 
@@ -241,11 +254,11 @@ ${title} Style 6
 }
 
 
+
 showCategory("hair");
 
 
 </script>
-
 
 
 

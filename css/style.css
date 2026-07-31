@@ -54,7 +54,6 @@ nav{
 
 /* HEADERS */
 
-
 .dashboard-header{
     text-align:center;
     padding:70px 20px 40px;
@@ -63,12 +62,12 @@ nav{
 
 .dashboard-header h1{
     font-size:45px;
+    margin-bottom:15px;
 }
 
 
 
 /* MAIN */
-
 
 main{
     width:90%;
@@ -78,12 +77,9 @@ main{
 
 
 
-/* =====================
- CHARACTER CREATOR
-===================== */
+/* PROFILE CARD */
 
-
-.character-creator{
+.profile-section{
 
     display:flex;
     gap:40px;
@@ -100,51 +96,14 @@ main{
 
 
 
-/* LEFT SIDE */
-
-.character-preview{
+.character-box{
 
     width:300px;
+    height:350px;
 
     background:#101d2d;
 
     border-radius:15px;
-
-    padding:20px;
-
-    text-align:center;
-
-    display:flex;
-
-    flex-direction:column;
-
-    align-items:center;
-
-}
-
-
-
-.character-preview h2{
-
-    margin:0 0 20px;
-
-    font-size:22px;
-
-}
-
-
-
-.character-model{
-
-    width:240px;
-
-    height:330px;
-
-    background:#07121f;
-
-    border-radius:12px;
-
-    overflow:hidden;
 
     display:flex;
 
@@ -152,63 +111,71 @@ main{
 
     align-items:center;
 
-}
-
-
-
-.character-model model-viewer{
-
-    width:100%;
-
-    height:100%;
+    overflow:hidden;
 
 }
 
 
 
-#characterName{
+.character-image{
 
-    margin-top:20px;
+    width:220px;
 
-    color:#f5d76e;
+    height:300px;
 
-    font-size:22px;
-
-}
-
-
-
-
-
-/* RIGHT SIDE */
-
-
-.customization-panel{
-
-    flex:1;
+    object-fit:contain;
 
 }
 
 
 
-.customization-panel h2{
-
-    margin-top:0;
-
-}
-
-
-
-.custom-tabs{
+.profile-info{
 
     display:flex;
 
-    gap:10px;
+    flex-direction:column;
 
-    margin-bottom:20px;
+    justify-content:center;
 
 }
 
+
+
+.profile-info h2{
+
+    font-size:28px;
+
+}
+
+
+
+/* DASHBOARD SECTIONS */
+
+
+.dashboard-section{
+
+    margin-top:30px;
+
+    background:#0c1827;
+
+    padding:35px;
+
+    border-radius:16px;
+
+    border:1px solid rgba(255,255,255,.08);
+
+}
+
+
+.dashboard-section h2{
+
+    color:#f5d76e;
+
+}
+
+
+
+/* BUTTONS */
 
 
 button{
@@ -219,11 +186,13 @@ button{
 
     color:white;
 
-    padding:12px 25px;
+    padding:14px 35px;
 
     border-radius:8px;
 
-    font-size:15px;
+    font-size:16px;
+
+    transition:.25s;
 
 }
 
@@ -231,16 +200,143 @@ button{
 
 button:hover{
 
+    transform:translateY(-3px);
+
     border-color:#f5d76e;
 
 }
 
 
 
-/* OPTIONS */
+/* TEXTAREA */
+
+
+textarea{
+
+    width:400px;
+
+    height:150px;
+
+    background:#101c2b;
+
+    color:white;
+
+    border:1px solid #30445c;
+
+    border-radius:12px;
+
+    padding:15px;
+
+    resize:none;
+
+    font-family:"Segoe UI",Arial;
+
+}
+
+
+
+textarea:focus{
+
+    outline:none;
+
+    border-color:#f5d76e;
+
+}
+
+
+
+/* CHARACTER CREATOR */
+
+
+.character-creator{
+
+    display:flex;
+
+    gap:40px;
+
+    background:#0c1827;
+
+    padding:35px;
+
+    border-radius:16px;
+
+    border:1px solid rgba(255,255,255,.08);
+
+}
+
+
+
+/* 3D PREVIEW */
+
+
+.creator-preview{
+
+    width:350px;
+
+    background:#101d2d;
+
+    border-radius:15px;
+
+    padding:25px;
+
+    text-align:center;
+
+}
+
+
+
+.creator-model{
+
+    width:100%;
+
+    height:450px;
+
+    background:#07121f;
+
+    border-radius:12px;
+
+    overflow:hidden;
+
+}
+
+
+
+.creator-model model-viewer{
+
+    width:100%;
+
+    height:100%;
+
+}
+
+
+
+/* CUSTOMIZATION */
+
+
+.creator-customization{
+
+    flex:1;
+
+}
+
+
+
+.creator-tabs{
+
+    display:flex;
+
+    gap:10px;
+
+    flex-wrap:wrap;
+
+}
+
 
 
 #customOptions{
+
+    margin-top:20px;
 
     background:#101d2d;
 
@@ -266,7 +362,7 @@ button:hover{
 
 .option-card{
 
-    height:120px;
+    height:130px;
 
     background:#17263a;
 
@@ -276,13 +372,23 @@ button:hover{
 
     display:flex;
 
-    align-items:center;
-
     justify-content:center;
+
+    align-items:center;
 
     text-align:center;
 
     color:#8997a8;
+
+}
+
+
+
+.option-card:hover{
+
+    border-color:#f5d76e;
+
+    transform:translateY(-3px);
 
 }
 
@@ -323,9 +429,17 @@ footer{
 
 @media(max-width:900px){
 
+    .profile-section,
     .character-creator{
 
         flex-direction:column;
+
+    }
+
+
+    .nav-links{
+
+        display:none;
 
     }
 
@@ -337,9 +451,9 @@ footer{
     }
 
 
-    .nav-links{
+    textarea{
 
-        display:none;
+        width:100%;
 
     }
 
