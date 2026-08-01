@@ -16,24 +16,17 @@
 <nav>
 
 <a href="index.html">
-
 <img src="Images/Wippix-logo.png" class="logo">
-
 </a>
 
 
 <div class="nav-links">
 
 <a href="index.html">Home</a>
-
 <a href="vehicles.html">Vehicles</a>
-
 <a href="maps.html">Maps</a>
-
 <a href="characters.html">Characters</a>
-
 <a href="features.html">Features</a>
-
 <a href="devlog.html">Dev Log</a>
 
 </div>
@@ -47,7 +40,6 @@ Account
 
 </div>
 
-
 </nav>
 
 
@@ -60,14 +52,11 @@ Account
 Characters
 </h1>
 
-
 <p>
 Manage your Wippix identity.
 </p>
 
-
 </header>
-
 
 
 
@@ -77,7 +66,6 @@ Manage your Wippix identity.
 <main>
 
 
-
 <section class="profile-section">
 
 
@@ -85,15 +73,12 @@ Manage your Wippix identity.
 <div class="character-box">
 
 
-<div class="character-placeholder">
-
-3D Character Coming Soon
-
-
-</div>
+<img src="Images/character-preview.png"
+class="character-image">
 
 
 </div>
+
 
 
 
@@ -103,35 +88,28 @@ Manage your Wippix identity.
 
 
 <h2 id="name">
-
 Player
-
 </h2>
 
 
 
 <p id="style">
-
 Style: Driver
-
 </p>
 
 
 
 <p>
-
-Default Character
-
+Your default Wippix character.
 </p>
+
 
 
 
 <a href="character.html">
 
 <button>
-
 Customize Character
-
 </button>
 
 </a>
@@ -139,7 +117,6 @@ Customize Character
 
 
 </div>
-
 
 
 </section>
@@ -159,9 +136,7 @@ Character Status
 
 
 <p>
-
 Your default Wippix character is ready.
-
 </p>
 
 
@@ -182,9 +157,7 @@ Future Features
 
 
 <p>
-
 Clothing, hairstyles, accessories and more customization options will appear here.
-
 </p>
 
 
@@ -192,9 +165,8 @@ Clothing, hairstyles, accessories and more customization options will appear her
 
 
 
-
-
 </main>
+
 
 
 
@@ -212,12 +184,11 @@ localStorage.getItem("wippixUsername");
 
 if(username){
 
-
 document.getElementById("name").innerHTML =
 username;
 
-
 }
+
 
 
 
@@ -228,16 +199,20 @@ localStorage.getItem("wippixCharacterStyle");
 
 if(style){
 
-
 document.getElementById("style").innerHTML =
 "Style: " + style;
-
 
 }
 
 
 
 </script>
+
+
+
+
+
+
 
 <footer>
 

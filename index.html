@@ -15,7 +15,6 @@
 
 <nav>
 
-
 <a href="index.html">
 
 <img src="Images/Wippix-logo.png" class="logo">
@@ -26,29 +25,17 @@
 
 <div class="nav-links">
 
-<a href="index.html">
-Home
-</a>
+<a href="index.html">Home</a>
 
-<a href="vehicles.html">
-Vehicles
-</a>
+<a href="vehicles.html">Vehicles</a>
 
-<a href="maps.html">
-Maps
-</a>
+<a href="maps.html">Maps</a>
 
-<a href="characters.html">
-Characters
-</a>
+<a href="characters.html">Characters</a>
 
-<a href="features.html">
-Features
-</a>
+<a href="features.html">Features</a>
 
-<a href="devlog.html">
-Dev Log
-</a>
+<a href="devlog.html">Dev Log</a>
 
 </div>
 
@@ -56,14 +43,16 @@ Dev Log
 
 <div class="nav-right">
 
-<input placeholder="Search">
+<input
+type="text"
+class="search-box"
+placeholder="Search...">
 
 <a id="accountLink" href="signin.html">
 Sign In
 </a>
 
 </div>
-
 
 
 </nav>
@@ -73,8 +62,7 @@ Sign In
 
 
 
-
-<!-- Logged out -->
+<!-- Logged Out -->
 
 <section id="landingPage" class="landing">
 
@@ -92,7 +80,6 @@ A new generation of driving and worlds.
 </p>
 
 
-
 <a href="signin.html">
 
 <button>
@@ -100,7 +87,6 @@ Sign In
 </button>
 
 </a>
-
 
 
 <a href="create-account.html">
@@ -123,27 +109,28 @@ Create Account
 
 
 
+<!-- Logged In -->
 
-
-
-<!-- Logged in Dashboard -->
-
-
-<section id="dashboardPage" style="display:none;">
-
+<section
+id="dashboardPage"
+style="display:none;">
 
 
 <header class="dashboard-header">
 
-
 <h1>
+
 Welcome back,
+
 <span id="welcomeName"></span>
+
 </h1>
 
 
 <p>
+
 Your Wippix dashboard
+
 </p>
 
 
@@ -154,67 +141,67 @@ Your Wippix dashboard
 
 
 
-
 <main class="launcher">
 
 
+<section class="dashboard-hero">
 
 
-
-<section class="main-profile">
-
+<div class="hero-left">
 
 
-<div class="character-preview">
+<h1>
+
+Welcome back,
+
+<span id="username"></span>
+
+</h1>
 
 
-<div class="character-placeholder">
+<p>
 
-Character Coming Soon
+Everything you need is right here.
 
-</div>
-
-
-</div>
-
-
-
-
-
-<div class="profile-details">
-
-
-<h2 id="username">
-
-</h2>
-
-
-<p id="rank">
+Launch the game, customize your character and keep up with development.
 
 </p>
 
 
 
-<a href="characters.html">
+<div class="hero-buttons">
+
+
+<a href="game.html">
 
 <button>
 
-Customize Character
+Play Wippix
 
 </button>
-
 
 </a>
 
 
 
+<a href="characters.html">
+
+<button class="secondary">
+
+Characters
+
+</button>
+
+</a>
+
+
 </div>
 
 
+</div>
+
 
 </section>
-
-
 
 
 
@@ -225,21 +212,15 @@ Customize Character
 <section class="launcher-grid">
 
 
-
-
-
 <div class="launcher-box">
-
 
 <h2>
 Vehicles
 </h2>
 
-
 <p>
-Manage your vehicles and customization.
+Manage your garage and customize vehicles.
 </p>
-
 
 <a href="vehicles.html">
 
@@ -249,39 +230,55 @@ Open Garage
 
 </a>
 
-
 </div>
 
 
 
 
 
-
-
 <div class="launcher-box">
-
 
 <h2>
 Maps
 </h2>
 
-
 <p>
-Explore worlds and locations.
+Explore all available maps and worlds.
 </p>
-
 
 <a href="maps.html">
 
 <button>
-View Maps
+Browse Maps
 </button>
 
 </a>
 
-
 </div>
 
+
+
+
+
+<div class="launcher-box">
+
+<h2>
+Characters
+</h2>
+
+<p>
+Customize your Wippix character.
+</p>
+
+<a href="characters.html">
+
+<button>
+Open Characters
+</button>
+
+</a>
+
+</div>
 
 
 
@@ -290,25 +287,21 @@ View Maps
 
 <div class="launcher-box">
 
-
 <h2>
 Game
 </h2>
 
-
 <p>
-Launch your Wippix experience.
+Launch into the latest Wippix experience.
 </p>
-
 
 <a href="game.html">
 
 <button>
-Open Game
+Play
 </button>
 
 </a>
-
 
 </div>
 
@@ -317,25 +310,59 @@ Open Game
 
 
 
+<div class="launcher-box">
+
+<h2>
+Features
+</h2>
+
+<p>
+See everything planned for future updates.
+</p>
+
+<a href="features.html">
+
+<button>
+View Features
+</button>
+
+</a>
+
+</div>
+
+
+
+
+
+
+<div class="launcher-box">
+
+<h2>
+Dev Log
+</h2>
+
+<p>
+Read the latest development progress.
+</p>
+
+<a href="devlog.html">
+
+<button>
+Read Dev Log
+</button>
+
+</a>
+
+</div>
+
+
 </section>
-
-
-
 
 
 </main>
 
 
-
 </section>
-
-
-
-
-
-
-
-
 
 <script>
 
@@ -363,8 +390,8 @@ document.getElementById("accountLink");
 
 
 
-if(loggedIn === "true" && username){
 
+if(loggedIn === "true" && username){
 
 
 landing.style.display =
@@ -386,9 +413,9 @@ account.href =
 
 
 
+
 document.getElementById("welcomeName").innerHTML =
 username;
-
 
 
 document.getElementById("username").innerHTML =
@@ -396,17 +423,17 @@ username;
 
 
 
-document.getElementById("rank").innerHTML =
-"Rank: " +
-(localStorage.getItem("wippixRank") || "PLAYER");
-
-
-
 }
 
 
 
+
+
 </script>
+
+
+
+
 
 <footer>
 
@@ -430,6 +457,7 @@ Terms of Service
 
 
 </footer>
+
 
 
 </body>
