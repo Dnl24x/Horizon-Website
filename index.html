@@ -22,7 +22,6 @@
 </a>
 
 
-
 <div class="nav-links">
 
 <a href="index.html">Home</a>
@@ -40,16 +39,18 @@
 </div>
 
 
-
 <div class="nav-right">
 
-<input
-type="text"
+<input 
 class="search-box"
-placeholder="Search...">
+placeholder="Search..."
+>
+
 
 <a id="accountLink" href="signin.html">
+
 Sign In
+
 </a>
 
 </div>
@@ -61,10 +62,10 @@ Sign In
 
 
 
+<!-- LOGGED OUT HOMEPAGE -->
 
-<!-- Logged Out -->
 
-<section id="landingPage" class="landing">
+<section id="landingPage" class="landing" style="min-height:calc(100vh - 80px);">
 
 
 <div class="landing-content">
@@ -80,6 +81,10 @@ A new generation of driving and worlds.
 </p>
 
 
+
+<div class="landing-buttons">
+
+
 <a href="signin.html">
 
 <button>
@@ -89,9 +94,10 @@ Sign In
 </a>
 
 
+
 <a href="create-account.html">
 
-<button class="secondary">
+<button>
 Create Account
 </button>
 
@@ -101,6 +107,9 @@ Create Account
 </div>
 
 
+</div>
+
+
 </section>
 
 
@@ -109,96 +118,76 @@ Create Account
 
 
 
-<!-- Logged In -->
-
-<section
-id="dashboardPage"
-style="display:none;">
+<!-- LOGGED IN DASHBOARD -->
 
 
-<header class="dashboard-header">
+<section id="dashboardPage" style="display:none;">
 
-<h1>
-
-Welcome back,
-
-<span id="welcomeName"></span>
-
-</h1>
-
-
-<p>
-
-Your Wippix dashboard
-
-</p>
-
-
-</header>
-
-
-
-
-
-
-<main class="launcher">
-
+<main>
 
 <section class="dashboard-hero">
 
-
-<div class="hero-left">
-
+<div class="hero-content">
 
 <h1>
-
 Welcome back,
-
-<span id="username"></span>
-
+<span id="welcomeName"></span>
 </h1>
 
-
 <p>
-
-Everything you need is right here.
-
-Launch the game, customize your character and keep up with development.
-
+Everything you need is here.
+Customize your character, explore worlds and keep up with development.
 </p>
-
-
 
 <div class="hero-buttons">
 
+<a href="characters.html">
+<button>Customize Character</button>
+</a>
 
 <a href="game.html">
-
-<button>
-
-Play Wippix
-
-</button>
-
+<button>Play Wippix</button>
 </a>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="dashboard-section">
+
+
+<h2>
+Wippix Dashboard
+</h2>
+
+
+<p>
+Everything you need is here.
+Customize your character, explore worlds and keep up with development.
+</p>
 
 
 
 <a href="characters.html">
 
-<button class="secondary">
-
-Characters
-
+<button>
+Customize Character
 </button>
 
 </a>
 
 
-</div>
 
+<a href="game.html">
 
-</div>
+<button>
+Play Wippix
+</button>
+
+</a>
+
 
 
 </section>
@@ -209,160 +198,69 @@ Characters
 
 
 
-<section class="launcher-grid">
+<section class="dashboard-section">
 
-
-<div class="launcher-box">
 
 <h2>
-Vehicles
+Quick Access
 </h2>
 
-<p>
-Manage your garage and customize vehicles.
-</p>
+
 
 <a href="vehicles.html">
 
 <button>
-Open Garage
+Vehicles
 </button>
 
 </a>
 
-</div>
 
-
-
-
-
-<div class="launcher-box">
-
-<h2>
-Maps
-</h2>
-
-<p>
-Explore all available maps and worlds.
-</p>
 
 <a href="maps.html">
 
 <button>
-Browse Maps
+Maps
 </button>
 
 </a>
 
-</div>
 
-
-
-
-
-<div class="launcher-box">
-
-<h2>
-Characters
-</h2>
-
-<p>
-Customize your Wippix character.
-</p>
-
-<a href="characters.html">
-
-<button>
-Open Characters
-</button>
-
-</a>
-
-</div>
-
-
-
-
-
-
-<div class="launcher-box">
-
-<h2>
-Game
-</h2>
-
-<p>
-Launch into the latest Wippix experience.
-</p>
-
-<a href="game.html">
-
-<button>
-Play
-</button>
-
-</a>
-
-</div>
-
-
-
-
-
-
-<div class="launcher-box">
-
-<h2>
-Features
-</h2>
-
-<p>
-See everything planned for future updates.
-</p>
 
 <a href="features.html">
 
 <button>
-View Features
+Features
 </button>
 
 </a>
 
-</div>
 
-
-
-
-
-
-<div class="launcher-box">
-
-<h2>
-Dev Log
-</h2>
-
-<p>
-Read the latest development progress.
-</p>
 
 <a href="devlog.html">
 
 <button>
-Read Dev Log
+Dev Log
 </button>
 
 </a>
 
-</div>
 
 
 </section>
+
 
 
 </main>
 
 
 </section>
+
+
+
+
+
+
 
 <script>
 
@@ -412,15 +310,8 @@ account.href =
 
 
 
-
-
 document.getElementById("welcomeName").innerHTML =
 username;
-
-
-document.getElementById("username").innerHTML =
-username;
-
 
 
 }
@@ -428,8 +319,9 @@ username;
 
 
 
-
 </script>
+
+
 
 
 
